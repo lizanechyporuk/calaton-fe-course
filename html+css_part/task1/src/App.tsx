@@ -1,13 +1,8 @@
-import React from "react";
+import HomePage from "./pages/HomePage/index";
+import "../src/styles/main.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-      </header>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;

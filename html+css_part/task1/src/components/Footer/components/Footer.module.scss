@@ -1,0 +1,24 @@
+@use "/src/styles/variables.scss";
+
+footer {
+  background-color: map-get(
+    $map: variables.$background-colors,
+    $key: primary-color
+  );
+  color: map-get($map: variables.$text-colors, $key: light-color);
+  section {
+    &:first-of-type {
+      display: flex;
+    }
+    div {
+      display: flex;
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+}
+
+div.redness {
+  color: red;
+}

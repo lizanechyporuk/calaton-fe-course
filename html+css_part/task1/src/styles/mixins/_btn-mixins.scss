@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "../variables.scss";
+
+@mixin button-style(
+  $btn-text-color,
+  $btn-border-color,
+  $btn-radius,
+  $btn-border: none,
+  $btn-background: none,
+  $btn-padding-y: map-get($map: variables.$spaces, $key: space-14),
+  $btn-padding-x: map-get($map: variables.$spaces, $key: space-26),
+  $btn-text-size: map-get($map: variables.$text-size, $key: font-size-15),
+  $btn-border-style: solid
+) {
+  @if $btn-border != "none" {
+    border: $btn-border $btn-border-style $btn-border-color;
+    border-radius: $btn-radius;
+  } @else {
+    border: $btn-border;
+  }
+  font-size: $btn-text-size;
+  color: $btn-text-color;
+  background: $btn-background;
+  padding: $btn-padding-y $btn-padding-x;
+}

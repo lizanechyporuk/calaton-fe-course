@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz@0,9..144;1,9..144&family=Space+Grotesk:wght@300..700&display=swap");
+
+$background-colors: (
+  "primary-color": #162e3c,
+  "secondary-color": #ddf0a7,
+  "white-color": #fff,
+);
+
+$text-colors: (
+  "dark-color": #162e3c,
+  "lighter-dark-color": #49616e,
+  "light-color": #fff,
+);
+
+$text-font-family: (
+  "font-family-primary": "Space Grotesk",
+  "font-family-secondary": "Fraunces",
+);
+
+$text-weight: (
+  "normal": 400,
+  "bold": 700,
+);
+
+$text-size: (
+  "font-size-11": 11px,
+  "font-size-13": 13px,
+  "font-size-14": 14px,
+  "font-size-15": 15px,
+  "font-size-16": 16px,
+  "font-size-17": 17px,
+  "font-size-18": 18px,
+  "font-size-20": 20px,
+  "font-size-24": 24px,
+  "font-size-32": 32px,
+  "font-size-40": 40px,
+  "font-size-48": 48px,
+  "font-size-56": 56px,
+);
+
+$spaces: (
+  "space-8": 8px,
+  "space-10": 10px,
+  "space-14": 14px,
+  "space-16": 16px,
+  "space-22": 22px,
+  "space-26": 26px,
+  "space-32": 32px,
+);
