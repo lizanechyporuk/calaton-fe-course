@@ -1,10 +1,9 @@
-import "./Button.module.scss";
+import styles from "./Button.module.scss";
 interface ButtonProps {
   text: string;
-  className?: string;
 }
 
-function Button({ text, className }: ButtonProps): JSX.Element {
-  return <button className={className}>{text}</button>;
+function Button({ text }: ButtonProps): JSX.Element {
+  return <button>{text}</button>;
 }
 export default Button;

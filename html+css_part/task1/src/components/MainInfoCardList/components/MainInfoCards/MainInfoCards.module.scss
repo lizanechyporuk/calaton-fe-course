@@ -1,0 +1,8 @@
+@use "/src/styles/variables.scss";
+
+section.mainInfoCards {
+  display: flex;
+  gap: map-get($map: variables.$spaces, $key: space-32);
+  margin: map-get($map: variables.$spaces, $key: space-62) 0
+    map-get($map: variables.$spaces, $key: space-48);
+}

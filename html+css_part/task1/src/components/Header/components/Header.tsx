@@ -1,9 +1,9 @@
 import Button from "../../../ui/Button";
-import "./Header.module.scss";
+import styles from "./Header.module.scss";
 
 function Header(): JSX.Element {
   return (
-    <header>
+    <header className={styles.header}>
       <img src="/icons/shared/logo.svg" alt="Logo"></img>
       <nav>
         <ul>
@@ -19,8 +19,8 @@ function Header(): JSX.Element {
           <li>
             <a>Pricing</a>
           </li>
-          <Button text="Log in" className="first" />
-          <Button text="Try for free" className="last" />
+          <Button text="Log in" />
+          <Button text="Try for free" />
         </ul>
       </nav>
     </header>

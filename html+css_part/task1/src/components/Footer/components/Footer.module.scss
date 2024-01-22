@@ -1,24 +1,83 @@
 @use "/src/styles/variables.scss";
 
-footer {
+.footer {
+  padding: map-get($map: variables.$spaces, $key: space-80);
   background-color: map-get(
     $map: variables.$background-colors,
     $key: primary-color
   );
+  font-family: map-get(
+      $map: variables.$text-font-family,
+      $key: font-family-primary
+    ),
+    sans-serif;
   color: map-get($map: variables.$text-colors, $key: light-color);
+  hr {
+    width: 100%;
+    border: 0;
+    margin: map-get($map: variables.$spaces, $key: space-88) 0
+      map-get($map: variables.$spaces, $key: space-32);
+    height: 1px;
+    background: map-get($map: variables.$text-colors, $key: light-dark-color);
+  }
   section {
     &:first-of-type {
       display: flex;
+      justify-content: space-between;
     }
     div {
       display: flex;
-      &:first-child {
+      &.footerContact {
         display: block;
+        img {
+          margin-bottom: map-get($map: variables.$spaces, $key: space-24);
+        }
+        address {
+          font-style: normal;
+
+          font-size: map-get($map: variables.$text-size, $key: font-size-14);
+          margin-bottom: map-get($map: variables.$spaces, $key: space-21);
+          p {
+            margin: 0;
+            line-height: map-get($map: variables.$spaces, $key: space-21);
+          }
+        }
+      }
+      &.footerLists {
+        width: 666px;
+        gap: map-get($map: variables.$spaces, $key: space-32);
+
+        ul {
+          width: 100%;
+          margin: 0;
+          list-style-type: none;
+          padding: 0;
+          font-size: map-get($map: variables.$text-size, $key: font-size-15);
+          li {
+            &:not(:last-of-type) {
+              margin-bottom: map-get($map: variables.$spaces, $key: space-16);
+            }
+            &:first-of-type {
+              font-size: map-get(
+                $map: variables.$text-size,
+                $key: font-size-16
+              );
+              margin-bottom: map-get($map: variables.$spaces, $key: space-24);
+            }
+          }
+        }
+      }
+    }
+    &:last-of-type {
+      display: flex;
+      justify-content: space-between;
+      height: fit-content;
+      flex-wrap: wrap;
+      align-items: center;
+      p {
+        font-size: map-get($map: variables.$text-size, $key: font-size-14);
+        margin: 0;
       }
     }
   }
-}
-
-div.redness {
-  color: red;
 }

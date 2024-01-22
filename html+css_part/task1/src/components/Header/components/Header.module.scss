@@ -1,9 +1,11 @@
 @use "/src/styles/variables.scss";
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
-header {
+
+.header {
   display: flex;
   justify-content: space-between;
-  padding: 0 80px;
+  padding: map-get($map: variables.$spaces, $key: space-14)
+    map-get($map: variables.$spaces, $key: space-80);
   nav {
     display: inline;
     margin-left: auto;
@@ -11,10 +13,12 @@ header {
       $map: variables.$text-font-family,
       $key: font-family-primary
     );
+    color: map-get($map: variables.$text-colors, $key: dark-color);
     ul {
       list-style-type: none;
       display: inline;
       padding: 0;
+      cursor: pointer;
       font-size: map-get($map: variables.$text-size, $key: font-size-16);
       li {
         display: inline;

@@ -1,0 +1,11 @@
+@use "/src/styles/variables.scss";
+
+.socialLinks {
+  list-style-type: none;
+  display: inherit;
+  padding: 0;
+  margin: 0;
+  li:not(:last-of-type) {
+    margin: 0 map-get($map: variables.$spaces, $key: space-8) 0 0;
+  }
+}

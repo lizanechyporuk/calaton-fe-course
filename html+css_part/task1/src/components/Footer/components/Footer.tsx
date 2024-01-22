@@ -1,10 +1,11 @@
-import "./Footer.module.scss";
+import styles from "./Footer.module.scss";
+import SocialLinkList from "../../SocialLinkList/index";
 
 function Footer(): JSX.Element {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <section>
-        <div>
+        <div className={styles.footerContact}>
           <img src="/icons/shared/logo-white.svg" alt="Logo"></img>
           <address>
             <p>Address:</p>
@@ -16,7 +17,7 @@ function Footer(): JSX.Element {
             <p>info@startico.io</p>
           </address>
         </div>
-        <div>
+        <div className={styles.footerLists}>
           <ul>
             <li>Pages</li>
             <li>Home v1</li>
@@ -48,10 +49,10 @@ function Footer(): JSX.Element {
           </ul>
         </div>
       </section>
+      <hr></hr>
       <section>
-        <div>
-          <p>© Startico by Minima Square. Powered by Webflow</p>
-        </div>
+        <p>© Startico by Minima Square. Powered by Webflow</p>
+        <SocialLinkList />
       </section>
     </footer>
   );

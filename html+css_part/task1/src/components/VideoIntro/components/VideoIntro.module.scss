@@ -1,0 +1,26 @@
+@use "/src/styles/variables.scss";
+@use "/src/ui/Button/components/Button.module.scss" as buttonModule;
+.videoIntro {
+  background-image: url("../../../../public/images/backgrounds/videoBg.png");
+  width: 1280px;
+  height: 640px;
+  margin: 0 auto;
+  button {
+    font-family: map-get(
+      $map: variables.$text-font-family,
+      $key: font-family-primary
+    );
+    margin: map-get($map: variables.$spaces, $key: space-274) 0 0
+      map-get($map: variables.$spaces, $key: space-504);
+    font-weight: map-get($map: variables.$text-weight, $key: bold);
+    @include buttonModule.button-style(
+      map-get($map: variables.$text-colors, $key: dark-color),
+      map-get($map: variables.$background-colors, $key: secondary-color),
+      64px,
+      2px,
+      map-get($map: variables.$background-colors, $key: secondary-color),
+      map-get($map: variables.$spaces, $key: space-14),
+      map-get($map: variables.$spaces, $key: space-42)
+    );
+  }
+}

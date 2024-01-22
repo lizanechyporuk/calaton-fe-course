@@ -1,0 +1,34 @@
+@use "/src/styles/variables.scss";
+
+section.pricingSection {
+  position: relative;
+  text-align: center;
+  margin: map-get($map: variables.$spaces, $key: space-128) 0;
+  padding: 0 map-get($map: variables.$spaces, $key: space-80);
+  div {
+    h2 {
+      font-family: map-get(
+        $map: variables.$text-font-family,
+        $key: font-family-secondary
+      );
+      font-size: map-get($map: variables.$text-size, $key: font-size-48);
+      margin: map-get($map: variables.$spaces, $key: space-15) 0
+        map-get($map: variables.$spaces, $key: space-24);
+      color: map-get($map: variables.$text-colors, $key: dark-color);
+    }
+    p {
+      font-family: map-get(
+        $map: variables.$text-font-family,
+        $key: font-family-primary
+      );
+      font-size: map-get($map: variables.$text-size, $key: font-size-17);
+      margin: 0 0 map-get($map: variables.$spaces, $key: space-80);
+      color: map-get($map: variables.$text-colors, $key: lighter-dark-color);
+    }
+  }
+  img.imgWaves {
+    position: absolute;
+    top: map-get($map: variables.$spaces, $key: space-32);
+    right: map-get($map: variables.$spaces, $key: space-80);
+  }
+}

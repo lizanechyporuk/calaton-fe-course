@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "../variables.scss";
+
+@mixin card-price-style($card-price-background, $card-radius, $color) {
+  color: $color;
+  background: $card-price-background;
+  border-radius: $card-radius;
+}

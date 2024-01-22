@@ -1,0 +1,7 @@
+@use "/src/styles/variables.scss";
+
+section.pricingCards {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}

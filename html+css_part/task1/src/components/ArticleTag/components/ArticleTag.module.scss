@@ -1,0 +1,17 @@
+@use "/src/styles/variables.scss";
+
+.articleTag {
+  background: map-get(
+    $map: variables.$background-colors,
+    $key: secondary-color
+  );
+  padding: map-get($map: variables.$spaces, $key: space-4)
+    map-get($map: variables.$spaces, $key: space-12);
+  border-radius: map-get($map: variables.$spaces, $key: space-64);
+  font-family: map-get(
+    $map: variables.$text-font-family,
+    $key: font-family-primary
+  );
+  font-weight: map-get($map: variables.$text-weight, $key: bold);
+  font-size: map-get($map: variables.$text-size, $key: font-size-15);
+}

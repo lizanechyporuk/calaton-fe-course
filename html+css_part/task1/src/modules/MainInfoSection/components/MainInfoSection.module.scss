@@ -1,0 +1,86 @@
+@use "/src/styles/variables.scss";
+@use "/src/ui/Button/components/Button.module.scss" as buttonModule;
+
+.mainInfoSection {
+  position: relative;
+  padding: 0 map-get($map: variables.$spaces, $key: space-80);
+  margin: map-get($map: variables.$spaces, $key: space-128) 0;
+  color: map-get($map: variables.$text-colors, $key: dark-color);
+  div {
+    background: map-get(
+      $map: variables.$background-colors,
+      $key: secondary-color
+    );
+    border-radius: map-get($map: variables.$spaces, $key: space-48);
+    padding: map-get($map: variables.$spaces, $key: space-128)
+      map-get($map: variables.$spaces, $key: space-64);
+    text-align: center;
+    h2 {
+      font-family: map-get(
+        $map: variables.$text-font-family,
+        $key: font-family-secondary
+      );
+      font-size: map-get($map: variables.$text-size, $key: font-size-40);
+      margin: 0 0 map-get($map: variables.$spaces, $key: space-27);
+      font-weight: map-get($map: variables.$text-weight, $key: normal);
+    }
+    p {
+      margin: 0;
+      font-family: map-get(
+        $map: variables.$text-font-family,
+        $key: font-family-primary
+      );
+      font-size: map-get($map: variables.$text-size, $key: font-size-18);
+      line-height: map-get($map: variables.$spaces, $key: space-27);
+      &:last-of-type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          font-family: map-get(
+            $map: variables.$text-font-family,
+            $key: font-family-primary
+          );
+          font-weight: map-get($map: variables.$text-weight, $key: bold);
+          &:first-of-type {
+            margin-right: map-get($map: variables.$spaces, $key: space-16);
+            @include buttonModule.button-style(
+              map-get($map: variables.$text-colors, $key: dark-color),
+              map-get($map: variables.$background-colors, $key: primary-color),
+              64px,
+              2px,
+              none,
+              map-get($map: variables.$spaces, $key: space-14),
+              map-get($map: variables.$spaces, $key: space-26)
+            );
+            margin-right: map-get($map: variables.$spaces, $key: space-32);
+          }
+          &:last-of-type {
+            @include buttonModule.button-style(
+              map-get($map: variables.$text-colors, $key: dark-color),
+              none,
+              0,
+              none,
+              none,
+              0,
+              0
+            );
+            margin-right: map-get($map: variables.$spaces, $key: space-8);
+          }
+        }
+        span.moreBtn {
+          img {
+            position: relative;
+            bottom: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+  img.absoluteImg {
+    position: absolute;
+    top: 0;
+    right: map-get($map: variables.$spaces, $key: space-112);
+  }
+}

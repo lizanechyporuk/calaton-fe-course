@@ -1,0 +1,37 @@
+@use "/src/styles/variables.scss";
+
+div.articlePercentage {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: map-get(
+    $map: variables.$background-colors,
+    $key: secondary-color
+  );
+  border-radius: map-get($map: variables.$spaces, $key: space-24);
+  padding: map-get($map: variables.$spaces, $key: space-24);
+  width: map-get($map: variables.$spaces, $key: space-420);
+  div {
+    &:first-of-type {
+      color: map-get($map: variables.$text-colors, $key: dark-color);
+      h2 {
+        font-family: map-get(
+          $map: variables.$text-font-family,
+          $key: font-family-secondary
+        );
+        font-weight: map-get($map: variables.$text-weight, $key: bold);
+        font-size: map-get($map: variables.$text-size, $key: font-size-32);
+        margin: 0;
+      }
+      p {
+        font-family: map-get(
+          $map: variables.$text-font-family,
+          $key: font-family-primary
+        );
+        font-size: map-get($map: variables.$text-size, $key: font-size-20);
+        margin: 0;
+      }
+    }
+  }
+}
