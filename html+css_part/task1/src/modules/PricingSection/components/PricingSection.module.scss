@@ -29,6 +29,6 @@ section.pricingSection {
   img.imgWaves {
     position: absolute;
     top: map-get($map: variables.$spaces, $key: space-32);
-    right: map-get($map: variables.$spaces, $key: space-80);
+    right: 0;
   }
 }

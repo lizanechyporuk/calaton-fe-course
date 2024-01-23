@@ -7,6 +7,7 @@ import SpeedArticleSection from "../../SpeedArticleSection/index";
 import MainInfoSection from "../../MainInfoSection/index";
 import EfficientArticleSection from "../../EfficientArticleSection/index";
 import PricingSection from "../../PricingSection/index";
+import ContactsSection from "../../ContactSection/index";
 
 interface LayoutProps {
   sections: JSX.Element[];
@@ -18,9 +19,10 @@ function Layout(): JSX.Element {
     <SpeedArticleSection />,
     <MainInfoSection />,
     <EfficientArticleSection />,
+    <CommentsSection />,
     <PricingSection />,
     <BlogsSection />,
-    <CommentsSection />,
+    <ContactsSection />,
   ];
   return (
     <>

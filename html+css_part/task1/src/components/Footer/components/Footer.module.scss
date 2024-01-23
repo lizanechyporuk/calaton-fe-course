@@ -1,7 +1,9 @@
 @use "/src/styles/variables.scss";
 
 .footer {
-  padding: map-get($map: variables.$spaces, $key: space-80);
+  padding: map-get($map: variables.$spaces, $key: space-322)
+    map-get($map: variables.$spaces, $key: space-80)
+    map-get($map: variables.$spaces, $key: space-80);
   background-color: map-get(
     $map: variables.$background-colors,
     $key: primary-color

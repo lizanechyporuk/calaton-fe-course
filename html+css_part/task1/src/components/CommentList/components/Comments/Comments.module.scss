@@ -1,0 +1,15 @@
+@use "/src/styles/variables.scss";
+
+section.blogCards {
+  display: flex;
+  gap: map-get($map: variables.$spaces, $key: space-32);
+
+  div.blogCardsCol {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: variables.$spaces, $key: space-45);
+    &:last-of-type {
+      margin-top: map-get($map: variables.$spaces, $key: space-47);
+    }
+  }
+}

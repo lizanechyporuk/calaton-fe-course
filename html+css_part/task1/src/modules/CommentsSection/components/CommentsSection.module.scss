@@ -1,0 +1,43 @@
+@use "/src/styles/variables.scss";
+
+section.commentsSection {
+  position: relative;
+  background: map-get($map: variables.$background-colors, $key: primary-color);
+  color: map-get($map: variables.$text-colors, $key: light-color);
+  margin: map-get($map: variables.$spaces, $key: space-128) 0 0;
+  padding: map-get($map: variables.$spaces, $key: space-128)
+    map-get($map: variables.$spaces, $key: space-80);
+  text-align: center;
+  h2 {
+    font-family: map-get(
+      $map: variables.$text-font-family,
+      $key: font-family-secondary
+    );
+    font-weight: map-get($map: variables.$text-weight, $key: normal);
+    font-size: map-get($map: variables.$text-size, $key: font-size-48);
+    margin: 0;
+  }
+  p {
+    font-family: map-get(
+      $map: variables.$text-font-family,
+      $key: font-family-primary
+    );
+    font-size: map-get($map: variables.$text-size, $key: font-size-17);
+    line-height: map-get($map: variables.$spaces, $key: space-27);
+    margin: map-get($map: variables.$spaces, $key: space-24) 0
+      map-get($map: variables.$spaces, $key: space-80);
+  }
+  img.absoluteImg {
+    position: absolute;
+    &:first-of-type {
+      left: 0;
+      bottom: map-get($map: variables.$spaces, $key: space-100);
+      z-index: 1;
+    }
+    &:last-of-type {
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+}

@@ -12,7 +12,7 @@ function EfficientArticleSection(): JSX.Element {
           Vivamus ante dolor, condimentum eget dignissim vitae, malesuada sed
           urna. Aenean consequat risus tortor, quis porta.
         </p>
-        <p>
+        <div className={styles.efficientCards}>
           <div>
             <img src="/icons/EfficientArticleSection/icon1.png"></img>
             <h3>No meetings</h3>
@@ -29,7 +29,7 @@ function EfficientArticleSection(): JSX.Element {
               vestibulum nam et dictum.
             </p>
           </div>
-        </p>
+        </div>
         <p>
           <Button text="Get started" />
           <Button text="Try for free" />

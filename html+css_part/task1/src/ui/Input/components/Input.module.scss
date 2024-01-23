@@ -1,0 +1,22 @@
+@use "/src/styles/variables.scss";
+
+input.formInput {
+  padding: map-get($map: variables.$spaces, $key: space-12) 0
+    map-get($map: variables.$spaces, $key: space-13)
+    map-get($map: variables.$spaces, $key: space-42);
+  border-radius: map-get($map: variables.$spaces, $key: space-24);
+  border: none;
+  width: map-get($map: variables.$spaces, $key: space-368);
+  box-sizing: border-box;
+  font-family: map-get(
+    $map: variables.$text-font-family,
+    $key: font-family-primary
+  );
+  font-weight: map-get($map: variables.$text-weight, $key: bold);
+  font-size: map-get($map: variables.$text-size, $key: font-size-18);
+  color: map-get($map: variables.$text-colors, $key: dark-color);
+  &::placeholder {
+    color: map-get($map: variables.$text-colors, $key: dark-color);
+    opacity: 1;
+  }
+}

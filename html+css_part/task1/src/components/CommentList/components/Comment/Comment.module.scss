@@ -1,0 +1,53 @@
+@use "/src/styles/variables.scss";
+
+div.comment {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  background: map-get($map: variables.$background-colors, $key: white-color);
+  width: map-get($map: variables.$spaces, $key: space-624);
+  border-radius: map-get($map: variables.$spaces, $key: space-32);
+  padding: map-get($map: variables.$spaces, $key: space-23)
+    map-get($map: variables.$spaces, $key: space-50)
+    map-get($map: variables.$spaces, $key: space-36)
+    map-get($map: variables.$spaces, $key: space-32);
+  text-align: start;
+  font-family: map-get(
+    $map: variables.$text-font-family,
+    $key: font-family-primary
+  );
+  div {
+    &:first-of-type {
+      display: flex;
+      gap: map-get($map: variables.$spaces, $key: space-4);
+    }
+    &:last-of-type {
+      display: flex;
+      gap: map-get($map: variables.$spaces, $key: space-16);
+      div {
+        display: block;
+        p {
+          margin: 0;
+          &:first-of-type {
+            color: map-get($map: variables.$text-colors, $key: dark-color);
+            font-size: map-get($map: variables.$text-size, $key: font-size-15);
+          }
+          &:last-of-type {
+            color: map-get(
+              $map: variables.$text-colors,
+              $key: lighter-dark-color
+            );
+            font-size: map-get($map: variables.$text-size, $key: font-size-16);
+          }
+        }
+      }
+    }
+  }
+  p {
+    color: map-get($map: variables.$text-colors, $key: lighter-dark-color);
+    font-size: map-get($map: variables.$text-size, $key: font-size-18);
+    line-height: map-get($map: variables.$spaces, $key: space-27);
+    margin: map-get($map: variables.$spaces, $key: space-26) 0
+      map-get($map: variables.$spaces, $key: space-22);
+  }
+}
