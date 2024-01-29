@@ -1,2 +1,1 @@
-import MainInfoCards from "./components/MainInfoCards/MainInfoCards";
-export default MainInfoCards;
+export { default } from "./components/MainInfoCards/MainInfoCards";

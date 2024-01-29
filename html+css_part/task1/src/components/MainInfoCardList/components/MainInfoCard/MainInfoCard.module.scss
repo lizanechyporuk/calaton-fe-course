@@ -1,28 +1,22 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
 div.mainInfoCard {
-  padding: map-get($map: variables.$spaces, $key: space-32)
-    map-get($map: variables.$spaces, $key: space-42);
-  background: map-get($map: variables.$background-colors, $key: primary-color);
-  color: map-get($map: variables.$text-colors, $key: light-color);
+  padding: var(--space-32) var(--space-42);
+  background: var(--primary-bg-color);
+  color: var(--light-text-color);
+  align-self: stretch;
+
   h3 {
-    margin: map-get($map: variables.$spaces, $key: space-24) 0
-      map-get($map: variables.$spaces, $key: space-17);
-    font-family: map-get(
-      $map: variables.$text-font-family,
-      $key: font-family-secondary
-    );
-    font-size: map-get($map: variables.$text-size, $key: font-size-20);
-    font-weight: map-get($map: variables.$text-weight, $key: normal);
+    @include fontsMixins.text-style-heading-3(var(--light-text-color));
+    margin: var(--space-24) 0 var(--space-17);
   }
   p {
-    margin: 0;
-    font-family: map-get(
-      $map: variables.$text-font-family,
-      $key: font-family-primary
+    @include fontsMixins.text-style-paragraph(
+      var(--font-size-16),
+      var(--text-weight-normal),
+      var(--light-text-color),
+      var(--space-24)
     );
-    font-size: map-get($map: variables.$text-size, $key: font-size-16);
-    word-wrap: break-word;
-    line-height: map-get($map: variables.$spaces, $key: space-24);
   }
 }

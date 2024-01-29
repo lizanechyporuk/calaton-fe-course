@@ -1,2 +1,1 @@
-import EfficientArticleSection from "./components/EfficientArticleSection";
-export default EfficientArticleSection;
+export { default } from "./components/EfficientArticleSection";

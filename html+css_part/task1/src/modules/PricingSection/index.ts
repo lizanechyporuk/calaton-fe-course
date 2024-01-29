@@ -1,2 +1,1 @@
-import PricingSection from "./components/PricingSection";
-export default PricingSection;
+export { default } from "./components/PricingSection";

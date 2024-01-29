@@ -1,90 +1,49 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-.speedArticleSection {
-  padding: 0 map-get($map: variables.$spaces, $key: space-80);
-  display: flex;
-  gap: map-get($map: variables.$spaces, $key: space-80);
+section.speedArticleSection {
   position: relative;
   div {
-    &:nth-last-of-type(2) {
-      margin: auto 0;
-      h2 {
-        font-family: map-get(
-          $map: variables.$text-font-family,
-          $key: font-family-secondary
-        );
-        font-size: map-get($map: variables.$text-size, $key: font-size-40);
-        margin: map-get($map: variables.$spaces, $key: space-15) 0
-          map-get($map: variables.$spaces, $key: space-27);
-        color: map-get($map: variables.$text-colors, $key: dark-color);
-      }
-      p {
-        margin: 0 0 map-get($map: variables.$spaces, $key: space-32);
-        font-family: map-get(
-          $map: variables.$text-font-family,
-          $key: font-family-primary
-        );
-        font-size: map-get($map: variables.$text-size, $key: font-size-18);
-        line-height: map-get($map: variables.$spaces, $key: space-27);
-        word-wrap: break-word;
-        color: map-get($map: variables.$text-colors, $key: lighter-dark-color);
-        &:last-of-type {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          button {
-            font-family: map-get(
-              $map: variables.$text-font-family,
-              $key: font-family-primary
-            );
-            font-weight: map-get($map: variables.$text-weight, $key: bold);
-            &:first-of-type {
-              margin-right: map-get($map: variables.$spaces, $key: space-16);
-              @include buttonModule.button-style(
-                map-get($map: variables.$text-colors, $key: dark-color),
-                map-get(
-                  $map: variables.$background-colors,
-                  $key: primary-color
-                ),
-                64px,
-                2px,
-                none,
-                map-get($map: variables.$spaces, $key: space-14),
-                map-get($map: variables.$spaces, $key: space-26)
-              );
-              margin-right: map-get($map: variables.$spaces, $key: space-32);
-            }
-            &:last-of-type {
-              @include buttonModule.button-style(
-                map-get($map: variables.$text-colors, $key: dark-color),
-                none,
-                0,
-                none,
-                none,
-                0,
-                0
-              );
-              margin-right: map-get($map: variables.$spaces, $key: space-8);
-            }
+    &.contentWrapper {
+      display: flex;
+      gap: var(--space-80);
+      position: relative;
+      div {
+        &.textWrapper {
+          margin: auto 0;
+          h2 {
+            @include fontsMixins.text-style-heading-2;
+            margin: var(--space-15) 0 var(--space-27);
           }
-          span.moreBtn {
-            img {
-              position: relative;
-              bottom: 0;
-              top: 0;
+          p {
+            &.paragraphText {
+              margin: 0 0 var(--space-32);
+              @include fontsMixins.text-style-paragraph;
+            }
+
+            &.paragraphButtons {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              button {
+                &:first-of-type {
+                  margin-right: var(--space-16);
+                }
+              }
             }
           }
         }
       }
     }
-    &:last-of-type {
-      bottom: map-get($map: variables.$spaces, $key: space-48);
-      left: map-get($map: variables.$spaces, $key: space-308);
-    }
   }
   .imgWave {
     position: absolute;
     right: 0;
+    top: 0;
+  }
+  div.articlePercentage {
+    bottom: var(--space-48);
+    left: var(--space-308);
   }
 }

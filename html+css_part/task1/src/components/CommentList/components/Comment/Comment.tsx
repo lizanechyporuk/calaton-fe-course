@@ -10,19 +10,25 @@ interface CommentProps {
 function Comment({ src, text, name, position }: CommentProps): JSX.Element {
   return (
     <div className={styles.comment}>
-      <div>
-        <img src="/icons/CommentsSection/star.svg" alt="Star"></img>
-        <img src="/icons/CommentsSection/star.svg" alt="Star"></img>
-        <img src="/icons/CommentsSection/star.svg" alt="Star"></img>
-        <img src="/icons/CommentsSection/star.svg" alt="Star"></img>
-        <img src="/icons/CommentsSection/star.svg" alt="Star"></img>
-      </div>
-      <p>{text}</p>
-      <div>
-        <img src={src} alt="Portait"></img>
-        <div>
-          <p>{name}</p>
-          <p>{position}</p>
+      <div className={styles.commentWrapper}>
+        <div className={styles.stars}>
+          {Array.from({ length: 5 }, (_, index) => (
+            <img
+              key={index}
+              src="/icons/CommentsSection/star.svg"
+              width="20px"
+              height="20px"
+              alt="Star"
+            />
+          ))}
+        </div>
+        <p>{text}</p>
+        <div className={styles.commentContent}>
+          <img src={src} width="48px" height="54px" alt="Portait"></img>
+          <div>
+            <p className={styles.commentName}>{name}</p>
+            <p className={styles.commentPosition}>{position}</p>
+          </div>
         </div>
       </div>
     </div>

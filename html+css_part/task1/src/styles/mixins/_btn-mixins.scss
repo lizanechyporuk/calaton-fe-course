@@ -7,9 +7,9 @@
   $btn-radius,
   $btn-border: none,
   $btn-background: none,
-  $btn-padding-y: map-get($map: variables.$spaces, $key: space-14),
-  $btn-padding-x: map-get($map: variables.$spaces, $key: space-26),
-  $btn-text-size: map-get($map: variables.$text-size, $key: font-size-15),
+  $btn-padding-y: var(--space-14),
+  $btn-padding-x: var(--space-26),
+  $btn-text-size: var(--font-size-15),
   $btn-border-style: solid
 ) {
   @if $btn-border != "none" {
@@ -18,6 +18,7 @@
   } @else {
     border: $btn-border;
   }
+  font-family: var(--font-family-primary);
   font-size: $btn-text-size;
   color: $btn-text-color;
   background: $btn-background;

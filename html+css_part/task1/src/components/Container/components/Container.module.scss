@@ -1,0 +1,6 @@
+@use "/src/styles/variables.scss";
+
+div.container {
+  padding: 0 var(--space-80);
+  margin: 0 auto;
+}

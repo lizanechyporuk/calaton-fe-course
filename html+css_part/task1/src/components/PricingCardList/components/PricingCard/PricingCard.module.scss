@@ -1,22 +1,17 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/styles/mixins/card-price-mixins.scss" as cardModule;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
 div.pricingCard {
   position: relative;
   div {
-    padding: map-get($map: variables.$spaces, $key: space-112)
-      map-get($map: variables.$spaces, $key: space-32) 0;
+    padding: var(--space-112) var(--space-32) 0;
     box-sizing: border-box;
     text-align: start;
-    width: map-get($map: variables.$spaces, $key: space-405);
+    width: var(--space-405);
     h3 {
-      font-family: map-get(
-        $map: variables.$text-font-family,
-        $key: font-family-secondary
-      );
-      font-size: map-get($map: variables.$text-size, $key: font-size-20);
-      font-weight: map-get($map: variables.$text-weight, $key: normal);
+      @include fontsMixins.text-style-heading-3(null);
       margin: 0;
     }
     ul {
@@ -24,72 +19,73 @@ div.pricingCard {
       padding: 0;
       margin: 0;
       li {
-        position: relative;
-        font-family: map-get(
-          $map: variables.$text-font-family,
-          $key: font-family-primary
+        @include fontsMixins.text-style-paragraph(
+          var(--font-size-15),
+          var(--text-weight-normal),
+          null,
+          var(--space-24)
         );
-        font-size: map-get($map: variables.$text-size, $key: font-size-15);
-        padding: 0 0 0 map-get($map: variables.$spaces, $key: space-40);
-        line-height: map-get($map: variables.$spaces, $key: space-24);
+        position: relative;
+        padding: 0 0 0 var(--space-40);
         &:not(:last-of-type) {
-          margin: 0 0 map-get($map: variables.$spaces, $key: space-16);
+          margin: 0 0 var(--space-16);
         }
       }
     }
     img {
       position: absolute;
-      top: map-get($map: variables.$spaces, $key: space-32);
-      right: map-get($map: variables.$spaces, $key: space-32);
+      top: var(--space-32);
+      right: var(--space-32);
     }
     &.primaryPricingCard {
       @include cardModule.card-price-style(
-        map-get($map: variables.$background-colors, $key: secondary-color),
-        map-get($map: variables.$spaces, $key: space-32),
-        map-get($map: variables.$text-colors, $key: dark-color)
+        var(--secondary-bg-color),
+        var(--space-32),
+        var(--dark-text-color)
       );
-      height: map-get($map: variables.$spaces, $key: space-732);
+      height: var(--space-732);
       p {
-        &:first-of-type {
-          color: map-get($map: variables.$text-colors, $key: dark-color);
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-secondary
+        &.paragraphPrice {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-32),
+            var(--text-weight-normal),
+            var(---dark-text-color),
+            var(--space-41-60)
           );
-          font-size: map-get($map: variables.$text-size, $key: font-size-32);
-          margin: map-get($map: variables.$spaces, $key: space-7) 0
-            map-get($map: variables.$spaces, $key: space-8);
+          margin: var(--space-7) 0 var(--space-8);
           span {
-            font-size: map-get($map: variables.$text-size, $key: font-size-56);
+            @include fontsMixins.text-style-paragraph(
+              var(--font-size-56),
+              var(--text-weight-normal),
+              var(---dark-text-color),
+              var(--space-67-20)
+            );
           }
         }
-        &:nth-of-type(2) {
-          color: map-get($map: variables.$text-colors, $key: dark-color);
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-primary
+        &.paragraphText {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-16),
+            var(--text-weight-normal),
+            var(---dark-text-color),
+            var(--space-24)
           );
-          font-size: map-get($map: variables.$text-size, $key: font-size-16);
           margin: 0;
         }
-        &:last-of-type {
-          color: map-get($map: variables.$text-colors, $key: dark-color);
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-primary
+        &.paragraphListHeader {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-15),
+            var(--text-weight-normal),
+            var(---dark-text-color),
+            var(--space-24)
           );
-          font-size: map-get($map: variables.$text-size, $key: font-size-15);
-          margin: 0 0 map-get($map: variables.$spaces, $key: space-24);
+          margin: 0 0 var(--space-24);
         }
       }
       hr {
-        background: map-get(
-          $map: variables.$text-colors,
-          $key: darker-light-color
-        );
-        height: map-get($map: variables.$spaces, $key: space-1);
+        background: var(--darker-light-text-color);
+        height: var(--space-1);
         border: none;
-        margin: map-get($map: variables.$spaces, $key: space-32) 0;
+        margin: var(--space-32) 0;
       }
       ul {
         li {
@@ -101,74 +97,57 @@ div.pricingCard {
         }
       }
       button {
-        font-family: map-get(
-          $map: variables.$text-font-family,
-          $key: font-family-primary
-        );
         margin: 0;
-        font-weight: map-get($map: variables.$text-weight, $key: bold);
+        font-weight: var(--text-weight-bold);
         position: absolute;
-        bottom: map-get($map: variables.$spaces, $key: space-32);
-        left: map-get($map: variables.$spaces, $key: space-32);
-        @include buttonModule.button-style(
-          map-get($map: variables.$text-colors, $key: light-color),
-          map-get($map: variables.$background-colors, $key: primary-color),
-          64px,
-          2px,
-          map-get($map: variables.$background-colors, $key: primary-color),
-          map-get($map: variables.$spaces, $key: space-14),
-          map-get($map: variables.$spaces, $key: space-127)
-        );
+        bottom: var(--space-32);
+        left: var(--space-32);
       }
     }
     &.secondaryPricingCard {
       @include cardModule.card-price-style(
-        map-get($map: variables.$background-colors, $key: primary-color),
-        map-get($map: variables.$spaces, $key: space-32),
-        map-get($map: variables.$text-colors, $key: light-color)
+        var(--primary-bg-color),
+        var(--space-32),
+        var(--light-text-color)
       );
-      height: map-get($map: variables.$spaces, $key: space-668);
+      height: var(--space-668);
       p {
-        &:first-of-type {
-          color: map-get($map: variables.$text-colors, $key: light-color);
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-secondary
+        &.paragraphPrice {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-32),
+            var(--text-weight-normal),
+            var(---light-text-color),
+            var(--space-41-60)
           );
-          font-size: map-get($map: variables.$text-size, $key: font-size-32);
-          margin: map-get($map: variables.$spaces, $key: space-7) 0
-            map-get($map: variables.$spaces, $key: space-8);
+          margin: var(--space-7) 0 var(--space-8);
           span {
-            font-size: map-get($map: variables.$text-size, $key: font-size-56);
+            font-size: var(--font-size-56);
           }
         }
-        &:nth-of-type(2) {
-          color: map-get($map: variables.$text-colors, $key: light-color);
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-primary
+        &.paragraphText {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-16),
+            var(--text-weight-normal),
+            var(---light-text-color),
+            var(--space-24)
           );
-          font-size: map-get($map: variables.$text-size, $key: font-size-16);
           margin: 0;
         }
-        &:last-of-type {
-          color: map-get($map: variables.$text-colors, $key: light-color);
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-primary
+        &.paragraphListHeader {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-15),
+            var(--text-weight-normal),
+            var(---light-text-color),
+            var(--space-24)
           );
-          font-size: map-get($map: variables.$text-size, $key: font-size-15);
-          margin: 0 0 map-get($map: variables.$spaces, $key: space-24);
+          margin: 0 0 var(--space-24);
         }
       }
       hr {
-        background: map-get(
-          $map: variables.$text-colors,
-          $key: light-dark-color
-        );
-        height: map-get($map: variables.$spaces, $key: space-1);
+        background: var(--light-dark-text-color);
+        height: var(--space-1);
         border: none;
-        margin: map-get($map: variables.$spaces, $key: space-32) 0;
+        margin: var(--space-32) 0;
       }
       ul {
         li {
@@ -180,24 +159,11 @@ div.pricingCard {
         }
       }
       button {
-        font-family: map-get(
-          $map: variables.$text-font-family,
-          $key: font-family-primary
-        );
         margin: 0;
-        font-weight: map-get($map: variables.$text-weight, $key: bold);
+        font-weight: var(--text-weight-bold);
         position: absolute;
-        bottom: map-get($map: variables.$spaces, $key: space-32);
-        left: map-get($map: variables.$spaces, $key: space-32);
-        @include buttonModule.button-style(
-          map-get($map: variables.$text-colors, $key: dark-color),
-          map-get($map: variables.$background-colors, $key: secondary-color),
-          64px,
-          2px,
-          map-get($map: variables.$background-colors, $key: secondary-color),
-          map-get($map: variables.$spaces, $key: space-14),
-          map-get($map: variables.$spaces, $key: space-127)
-        );
+        bottom: var(--space-32);
+        left: var(--space-32);
       }
     }
   }

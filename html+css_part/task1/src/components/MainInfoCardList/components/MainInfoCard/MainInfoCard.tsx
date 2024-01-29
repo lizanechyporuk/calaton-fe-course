@@ -9,7 +9,7 @@ interface MainInfoCardProps {
 function MainInfoCard({ src, header, text }: MainInfoCardProps): JSX.Element {
   return (
     <div className={styles.mainInfoCard}>
-      <img src={src}></img>
+      <img width="101px" height="100" src={src}></img>
       <h3>{header}</h3>
       <p>{text}</p>
     </div>

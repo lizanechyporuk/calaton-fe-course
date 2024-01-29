@@ -1,2 +1,1 @@
-import CommentsSection from "./components/CommentsSection";
-export default CommentsSection;
+export { default } from "./components/CommentsSection";

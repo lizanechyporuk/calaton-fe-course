@@ -1,2 +1,1 @@
-import ContactsSection from "./components/ContactsSection";
-export default ContactsSection;
+export { default } from "./components/ContactsSection";

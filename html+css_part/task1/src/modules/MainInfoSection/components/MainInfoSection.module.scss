@@ -1,78 +1,38 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-.mainInfoSection {
+section.mainInfoSection {
   position: relative;
-  padding: 0 map-get($map: variables.$spaces, $key: space-80);
-  margin: map-get($map: variables.$spaces, $key: space-128) 0;
-  color: map-get($map: variables.$text-colors, $key: dark-color);
-  div {
-    background: map-get(
-      $map: variables.$background-colors,
-      $key: secondary-color
-    );
-    border-radius: map-get($map: variables.$spaces, $key: space-48);
-    padding: map-get($map: variables.$spaces, $key: space-128)
-      map-get($map: variables.$spaces, $key: space-64);
+  margin: var(--space-128) 0;
+  div.contentWrapper {
+    background: var(--secondary-bg-color);
+    color: var(--dark-text-color);
+    border-radius: var(--space-48);
+    padding: var(--space-128) var(--space-64);
     text-align: center;
     h2 {
-      font-family: map-get(
-        $map: variables.$text-font-family,
-        $key: font-family-secondary
-      );
-      font-size: map-get($map: variables.$text-size, $key: font-size-40);
-      margin: 0 0 map-get($map: variables.$spaces, $key: space-27);
-      font-weight: map-get($map: variables.$text-weight, $key: normal);
+      @include fontsMixins.text-style-heading-2;
+      margin: 0 0 var(--space-27);
     }
     p {
       margin: 0;
-      font-family: map-get(
-        $map: variables.$text-font-family,
-        $key: font-family-primary
-      );
-      font-size: map-get($map: variables.$text-size, $key: font-size-18);
-      line-height: map-get($map: variables.$spaces, $key: space-27);
-      &:last-of-type {
+      &.paragraphText {
+        @include fontsMixins.text-style-paragraph(
+          var(--font-size-18),
+          var(--text-weight-normal),
+          var(--dark-text-color)
+        );
+      }
+
+      &.paragraphButtons {
         display: flex;
         justify-content: center;
         align-items: center;
         button {
-          font-family: map-get(
-            $map: variables.$text-font-family,
-            $key: font-family-primary
-          );
-          font-weight: map-get($map: variables.$text-weight, $key: bold);
+          font-weight: var(--text-weight-bold);
           &:first-of-type {
-            margin-right: map-get($map: variables.$spaces, $key: space-16);
-            @include buttonModule.button-style(
-              map-get($map: variables.$text-colors, $key: dark-color),
-              map-get($map: variables.$background-colors, $key: primary-color),
-              64px,
-              2px,
-              none,
-              map-get($map: variables.$spaces, $key: space-14),
-              map-get($map: variables.$spaces, $key: space-26)
-            );
-            margin-right: map-get($map: variables.$spaces, $key: space-32);
-          }
-          &:last-of-type {
-            @include buttonModule.button-style(
-              map-get($map: variables.$text-colors, $key: dark-color),
-              none,
-              0,
-              none,
-              none,
-              0,
-              0
-            );
-            margin-right: map-get($map: variables.$spaces, $key: space-8);
-          }
-        }
-        span.moreBtn {
-          img {
-            position: relative;
-            bottom: 0;
-            top: 0;
+            margin-right: var(--space-16);
           }
         }
       }
@@ -81,6 +41,6 @@
   img.absoluteImg {
     position: absolute;
     top: 0;
-    right: map-get($map: variables.$spaces, $key: space-112);
+    right: var(--space-112);
   }
 }

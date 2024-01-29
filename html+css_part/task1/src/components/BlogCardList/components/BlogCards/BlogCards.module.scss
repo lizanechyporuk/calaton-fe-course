@@ -1,6 +1,7 @@
 @use "/src/styles/variables.scss";
 
-section.blogCards {
+div.blogCards {
   display: flex;
-  gap: map-get($map: variables.$spaces, $key: space-32);
+  gap: var(--space-32);
+  justify-content: center;
 }

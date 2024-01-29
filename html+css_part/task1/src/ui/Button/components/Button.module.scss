@@ -1,1 +1,140 @@
-@forward "/src/styles/mixins/btn-mixins.scss";
+@use "/src/styles/mixins/btn-mixins.scss" as btnMixins;
+
+button {
+  font-family: var(--font-family-primary);
+  &.filledBtnPrimary {
+    @include btnMixins.button-style(
+      var(--light-text-color),
+      var(--primary-bg-color),
+      64px,
+      2px,
+      var(--primary-bg-color),
+      var(--space-10),
+      var(--space-22)
+    );
+  }
+  &.filledBtnPrimaryBigger {
+    @include btnMixins.button-style(
+      var(--light-text-color),
+      var(--primary-bg-color),
+      64px,
+      2px,
+      var(--primary-bg-color),
+      var(--space-12),
+      var(--space-20),
+      var(--font-size-18)
+    );
+  }
+  &.filledBtnPrimaryBiggest {
+    @include btnMixins.button-style(
+      var(--light-text-color),
+      var(--primary-bg-color),
+      64px,
+      2px,
+      var(--primary-bg-color),
+      var(--space-14),
+      var(--space-127)
+    );
+  }
+  &.filledBtnSecondary {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      var(--secondary-bg-color),
+      64px,
+      2px,
+      var(--secondary-bg-color),
+      var(--space-14),
+      var(--space-26)
+    );
+  }
+  &.filledBtnSecondaryBigger {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      var(--secondary-bg-color),
+      64px,
+      2px,
+      var(--secondary-bg-color),
+      var(--space-14),
+      var(--space-42)
+    );
+  }
+  &.filledBtnSecondaryBiggest {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      var(--secondary-bg-color),
+      64px,
+      2px,
+      var(--secondary-bg-color),
+      var(--space-14),
+      var(--space-127)
+    );
+  }
+  &.outlinedBtn {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      var(--primary-bg-color),
+      64px,
+      2px,
+      0,
+      var(--space-10),
+      var(--space-22),
+      var(--font-size-16)
+    );
+  }
+  &.outlinedBtnBigger {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      var(--primary-bg-color),
+      64px,
+      2px,
+      none,
+      var(--space-14),
+      var(--space-26)
+    );
+  }
+  &.arrowBtnSmall {
+    @include btnMixins.button-style(
+      var(--light-text-color),
+      none,
+      0,
+      none,
+      none,
+      0,
+      0
+    );
+    &::after {
+      content: url("../../../../public/icons/shared/btn-more.svg");
+      margin-left: 8px;
+    }
+  }
+  &.arrowBtnSmallDark {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      none,
+      0,
+      none,
+      none,
+      0,
+      0
+    );
+    &::after {
+      content: url("../../../../public/icons/shared/btn-more-dark.svg");
+      margin-left: 8px;
+    }
+  }
+  &.arrowBtnBig {
+    @include btnMixins.button-style(
+      var(--dark-text-color),
+      none,
+      0,
+      none,
+      none,
+      0,
+      0
+    );
+    &::before {
+      content: url("../../../../public/icons/BlogsSection/btnIcon.svg");
+      margin-right: var(--space-8);
+    }
+  }
+}

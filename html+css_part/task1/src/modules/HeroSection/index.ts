@@ -1,2 +1,1 @@
-import HeroSection from "./components/HeroSection";
-export default HeroSection;
+export { default } from "./components/HeroSection";

@@ -1,22 +1,19 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
 input.formInput {
-  padding: map-get($map: variables.$spaces, $key: space-12) 0
-    map-get($map: variables.$spaces, $key: space-13)
-    map-get($map: variables.$spaces, $key: space-42);
-  border-radius: map-get($map: variables.$spaces, $key: space-24);
-  border: none;
-  width: map-get($map: variables.$spaces, $key: space-368);
-  box-sizing: border-box;
-  font-family: map-get(
-    $map: variables.$text-font-family,
-    $key: font-family-primary
+  @include fontsMixins.text-style-paragraph(
+    var(--font-size-18),
+    var(--text-weight-bold),
+    var(--dark-text-color)
   );
-  font-weight: map-get($map: variables.$text-weight, $key: bold);
-  font-size: map-get($map: variables.$text-size, $key: font-size-18);
-  color: map-get($map: variables.$text-colors, $key: dark-color);
+  padding: var(--space-12) 0 var(--space-13) var(--space-42);
+  border-radius: var(--space-24);
+  border: none;
+  width: var(--space-368);
+  box-sizing: border-box;
   &::placeholder {
-    color: map-get($map: variables.$text-colors, $key: dark-color);
+    color: var(--dark-text-color);
     opacity: 1;
   }
 }

@@ -1,81 +1,66 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
 div.blogCard {
   position: relative;
-  width: map-get($map: variables.$spaces, $key: space-403);
-  border: map-get($map: variables.$spaces, $key: space-1) solid
-    map-get($map: variables.$text-colors, $key: dark-light-color);
-  border-radius: map-get($map: variables.$spaces, $key: space-32);
+  width: var(--space-403);
+  border: var(--space-1) solid var(--dark-light-text-color);
+  border-radius: var(--space-32);
+  box-sizing: border-box;
+  height: var(--space-662);
   div.blogCardContent {
     height: 314px;
-    padding: map-get($map: variables.$spaces, $key: space-24);
+    padding: var(--space-24);
     p {
-      font-family: map-get(
-        $map: variables.$text-font-family,
-        $key: font-family-primary
-      );
-      &:first-of-type {
-        color: map-get($map: variables.$text-colors, $key: dark-color);
+      font-family: var(--font-family-primary);
+      &.paragraphTags {
+        @include fontsMixins.text-style-paragraph(
+          var(--font-size-14),
+          var(--text-weight-normal),
+          var(--dark-text-color),
+          var(--space-21)
+        );
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: map-get($map: variables.$spaces, $key: space-16);
-        font-size: map-get($map: variables.$text-size, $key: font-size-14);
+        gap: var(--space-16);
         margin: 0;
         span {
           &:first-of-type {
-            font-size: map-get($map: variables.$text-size, $key: font-size-13);
-            padding: map-get($map: variables.$spaces, $key: space-9)
-              map-get($map: variables.$spaces, $key: space-17);
-            border: map-get($map: variables.$spaces, $key: space-1) solid
-              map-get($map: variables.$text-colors, $key: dark-light-color);
-            border-radius: map-get($map: variables.$spaces, $key: space-32);
+            @include fontsMixins.text-style-paragraph(var(--font-size-13));
+            padding: var(--space-9) var(--space-17);
+            border: var(--space-1) solid var(--dark-light-text-color);
+            border-radius: var(--space-32);
           }
         }
       }
-      &:last-of-type {
-        color: map-get($map: variables.$text-colors, $key: lighter-dark-color);
-        font-size: map-get($map: variables.$text-size, $key: font-size-16);
-        line-height: map-get($map: variables.$spaces, $key: space-24);
-        margin: 0 0 map-get($map: variables.$spaces, $key: space-24);
+      &.paragraphText {
+        @include fontsMixins.text-style-paragraph(
+          var(--font-size-16),
+          var(--text-weight-normal),
+          var(--lighter-dark-text-color),
+          var(--space-24)
+        );
+        margin: 0 0 var(--space-24);
       }
     }
     h3 {
-      font-family: map-get(
-        $map: variables.$text-font-family,
-        $key: font-family-secondary
+      @include fontsMixins.text-style-heading-3(
+        var(--dark-text-color),
+        var(--font-size-24),
+        var(--space-33-6),
+        var(--text-weight-bold)
       );
-      font-size: map-get($map: variables.$text-size, $key: font-size-24);
-      line-height: map-get($map: variables.$spaces, $key: space-33-6);
-      margin: map-get($map: variables.$spaces, $key: space-18) 0
-        map-get($map: variables.$spaces, $key: space-5);
+      margin: var(--space-18) 0 var(--space-5);
     }
     button {
       position: absolute;
       display: flex;
-      bottom: map-get($map: variables.$spaces, $key: space-24);
-      left: map-get($map: variables.$spaces, $key: space-141);
+      bottom: var(--space-24);
+      left: var(--space-141);
       align-items: flex-start;
-      font-family: map-get(
-        $map: variables.$text-font-family,
-        $key: font-family-primary
-      );
       margin: 0 auto;
-      font-weight: map-get($map: variables.$text-weight, $key: normal);
-      @include buttonModule.button-style(
-        map-get($map: variables.$text-colors, $key: dark-color),
-        none,
-        0,
-        none,
-        none,
-        0,
-        0
-      );
-      &::before {
-        content: url("../../../../../public/icons/BlogsSection/btnIcon.svg");
-        margin-right: map-get($map: variables.$spaces, $key: space-8);
-      }
     }
   }
 }

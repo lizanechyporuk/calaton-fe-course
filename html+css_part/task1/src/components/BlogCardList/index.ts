@@ -1,2 +1,1 @@
-import BlogCards from "./components/BlogCards/BlogCards";
-export default BlogCards;
+export { default } from "./components/BlogCards/BlogCards";

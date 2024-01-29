@@ -1,62 +1,36 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: map-get($map: variables.$spaces, $key: space-14)
-    map-get($map: variables.$spaces, $key: space-80);
-  nav {
-    display: inline;
-    margin-left: auto;
-    font-family: map-get(
-      $map: variables.$text-font-family,
-      $key: font-family-primary
-    );
-    color: map-get($map: variables.$text-colors, $key: dark-color);
-    ul {
-      list-style-type: none;
-      display: inline;
-      padding: 0;
-      cursor: pointer;
-      font-size: map-get($map: variables.$text-size, $key: font-size-16);
-      li {
-        display: inline;
-        margin-right: map-get($map: variables.$spaces, $key: space-32);
-
-        &:last-of-type {
-          margin-right: map-get($map: variables.$spaces, $key: space-16);
-        }
-      }
-
-      button {
-        font-family: map-get(
-          $map: variables.$text-font-family,
-          $key: font-family-primary
+header.header {
+  div.headerContent {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-14) 0;
+    nav {
+      ul {
+        @include fontsMixins.text-style-paragraph(
+          var(--font-size-16),
+          var(--text-weight-normal),
+          var(--dark-text-color)
         );
-        &:first-of-type {
-          margin-right: map-get($map: variables.$spaces, $key: space-8);
-          @include buttonModule.button-style(
-            map-get($map: variables.$text-colors, $key: dark-color),
-            map-get($map: variables.$background-colors, $key: primary-color),
-            64px,
-            2px,
-            0,
-            map-get($map: variables.$spaces, $key: space-10),
-            map-get($map: variables.$spaces, $key: space-22),
-            map-get($map: variables.$text-size, $key: font-size-16)
-          );
+        list-style-type: none;
+        display: inline;
+        padding: 0;
+        cursor: pointer;
+        li {
+          display: inline;
+          margin-right: var(--space-32);
+
+          &:last-of-type {
+            margin-right: var(--space-16);
+          }
         }
-        &:nth-of-type(2) {
-          @include buttonModule.button-style(
-            map-get($map: variables.$text-colors, $key: light-color),
-            map-get($map: variables.$background-colors, $key: primary-color),
-            64px,
-            2px,
-            map-get($map: variables.$background-colors, $key: primary-color),
-            map-get($map: variables.$spaces, $key: space-10),
-            map-get($map: variables.$spaces, $key: space-22)
-          );
+
+        button {
+          &:first-of-type {
+            margin-right: var(--space-8);
+          }
         }
       }
     }

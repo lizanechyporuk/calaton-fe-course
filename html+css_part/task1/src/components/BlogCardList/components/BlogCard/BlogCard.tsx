@@ -18,15 +18,15 @@ function BlogCard({
 }: BlogCardProps): JSX.Element {
   return (
     <div className={styles.blogCard}>
-      <img src={src}></img>
+      <img src={src} width="403px" height="300px"></img>
       <div className={styles.blogCardContent}>
-        <p>
+        <p className={styles.paragraphTags}>
           <span>{tagText}</span>
           <span>{timeText}</span>
         </p>
         <h3>{header}</h3>
-        <p>{text}</p>
-        <Button text="Read more" />
+        <p className={styles.paragraphText}>{text}</p>
+        <Button classBtn="arrowBtnBig" text="Read more" />
       </div>
     </div>
   );

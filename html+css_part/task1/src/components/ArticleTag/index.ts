@@ -1,2 +1,1 @@
-import ArticleTag from "./components/ArticleTag";
-export default ArticleTag;
+export { default } from "./components/ArticleTag";

@@ -4,7 +4,7 @@ import Button from "../../../ui/Button";
 function VideoIntro(): JSX.Element {
   return (
     <section className={styles.videoIntro}>
-      <Button text="Watch Introduction" />
+      <Button classBtn="filledBtnSecondaryBigger" text="Watch Introduction" />
     </section>
   );
 }

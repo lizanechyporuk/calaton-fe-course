@@ -1,2 +1,1 @@
-import Comments from "./components/Comments/Comments";
-export default Comments;
+export { default } from "./components/Comments/Comments";

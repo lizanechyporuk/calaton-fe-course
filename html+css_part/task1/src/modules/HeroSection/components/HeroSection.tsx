@@ -1,39 +1,50 @@
 import styles from "./HeroSection.module.scss";
+import Container from "../../../components/Container/index";
 import Button from "../../../ui/Button";
 import VideoIntro from "../../../components/VideoIntro";
 
 function HeroSection(): JSX.Element {
+  const imageLogoNumbers = [1, 2, 3, 4];
+  const imageAbsoluteNumbers = [1, 2, 3];
   return (
     <section className={styles.heroSection}>
-      <div>
-        <h1>
-          Head start your business<br></br> today!
-        </h1>
-        <p>
-          Consectetur adipiscing elit. Integer sagittis quam magna, quis
-          sollicitudin<br></br> lorem ornare ut. Nulla et scelerisque mauris.
-        </p>
-        <p>
-          <Button text="Get started" />
-          <Button text="Try for free" />
-          <span className={styles.moreBtn}>
-            <img src="/icons/shared/btn-more.svg" alt="More"></img>
-          </span>
-        </p>
-        <p>
-          <img src="/icons/HeroSection/logoipsum1.svg" alt="Logoipsum"></img>
-          <img src="/icons/HeroSection/logoipsum2.svg" alt="Logoipsum"></img>
-          <img src="/icons/HeroSection/logoipsum3.svg" alt="Logoipsum"></img>
-          <img src="/icons/HeroSection/logoipsum4.svg" alt="Logoipsum"></img>
-        </p>
-      </div>
-      <img src="/images/HeroSection/image1.png" alt="Image 1"></img>
-      <img src="/images/HeroSection/image2.png" alt="Image 2"></img>
-      <img src="/images/HeroSection/image3.png" alt="Image 3"></img>
-      <div></div>
-      <div>
-        <VideoIntro />
-      </div>
+      <Container>
+        <div className={styles.contentWrapper}>
+          <h1>
+            Head start your business<br></br> today!
+          </h1>
+          <p className={styles.paragraphText}>
+            Consectetur adipiscing elit. Integer sagittis quam magna, quis
+            sollicitudin<br></br> lorem ornare ut. Nulla et scelerisque mauris.
+          </p>
+          <p className={styles.paragraphButtons}>
+            <Button classBtn="filledBtnSecondary" text="Get started" />
+            <Button classBtn="arrowBtnSmall" text="Try for free" />
+          </p>
+          <p className={styles.paragraphImages}>
+            {imageLogoNumbers.map((number) => (
+              <img
+                key={number}
+                className={styles[`logoImage${number}`]}
+                src={`/icons/HeroSection/logoipsum${number}.svg`}
+                alt={`Logoipsum ${number}`}
+              />
+            ))}
+          </p>
+        </div>
+        {imageAbsoluteNumbers.map((number) => (
+          <img
+            className={styles[`absoluteImg${number}`]}
+            key={number}
+            src={`/images/HeroSection/image${number}.png`}
+            alt={`Image ${number}`}
+          />
+        ))}
+        <div className={styles.filledDiv}></div>
+        <div className={styles.videoWrapper}>
+          <VideoIntro />
+        </div>
+      </Container>
     </section>
   );
 }

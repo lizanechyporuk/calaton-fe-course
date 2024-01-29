@@ -1,85 +1,85 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-.footer {
-  padding: map-get($map: variables.$spaces, $key: space-322)
-    map-get($map: variables.$spaces, $key: space-80)
-    map-get($map: variables.$spaces, $key: space-80);
-  background-color: map-get(
-    $map: variables.$background-colors,
-    $key: primary-color
-  );
-  font-family: map-get(
-      $map: variables.$text-font-family,
-      $key: font-family-primary
-    ),
-    sans-serif;
-  color: map-get($map: variables.$text-colors, $key: light-color);
+footer.footer {
+  padding: var(--space-322) 0 var(--space-80);
+  background-color: var(--primary-bg-color);
+  color: var(--light-text-color);
   hr {
     width: 100%;
     border: 0;
-    margin: map-get($map: variables.$spaces, $key: space-88) 0
-      map-get($map: variables.$spaces, $key: space-32);
+    margin: var(--space-88) 0 var(--space-32);
     height: 1px;
-    background: map-get($map: variables.$text-colors, $key: light-dark-color);
+    background: var(--light-dark-text-color);
   }
-  section {
-    &:first-of-type {
-      display: flex;
-      justify-content: space-between;
-    }
+  div.contentWrapper {
+    display: flex;
+    justify-content: space-between;
     div {
       display: flex;
-      &.footerContact {
+      &.footerContactsWrapper {
         display: block;
         img {
-          margin-bottom: map-get($map: variables.$spaces, $key: space-24);
+          margin-bottom: var(--space-24);
         }
-        address {
+        address.footerAddress,
+        address.footerContact {
           font-style: normal;
-
-          font-size: map-get($map: variables.$text-size, $key: font-size-14);
-          margin-bottom: map-get($map: variables.$spaces, $key: space-21);
+          margin-bottom: var(--space-21);
           p {
+            @include fontsMixins.text-style-paragraph(
+              var(--font-size-14),
+              var(--text-weight-normal),
+              var(--light-text-color),
+              var(--space-21)
+            );
             margin: 0;
-            line-height: map-get($map: variables.$spaces, $key: space-21);
           }
         }
       }
       &.footerLists {
         width: 666px;
-        gap: map-get($map: variables.$spaces, $key: space-32);
+        gap: var(--space-32);
 
         ul {
+          @include fontsMixins.text-style-paragraph(
+            var(--font-size-14),
+            var(--text-weight-normal),
+            var(--light-text-color),
+            var(--space-21)
+          );
           width: 100%;
           margin: 0;
           list-style-type: none;
           padding: 0;
-          font-size: map-get($map: variables.$text-size, $key: font-size-15);
           li {
             &:not(:last-of-type) {
-              margin-bottom: map-get($map: variables.$spaces, $key: space-16);
+              margin-bottom: var(--space-16);
             }
             &:first-of-type {
-              font-size: map-get(
-                $map: variables.$text-size,
-                $key: font-size-16
-              );
-              margin-bottom: map-get($map: variables.$spaces, $key: space-24);
+              font-size: var(--font-size-15);
+              margin-bottom: var(--space-24);
             }
           }
         }
       }
     }
-    &:last-of-type {
-      display: flex;
-      justify-content: space-between;
-      height: fit-content;
-      flex-wrap: wrap;
-      align-items: center;
-      p {
-        font-size: map-get($map: variables.$text-size, $key: font-size-14);
-        margin: 0;
-      }
+  }
+
+  div.copyrightWrapper {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    flex-wrap: wrap;
+    align-items: center;
+    p {
+      @include fontsMixins.text-style-paragraph(
+        var(--font-size-14),
+        var(--text-weight-normal),
+        var(--light-text-color),
+        var(--space-21)
+      );
+      margin: 0;
     }
   }
 }

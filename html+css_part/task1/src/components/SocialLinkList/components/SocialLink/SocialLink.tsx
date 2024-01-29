@@ -7,7 +7,7 @@ interface SocialLinkProps {
 function SocialLink({ socialMedia, alt }: SocialLinkProps): JSX.Element {
   return (
     <figure className={styles.socialLink}>
-      <img src={socialMedia} alt={alt}></img>
+      <img src={socialMedia} width="24px" height="24px" alt={alt}></img>
     </figure>
   );
 }

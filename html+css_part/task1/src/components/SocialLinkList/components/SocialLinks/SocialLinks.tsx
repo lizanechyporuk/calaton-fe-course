@@ -3,17 +3,17 @@ import "../SocialLink/SocialLink";
 import SocialLink from "../SocialLink/SocialLink";
 
 function SocialLinks(): JSX.Element {
+  const imageNames = ["linkedin", "twitter", "facebook"];
   return (
     <ul className={styles.socialLinks}>
-      <li>
-        <SocialLink socialMedia="/icons/shared/linkedin.svg" alt="LinkedIn" />
-      </li>
-      <li>
-        <SocialLink socialMedia="/icons/shared/twitter.svg" alt="Twitter" />
-      </li>
-      <li>
-        <SocialLink socialMedia="/icons/shared/facebook.svg" alt="Facebook" />
-      </li>
+      {imageNames.map((name, index) => (
+        <li key={index}>
+          <SocialLink
+            socialMedia={`/icons/shared/${name}.svg`}
+            alt={`${name}`}
+          />
+        </li>
+      ))}
     </ul>
   );
 }

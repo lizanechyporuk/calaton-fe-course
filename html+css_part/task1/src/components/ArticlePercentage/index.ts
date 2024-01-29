@@ -1,2 +1,1 @@
-import ArticlePercentage from "./components/ArticlePercentage";
-export default ArticlePercentage;
+export { default } from "./components/ArticlePercentage";

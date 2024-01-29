@@ -1,2 +1,1 @@
-import VideoIntro from "./components/VideoIntro";
-export default VideoIntro;
+export { default } from "./components/VideoIntro";

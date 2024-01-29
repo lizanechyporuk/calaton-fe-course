@@ -1,12 +1,8 @@
 @use "/src/styles/variables.scss";
 
 .socialLink {
-  padding: map-get($map: variables.$spaces, $key: space-6)
-    map-get($map: variables.$spaces, $key: space-8);
+  padding: var(--space-6) var(--space-8);
   margin: 0;
-  background: map-get(
-    $map: variables.$background-colors,
-    $key: secondary-color
-  );
-  border-radius: map-get($map: variables.$spaces, $key: space-32);
+  background: var(--secondary-bg-color);
+  border-radius: var(--space-32);
 }

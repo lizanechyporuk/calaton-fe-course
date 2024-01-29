@@ -22,19 +22,26 @@ function PricingCard({
     <div className={styles.pricingCard}>
       <div className={styles[cardClass]}>
         <h3>{header}</h3>
-        <p>
+        <p className={styles.paragraphPrice}>
           <span>{price}</span>/mo
         </p>
-        <p>{text}</p>
+        <p className={styles.paragraphText}>{text}</p>
         <hr></hr>
-        <p>Includes:</p>
+        <p className={styles.paragraphListHeader}>Includes:</p>
         <ul>
           {ulComponents.map((component, index) => (
             <li key={index}>{component}</li>
           ))}
         </ul>
-        <Button text="Get started" />
-        <img src={src}></img>
+        <Button
+          classBtn={`${
+            cardClass === "secondaryPricingCard"
+              ? "filledBtnSecondaryBiggest"
+              : "filledBtnPrimaryBiggest"
+          }`}
+          text="Get started"
+        />
+        <img src={src} width="48px" height="48px"></img>
       </div>
     </div>
   );

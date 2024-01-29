@@ -1,43 +1,50 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
 section.commentsSection {
   position: relative;
-  background: map-get($map: variables.$background-colors, $key: primary-color);
-  color: map-get($map: variables.$text-colors, $key: light-color);
-  margin: map-get($map: variables.$spaces, $key: space-128) 0 0;
-  padding: map-get($map: variables.$spaces, $key: space-128)
-    map-get($map: variables.$spaces, $key: space-80);
-  text-align: center;
-  h2 {
-    font-family: map-get(
-      $map: variables.$text-font-family,
-      $key: font-family-secondary
-    );
-    font-weight: map-get($map: variables.$text-weight, $key: normal);
-    font-size: map-get($map: variables.$text-size, $key: font-size-48);
-    margin: 0;
-  }
-  p {
-    font-family: map-get(
-      $map: variables.$text-font-family,
-      $key: font-family-primary
-    );
-    font-size: map-get($map: variables.$text-size, $key: font-size-17);
-    line-height: map-get($map: variables.$spaces, $key: space-27);
-    margin: map-get($map: variables.$spaces, $key: space-24) 0
-      map-get($map: variables.$spaces, $key: space-80);
-  }
-  img.absoluteImg {
-    position: absolute;
-    &:first-of-type {
-      left: 0;
-      bottom: map-get($map: variables.$spaces, $key: space-100);
-      z-index: 1;
+  background: var(--primary-bg-color);
+  margin: var(--space-128) 0 0;
+
+  div.contentWrapper {
+    text-align: center;
+    padding: var(--space-128) 0;
+    h2 {
+      @include fontsMixins.text-style-heading-2(
+        var(--font-size-48),
+        var(--text-weight-normal),
+        var(--space-57-60),
+        var(--light-text-color)
+      );
+      margin: 0;
     }
-    &:last-of-type {
+    p {
+      &.paragraphText {
+        @include fontsMixins.text-style-paragraph(
+          var(--font-size-17),
+          var(--text-weight-normal)
+        );
+        color: var(--light-text-color);
+        margin: var(--space-24) 0 var(--space-80);
+      }
+    }
+  }
+  img {
+    &.absoluteImg1 {
+      position: absolute;
+      left: 0;
+      bottom: var(--space-100);
+      z-index: 1;
+      width: var(--space-200);
+      height: var(--space-268);
+    }
+    &.absoluteImg2 {
+      position: absolute;
       right: 0;
       top: 0;
       z-index: 1;
+      width: var(--space-280);
+      height: var(--space-142);
     }
   }
 }

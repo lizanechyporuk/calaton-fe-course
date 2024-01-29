@@ -1,2 +1,1 @@
-import SpeedArticleSection from "./components/SpeedArticleSection";
-export default SpeedArticleSection;
+export { default } from "./components/SpeedArticleSection";

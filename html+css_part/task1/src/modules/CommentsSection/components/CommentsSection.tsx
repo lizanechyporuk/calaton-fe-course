@@ -1,22 +1,28 @@
 import styles from "./CommentsSection.module.scss";
+import Container from "../../../components/Container/index";
 import Comments from "../../../components/CommentList/index";
 
 function CommentsSection() {
+  const imageNumbers = [1, 2];
   return (
     <section className={styles.commentsSection}>
-      <h2>A words from our customers</h2>
-      <p>Eu turpis vel, maximus condimentum turpis faucibus dictum accumsan.</p>
-      <Comments />
-      <img
-        className={styles.absoluteImg}
-        src="/images/CommentsSection/image1.png"
-        alt="Image"
-      ></img>
-      <img
-        className={styles.absoluteImg}
-        src="/images/CommentsSection/image2.png"
-        alt="Image"
-      ></img>
+      <Container>
+        <div className={styles.contentWrapper}>
+          <h2>A words from our customers</h2>
+          <p className={styles.paragraphText}>
+            Eu turpis vel, maximus condimentum turpis faucibus dictum accumsan.
+          </p>
+          <Comments />
+          {imageNumbers.map((number) => (
+            <img
+              className={styles[`absoluteImg${number}`]}
+              key={number}
+              src={`/images/CommentsSection/image${number}.png`}
+              alt={`Image ${number}`}
+            />
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }
