@@ -2,23 +2,25 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-header.header {
-  div.headerContent {
+.header {
+  .headerContent {
     display: flex;
     justify-content: space-between;
     padding: var(--space-14) 0;
-    nav {
-      ul {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-16),
-          var(--text-weight-normal),
-          var(--dark-text-color)
-        );
+
+    .logoImg {
+      align-self: center;
+    }
+
+    .navigationWrapper {
+      .navigationList {
+        @include fontsMixins.text-style-paragraph-16-normal-dark;
         list-style-type: none;
         display: inline;
         padding: 0;
         cursor: pointer;
-        li {
+
+        .navigationListItem {
           display: inline;
           margin-right: var(--space-32);
 
@@ -27,10 +29,11 @@ header.header {
           }
         }
 
-        button {
-          &:first-of-type {
-            margin-right: var(--space-8);
-          }
+        .buttonsContainer {
+          display: inline-flex;
+          gap: var(--space-8);
+          padding: 0;
+          margin: 0;
         }
       }
     }

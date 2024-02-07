@@ -1,8 +1,14 @@
 @use "sass:map";
 @use "../variables.scss";
 
-@mixin card-price-style($card-price-background, $card-radius, $color) {
-  color: $color;
-  background: $card-price-background;
-  border-radius: $card-radius;
+@mixin primaryCardPrice {
+  color: var(--dark-text-color);
+  background: var(--secondary-bg-color);
+  border-radius: var(--space-32);
+}
+
+@mixin secondaryCardPrice {
+  color: var(--light-text-color);
+  background: var(--primary-bg-color);
+  border-radius: var(--space-32);
 }

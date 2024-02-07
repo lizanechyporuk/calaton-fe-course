@@ -1,26 +1,207 @@
 @use "sass:map";
 @use "../variables.scss";
 
-@mixin button-style(
-  $btn-text-color,
-  $btn-border-color,
-  $btn-radius,
-  $btn-border: none,
-  $btn-background: none,
-  $btn-padding-y: var(--space-14),
-  $btn-padding-x: var(--space-26),
-  $btn-text-size: var(--font-size-15),
-  $btn-border-style: solid
-) {
-  @if $btn-border != "none" {
-    border: $btn-border $btn-border-style $btn-border-color;
-    border-radius: $btn-radius;
-  } @else {
-    border: $btn-border;
-  }
+@mixin filledBtnPrimary {
   font-family: var(--font-family-primary);
-  font-size: $btn-text-size;
-  color: $btn-text-color;
-  background: $btn-background;
-  padding: $btn-padding-y $btn-padding-x;
+  color: var(--light-text-color);
+  font-weight: var(--text-weight-normal);
+  border: var(--space-2) solid var(--primary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--primary-bg-color);
+  padding: var(--space-10) var(--space-22);
+  font-size: var(--font-size-15);
+}
+
+@mixin filledBtnPrimaryBigger {
+  font-family: var(--font-family-primary);
+  color: var(--light-text-color);
+  font-weight: var(--text-weight-normal);
+  border: var(--space-2) solid var(--primary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--primary-bg-color);
+  padding: var(--space-12) var(--space-20);
+  font-size: var(--font-size-18);
+}
+
+@mixin filledBtnPrimaryBiggestBold {
+  font-family: var(--font-family-primary);
+  color: var(--light-text-color);
+  font-weight: var(--text-weight-bold);
+  border: var(--space-2) solid var(--primary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--primary-bg-color);
+  padding: var(--space-14) var(--space-127);
+  font-size: var(--font-size-15);
+}
+
+@mixin filledBtnSecondary {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-normal);
+  border: var(--space-2) solid var(--secondary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--secondary-bg-color);
+  padding: var(--space-14) var(--space-26);
+  font-size: var(--font-size-15);
+}
+
+@mixin filledBtnSecondaryBold {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-bold);
+  border: var(--space-2) solid var(--secondary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--secondary-bg-color);
+  padding: var(--space-14) var(--space-26);
+  font-size: var(--font-size-15);
+}
+
+@mixin filledBtnSecondaryBigger {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-normal);
+  border: var(--space-2) solid var(--secondary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--secondary-bg-color);
+  padding: var(--space-14) var(--space-42);
+  font-size: var(--font-size-15);
+}
+
+@mixin filledBtnSecondaryBiggerBold {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-bold);
+  border: var(--space-2) solid var(--secondary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--secondary-bg-color);
+  padding: var(--space-14) var(--space-42);
+  font-size: var(--font-size-15);
+}
+
+@mixin filledBtnSecondaryBiggestBold {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-bold);
+  border: var(--space-2) solid var(--secondary-bg-color);
+  border-radius: var(--space-64);
+  background: var(--secondary-bg-color);
+  padding: var(--space-14) var(--space-127);
+  font-size: var(--font-size-15);
+}
+
+@mixin outlinedBtn {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-normal);
+  border: var(--space-2) solid var(--primary-bg-color);
+  border-radius: var(--space-64);
+  background: none;
+  padding: var(--space-10) var(--space-22);
+  font-size: var(--font-size-16);
+}
+
+@mixin outlinedBtnBigger {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-normal);
+  border: var(--space-2) solid var(--primary-bg-color);
+  border-radius: var(--space-64);
+  background: none;
+  padding: var(--space-14) var(--space-26);
+  font-size: var(--font-size-15);
+}
+
+@mixin outlinedBtnBiggerBold {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-bold);
+  border: var(--space-2) solid var(--primary-bg-color);
+  border-radius: var(--space-64);
+  background: none;
+  padding: var(--space-14) var(--space-26);
+  font-size: var(--font-size-15);
+}
+
+@mixin arrowBtnSmall {
+  font-family: var(--font-family-primary);
+  color: var(--light-text-color);
+  font-weight: var(--text-weight-normal);
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: var(--font-size-15);
+
+  &::after {
+    content: url("../../../public/icons/shared/btn-more.svg");
+    margin-left: var(--space-8);
+  }
+}
+
+@mixin arrowBtnSmallBold {
+  font-family: var(--font-family-primary);
+  color: var(--light-text-color);
+  font-weight: var(--text-weight-bold);
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: var(--font-size-15);
+
+  &::after {
+    content: url("../../../public/icons/shared/btn-more.svg");
+    margin-left: var(--space-8);
+  }
+}
+
+@mixin arrowBtnSmallDark {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-normal);
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: var(--font-size-15);
+
+  &::after {
+    content: url("../../../public/icons/shared/btn-more-dark.svg");
+    margin-left: var(--space-8);
+  }
+}
+
+@mixin arrowBtnSmallDarkBold {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-bold);
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: var(--font-size-15);
+
+  &::after {
+    content: url("../../../public/icons/shared/btn-more-dark.svg");
+    margin-left: var(--space-8);
+  }
+}
+
+@mixin arrowBtnBig {
+  font-family: var(--font-family-primary);
+  color: var(--dark-text-color);
+  font-weight: var(--text-weight-normal);
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: var(--font-size-15);
+
+  &::before {
+    content: url("../../../public/icons/BlogsSection/btnIcon.svg");
+    width: var(--space-32);
+    height: var(--space-32);
+    margin-right: var(--space-8);
+  }
+
+  position: absolute;
+  display: flex;
+  bottom: var(--space-24);
+  left: var(--space-141);
+  align-items: flex-start;
+  margin: 0 auto;
 }

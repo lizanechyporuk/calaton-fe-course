@@ -2,65 +2,42 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-div.blogCard {
+.blogCard {
   position: relative;
   width: var(--space-403);
   border: var(--space-1) solid var(--dark-light-text-color);
   border-radius: var(--space-32);
   box-sizing: border-box;
-  height: var(--space-662);
-  div.blogCardContent {
+  height: var(--space-664);
+
+  .blogCardContent {
     height: 314px;
     padding: var(--space-24);
-    p {
-      font-family: var(--font-family-primary);
-      &.paragraphTags {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-14),
-          var(--text-weight-normal),
-          var(--dark-text-color),
-          var(--space-21)
-        );
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--space-16);
-        margin: 0;
-        span {
-          &:first-of-type {
-            @include fontsMixins.text-style-paragraph(var(--font-size-13));
-            padding: var(--space-9) var(--space-17);
-            border: var(--space-1) solid var(--dark-light-text-color);
-            border-radius: var(--space-32);
-          }
-        }
-      }
-      &.paragraphText {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-16),
-          var(--text-weight-normal),
-          var(--lighter-dark-text-color),
-          var(--space-24)
-        );
-        margin: 0 0 var(--space-24);
-      }
-    }
-    h3 {
-      @include fontsMixins.text-style-heading-3(
-        var(--dark-text-color),
-        var(--font-size-24),
-        var(--space-33-6),
-        var(--text-weight-bold)
-      );
-      margin: var(--space-18) 0 var(--space-5);
-    }
-    button {
-      position: absolute;
+
+    .paragraphTags {
+      @include fontsMixins.text-style-paragraph-14-normal;
       display: flex;
-      bottom: var(--space-24);
-      left: var(--space-141);
-      align-items: flex-start;
-      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-16);
+      margin: 0;
+
+      .spanFirst {
+        @include fontsMixins.text-style-paragraph-13-normal;
+        padding: var(--space-9) var(--space-17);
+        border: var(--space-1) solid var(--dark-light-text-color);
+        border-radius: var(--space-32);
+      }
     }
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-16-normal;
+      margin: 0 0 var(--space-24);
+    }
+  }
+
+  .header {
+    @include fontsMixins.text-style-heading-24-bold;
+    margin: var(--space-18) 0 var(--space-5);
   }
 }

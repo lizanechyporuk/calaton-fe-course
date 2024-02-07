@@ -2,47 +2,43 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-section.speedArticleSection {
+.speedArticleSection {
   position: relative;
-  div {
-    &.contentWrapper {
-      display: flex;
-      gap: var(--space-80);
-      position: relative;
-      div {
-        &.textWrapper {
-          margin: auto 0;
-          h2 {
-            @include fontsMixins.text-style-heading-2;
-            margin: var(--space-15) 0 var(--space-27);
-          }
-          p {
-            &.paragraphText {
-              margin: 0 0 var(--space-32);
-              @include fontsMixins.text-style-paragraph;
-            }
 
-            &.paragraphButtons {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              button {
-                &:first-of-type {
-                  margin-right: var(--space-16);
-                }
-              }
-            }
-          }
-        }
+  .contentWrapper {
+    display: flex;
+    gap: var(--space-80);
+    position: relative;
+
+    .textWrapper {
+      max-width: var(--space-600);
+      margin: auto 0;
+      .header {
+        @include fontsMixins.text-style-heading-40-normal;
+        margin: var(--space-15) 0 var(--space-27);
+      }
+
+      .paragraphText {
+        margin: 0 0 var(--space-32);
+        @include fontsMixins.text-style-paragraph-18-normal;
+      }
+
+      .paragraphButtons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--space-16);
       }
     }
   }
+
   .imgWave {
     position: absolute;
     right: 0;
     top: 0;
   }
-  div.articlePercentage {
+
+  .articlePercentage {
     bottom: var(--space-48);
     left: var(--space-308);
   }

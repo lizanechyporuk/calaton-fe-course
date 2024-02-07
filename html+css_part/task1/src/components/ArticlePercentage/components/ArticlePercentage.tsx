@@ -20,13 +20,15 @@ function ArticlePercentage({
       }`}
     >
       <div className={styles.textWrapper}>
-        <h2>{percent}</h2>
-        <p>{text}</p>
+        <h2 className={styles.header}>{percent}</h2>
+        <p className={styles.paragraph}>{text}</p>
       </div>
+
       <div className={styles.imageWrapper}>
-        <img src={src} height="72px" width="72px" alt="Icon"></img>
+        <img src={src} height="72" width="72" alt="Icon"></img>
       </div>
     </div>
   );
 }
+
 export default ArticlePercentage;

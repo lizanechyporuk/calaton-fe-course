@@ -1,85 +1,78 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-footer.footer {
+.footer {
   padding: var(--space-322) 0 var(--space-80);
   background-color: var(--primary-bg-color);
   color: var(--light-text-color);
-  hr {
+
+  .hrDivider {
     width: 100%;
     border: 0;
     margin: var(--space-88) 0 var(--space-32);
     height: 1px;
     background: var(--light-dark-text-color);
   }
-  div.contentWrapper {
+
+  .contentWrapper {
     display: flex;
     justify-content: space-between;
-    div {
-      display: flex;
-      &.footerContactsWrapper {
-        display: block;
-        img {
-          margin-bottom: var(--space-24);
-        }
-        address.footerAddress,
-        address.footerContact {
-          font-style: normal;
-          margin-bottom: var(--space-21);
-          p {
-            @include fontsMixins.text-style-paragraph(
-              var(--font-size-14),
-              var(--text-weight-normal),
-              var(--light-text-color),
-              var(--space-21)
-            );
-            margin: 0;
-          }
+
+    .footerContactsWrapper {
+      display: block;
+
+      .image {
+        margin-bottom: var(--space-24);
+      }
+
+      .footerAddress,
+      .footerContact {
+        font-style: normal;
+        margin-bottom: var(--space-21);
+
+        .paragraphContacts {
+          @include fontsMixins.text-style-paragraph-14-normal-light;
+          margin: 0;
         }
       }
-      &.footerLists {
-        width: 666px;
-        gap: var(--space-32);
+    }
 
-        ul {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-14),
-            var(--text-weight-normal),
-            var(--light-text-color),
-            var(--space-21)
-          );
-          width: 100%;
-          margin: 0;
-          list-style-type: none;
-          padding: 0;
-          li {
-            &:not(:last-of-type) {
-              margin-bottom: var(--space-16);
-            }
-            &:first-of-type {
-              font-size: var(--font-size-15);
-              margin-bottom: var(--space-24);
-            }
+    .footerLists {
+      display: flex;
+      width: 666px;
+      gap: var(--space-32);
+
+      .footerList {
+        @include fontsMixins.text-style-paragraph-14-normal-light;
+        width: 100%;
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+
+        .footerListHeader {
+          font-size: var(--font-size-15);
+          margin-bottom: var(--space-24);
+        }
+
+        .footerListItem {
+          &:not(:last-of-type) {
+            margin-bottom: var(--space-16);
           }
         }
       }
     }
   }
+}
 
-  div.copyrightWrapper {
-    display: flex;
-    justify-content: space-between;
-    height: fit-content;
-    flex-wrap: wrap;
-    align-items: center;
-    p {
-      @include fontsMixins.text-style-paragraph(
-        var(--font-size-14),
-        var(--text-weight-normal),
-        var(--light-text-color),
-        var(--space-21)
-      );
-      margin: 0;
-    }
+.copyrightWrapper {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .paragraphCopyright {
+    @include fontsMixins.text-style-paragraph-14-normal-light;
+    margin: 0;
   }
 }

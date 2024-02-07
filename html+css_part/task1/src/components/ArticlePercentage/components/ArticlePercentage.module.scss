@@ -1,7 +1,7 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-div.articlePercentage {
+.articlePercentage {
   box-sizing: border-box;
   position: absolute;
   display: flex;
@@ -11,26 +11,18 @@ div.articlePercentage {
   border-radius: var(--space-24);
   padding: var(--space-24);
   width: var(--space-420);
-  div {
-    &.textWrapper {
-      color: var(--dark-color);
-      h2 {
-        @include fontsMixins.text-style-heading-2(
-          var(--font-size-32),
-          var(--text-weight-bold),
-          var(--space-41-60)
-        );
-        margin: 0;
-      }
-      p {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-20),
-          var(--text-weight-normal),
-          $color: var(--dark-text-color),
-          $line-height: var(--space-30)
-        );
-        margin: 0;
-      }
+
+  .textWrapper {
+    color: var(--dark-color);
+
+    .header {
+      @include fontsMixins.text-style-heading-32-bold;
+      margin: 0;
+    }
+
+    .paragraph {
+      @include fontsMixins.text-style-paragraph-20-normal;
+      margin: 0;
     }
   }
 }

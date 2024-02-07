@@ -13,7 +13,6 @@ function PricingCards(): JSX.Element {
         "Id purus maximus condimentum",
         "Vel convallis nibh duis",
       ],
-      src: "/icons/PricingSection/light-card.png",
     },
     {
       cardClass: "primaryPricingCard",
@@ -26,7 +25,6 @@ function PricingCards(): JSX.Element {
         "Vivamus ante dolor",
         "Purus in convallis pharetra",
       ],
-      src: "/icons/PricingSection/dark-card.png",
     },
     {
       cardClass: "secondaryPricingCard",
@@ -40,22 +38,26 @@ function PricingCards(): JSX.Element {
         "Mattis facilisis lacus aliquet",
         "Am condimentum cursus",
       ],
-      src: "/icons/PricingSection/light-card.png",
     },
   ];
+
   return (
     <div className={styles.pricingCards}>
-      {cards.map((card, index) => (
-        <PricingCard
-          key={index}
-          cardClass={card.cardClass}
-          header={card.header}
-          price={card.price}
-          text={card.text}
-          ulComponents={card.ulComponents}
-          src={card.src}
-        ></PricingCard>
-      ))}
+      {cards.map((card, index) => {
+        const cardOrder = index % 2 ? "dark-card" : "light-card";
+
+        return (
+          <PricingCard
+            key={index}
+            cardClass={card.cardClass}
+            header={card.header}
+            price={card.price}
+            text={card.text}
+            ulComponents={card.ulComponents}
+            src={`/icons/PricingSection/${cardOrder}.png`}
+          />
+        );
+      })}
     </div>
   );
 }

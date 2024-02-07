@@ -1,30 +1,25 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-section.pricingSection {
+.pricingSection {
   position: relative;
-
   margin: var(--space-128) 0;
-  div {
-    &.contentWrapper {
-      text-align: center;
-      h2 {
-        @include fontsMixins.text-style-heading-2(
-          var(--font-size-48),
-          var(--text-weight-bold),
-          var(--space-57-60)
-        );
-        margin: var(--space-15) 0 var(--space-24);
-      }
-      p {
-        &.paragraphText {
-          @include fontsMixins.text-style-paragraph(var(--font-size-17));
-          margin: 0 0 var(--space-80);
-        }
-      }
+
+  .contentWrapper {
+    text-align: center;
+
+    .header {
+      @include fontsMixins.text-style-heading-48-bold;
+      margin: var(--space-15) 0 var(--space-24);
+    }
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-17-normal;
+      margin: 0 0 var(--space-80);
     }
   }
-  img.imgWaves {
+
+  .imgWaves {
     position: absolute;
     top: var(--space-32);
     right: 0;

@@ -1,16 +1,20 @@
 @use "/src/styles/variables.scss";
 
-div.blogCards {
+.comments {
   display: flex;
   gap: var(--space-32);
   justify-content: center;
 
-  div.blogCardsCol {
+  .commentsColOne {
     display: flex;
     flex-direction: column;
     gap: var(--space-45);
-    &:last-of-type {
-      margin-top: var(--space-47);
-    }
+  }
+
+  .commentsColTwo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-45);
+    margin-top: var(--space-47);
   }
 }

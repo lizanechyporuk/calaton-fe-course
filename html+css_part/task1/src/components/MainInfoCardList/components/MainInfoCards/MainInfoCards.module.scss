@@ -1,6 +1,6 @@
 @use "/src/styles/variables.scss";
 
-div.mainInfoCards {
+.mainInfoCards {
   display: flex;
   gap: var(--space-32);
   margin: var(--space-62) 0 var(--space-48);

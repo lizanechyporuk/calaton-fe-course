@@ -7,4 +7,5 @@ interface ArticleTagProps {
 function ArticleTag({ text }: ArticleTagProps): JSX.Element {
   return <span className={styles.articleTag}>{text}</span>;
 }
+
 export default ArticleTag;

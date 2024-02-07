@@ -15,4 +15,5 @@ function Layout({ children }: LayoutProps): JSX.Element {
     </>
   );
 }
+
 export default Layout;

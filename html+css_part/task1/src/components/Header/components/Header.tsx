@@ -9,26 +9,35 @@ function Header(): JSX.Element {
         <div className={styles.headerContent}>
           <img
             src="/icons/shared/logo.svg"
-            height="28px"
-            width="112px"
+            height="28"
+            width="112"
             alt="Logo"
+            className={styles.logoImg}
           ></img>
-          <nav>
-            <ul>
-              <li>
-                <a>Our Story</a>
+
+          <nav className={styles.navigationWrapper}>
+            <ul className={styles.navigationList}>
+              <li className={styles.navigationListItem}>
+                <a className={styles.navigationLink}>Our Story</a>
               </li>
-              <li>
-                <a>Blog</a>
+
+              <li className={styles.navigationListItem}>
+                <a className={styles.navigationLink}>Blog</a>
               </li>
-              <li>
-                <a>Contact</a>
+
+              <li className={styles.navigationListItem}>
+                <a className={styles.navigationLink}>Contact</a>
               </li>
-              <li>
-                <a>Pricing</a>
+
+              <li className={styles.navigationListItem}>
+                <a className={styles.navigationLink}>Pricing</a>
               </li>
-              <Button classBtn="outlinedBtn" text="Log in" />
-              <Button classBtn="filledBtnPrimary" text="Try for free" />
+
+              <div className={styles.buttonsContainer}>
+                <Button classBtn="outlinedBtn" text="Log in" />
+
+                <Button classBtn="filledBtnPrimary" text="Try for free" />
+              </div>
             </ul>
           </nav>
         </div>
@@ -36,4 +45,5 @@ function Header(): JSX.Element {
     </header>
   );
 }
+
 export default Header;

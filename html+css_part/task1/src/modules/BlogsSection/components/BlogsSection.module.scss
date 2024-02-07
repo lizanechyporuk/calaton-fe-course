@@ -2,25 +2,20 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-section.blogsSection {
+.blogsSection {
   margin: 0;
-  div.contentWrapper {
+
+  .contentWrapper {
     text-align: center;
-    h2 {
-      @include fontsMixins.text-style-heading-2(
-        var(--font-size-48),
-        var(--text-weight-bold),
-        var(--space-57-60)
-      );
+
+    .header {
+      @include fontsMixins.text-style-heading-48-bold;
       margin: var(--space-15) 0 var(--space-24);
     }
-    p {
-      @include fontsMixins.text-style-paragraph;
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-18-normal;
       margin: 0 0 var(--space-80);
-    }
-    button {
-      font-weight: var(--text-weight-bold);
-      margin-top: var(--space-80);
     }
   }
 }

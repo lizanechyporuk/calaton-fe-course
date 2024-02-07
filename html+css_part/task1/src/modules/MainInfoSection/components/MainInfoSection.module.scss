@@ -2,43 +2,37 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-section.mainInfoSection {
+.mainInfoSection {
   position: relative;
   margin: var(--space-128) 0;
-  div.contentWrapper {
+
+  .contentWrapper {
     background: var(--secondary-bg-color);
     color: var(--dark-text-color);
     border-radius: var(--space-48);
     padding: var(--space-128) var(--space-64);
     text-align: center;
-    h2 {
-      @include fontsMixins.text-style-heading-2;
+
+    .header {
+      @include fontsMixins.text-style-heading-40-normal;
       margin: 0 0 var(--space-27);
     }
-    p {
-      margin: 0;
-      &.paragraphText {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-18),
-          var(--text-weight-normal),
-          var(--dark-text-color)
-        );
-      }
 
-      &.paragraphButtons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        button {
-          font-weight: var(--text-weight-bold);
-          &:first-of-type {
-            margin-right: var(--space-16);
-          }
-        }
-      }
+    .paragraphText {
+      margin: 0;
+      @include fontsMixins.text-style-paragraph-18-normal-dark;
+    }
+
+    .paragraphButtons {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-16);
     }
   }
-  img.absoluteImg {
+
+  .absoluteImg {
     position: absolute;
     top: 0;
     right: var(--space-112);

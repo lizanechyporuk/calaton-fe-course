@@ -8,6 +8,7 @@ import CommentsSection from "../../../modules/CommentsSection";
 import BlogsSection from "../../../modules/BlogsSection";
 import PricingSection from "../../../modules/PricingSection";
 import ContactsSection from "../../../modules/ContactSection";
+
 function HomePage() {
   return (
     <>
@@ -25,4 +26,5 @@ function HomePage() {
     </>
   );
 }
+
 export default HomePage;

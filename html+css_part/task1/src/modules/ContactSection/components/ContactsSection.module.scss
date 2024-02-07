@@ -2,38 +2,40 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-section.contactsSection {
+.contactsSection {
   padding: 0 var(--space-80);
   text-align: center;
   margin: var(--space-128) 0 var(--space-minus-242);
-  div.contentWrapper {
+
+  .contentWrapper {
     position: relative;
     background: var(--secondary-bg-color);
     border-radius: var(--space-48);
     padding: var(--space-95) 0 var(--space-93);
-    h2 {
-      @include fontsMixins.text-style-heading-2;
+
+    .header {
+      @include fontsMixins.text-style-heading-40-normal;
       margin: 0;
     }
-    p {
-      @include fontsMixins.text-style-paragraph(
-        var(--font-size-18),
-        var(--text-weight-normal),
-        var(--dark-text-color)
-      );
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-18-normal-dark;
       margin: var(--space-27) 0 var(--space-30);
     }
-    form {
+
+    .formContainer {
       input {
         margin-right: var(--space-16);
       }
     }
-    small {
+
+    .formInstruction {
       @include fontsMixins.text-style-small;
       display: inline-block;
       margin: var(--space-19) 0 0;
     }
-    img {
+
+    .image {
       position: absolute;
       top: 0;
       right: var(--space-64);

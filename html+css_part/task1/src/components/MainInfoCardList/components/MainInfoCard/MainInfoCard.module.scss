@@ -1,22 +1,18 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-div.mainInfoCard {
+.mainInfoCard {
   padding: var(--space-32) var(--space-42);
   background: var(--primary-bg-color);
   color: var(--light-text-color);
   align-self: stretch;
 
-  h3 {
-    @include fontsMixins.text-style-heading-3(var(--light-text-color));
+  .header {
+    @include fontsMixins.text-style-heading-20-normal;
     margin: var(--space-24) 0 var(--space-17);
   }
-  p {
-    @include fontsMixins.text-style-paragraph(
-      var(--font-size-16),
-      var(--text-weight-normal),
-      var(--light-text-color),
-      var(--space-24)
-    );
+
+  .paragraphText {
+    @include fontsMixins.text-style-paragraph-16-normal-light;
   }
 }

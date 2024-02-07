@@ -7,66 +7,63 @@
   background: var(--primary-bg-color);
   padding: var(--space-95) 0 var(--space-427);
   margin: 0 0 var(--space-448);
-  div.contentWrapper {
+
+  .contentWrapper {
     color: var(--light-text-color);
     width: fit-content;
     margin: 0 auto;
     text-align: center;
-    h1 {
-      @include fontsMixins.text-style-heading-1;
+
+    .header {
+      @include fontsMixins.text-style-heading-56-bold;
       margin: 0 0 var(--space-26);
     }
-    p {
-      &.paragraphText {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-20),
-          var(--text-weight-normal),
-          var(--light-text-color),
-          var(--space-30)
-        );
-        margin: 0 0 var(--space-38);
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-20-normal-light;
+      margin: 0 0 var(--space-38);
+    }
+
+    .paragraphButtons {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-32);
+    }
+
+    .paragraphImages {
+      display: flex;
+      margin: 0;
+      gap: var(--space-32);
+      justify-content: space-between;
+      padding: var(--space-32) var(--space-67);
+
+      .logoImage1,
+      .logoImage2 {
+        position: relative;
+        top: 0;
+        height: var(--space-35);
+        width: var(--space-132);
       }
-      &.paragraphButtons {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        button {
-          font-weight: var(--text-weight-bold);
-          &:first-of-type {
-            margin-right: var(--space-8);
-            margin-right: var(--space-32);
-          }
-          &:last-of-type {
-            margin-right: var(--space-8);
-          }
-        }
+
+      .logoImage3 {
+        position: relative;
+        top: 0;
+        height: var(--space-35);
+        width: var(--space-134);
       }
-      &.paragraphImages {
-        display: flex;
-        margin: 0;
-        gap: var(--space-32);
-        justify-content: space-between;
-        padding: var(--space-32) var(--space-67);
-        img {
-          position: relative;
-          top: 0;
-          height: var(--space-35);
-          &.logoImage1,
-          &.logoImage2 {
-            width: var(--space-132);
-          }
-          &.logoImage3 {
-            width: var(--space-134);
-          }
-          &.logoImage4 {
-            width: var(--space-140);
-          }
-        }
+
+      .logoImage4 {
+        position: relative;
+        top: 0;
+        height: var(--space-35);
+        width: var(--space-140);
       }
     }
   }
-  div.filledDiv {
+
+  .filledDiv {
     position: absolute;
     width: 100%;
     margin-left: var(--space-minus-80);
@@ -74,30 +71,34 @@
     height: var(--space-320);
     background: var(--primary-bg-color);
   }
-  div.videoWrapper {
+
+  .videoWrapper {
     position: absolute;
     width: 100%;
     margin: var(--space-104) 0 0 var(--space-minus-80);
   }
-  img {
+
+  .absoluteImg1 {
     position: absolute;
-    &.absoluteImg1 {
-      top: var(--space-100);
-      left: 0;
-      width: var(--space-187);
-      height: var(--space-250);
-    }
-    &.absoluteImg2 {
-      top: var(--space-260);
-      right: 0;
-      width: var(--space-170);
-      height: var(--space-240);
-    }
-    &.absoluteImg3 {
-      bottom: var(--space-160);
-      left: 0;
-      width: var(--space-260);
-      height: var(--space-275);
-    }
+    top: var(--space-100);
+    left: 0;
+    width: var(--space-187);
+    height: var(--space-250);
+  }
+
+  .absoluteImg2 {
+    position: absolute;
+    top: var(--space-260);
+    right: 0;
+    width: var(--space-170);
+    height: var(--space-240);
+  }
+
+  .absoluteImg3 {
+    position: absolute;
+    bottom: var(--space-160);
+    left: 0;
+    width: var(--space-260);
+    height: var(--space-275);
   }
 }

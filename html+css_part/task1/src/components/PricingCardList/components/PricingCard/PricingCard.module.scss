@@ -1,169 +1,145 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
-@use "/src/styles/mixins/card-price-mixins.scss" as cardModule;
+@use "/src/styles/mixins/card-price-mixins.scss" as cardMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-div.pricingCard {
+.pricingCard {
   position: relative;
-  div {
+
+  .image {
+    position: absolute;
+    top: var(--space-32);
+    right: var(--space-32);
+  }
+
+  .primaryPricingCard {
     padding: var(--space-112) var(--space-32) 0;
     box-sizing: border-box;
     text-align: start;
     width: var(--space-405);
-    h3 {
-      @include fontsMixins.text-style-heading-3(null);
+    @include cardMixins.primaryCardPrice;
+    height: var(--space-732);
+
+    .header {
+      @include fontsMixins.text-style-heading-20-normal-dark;
       margin: 0;
     }
-    ul {
+
+    .cardList {
       list-style: none;
       padding: 0;
       margin: 0;
-      li {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-15),
-          var(--text-weight-normal),
-          null,
-          var(--space-24)
-        );
+
+      .cardListItem {
+        @include fontsMixins.text-style-paragraph-15-normal;
         position: relative;
         padding: 0 0 0 var(--space-40);
+
         &:not(:last-of-type) {
           margin: 0 0 var(--space-16);
         }
       }
     }
-    img {
-      position: absolute;
-      top: var(--space-32);
-      right: var(--space-32);
-    }
-    &.primaryPricingCard {
-      @include cardModule.card-price-style(
-        var(--secondary-bg-color),
-        var(--space-32),
-        var(--dark-text-color)
-      );
-      height: var(--space-732);
-      p {
-        &.paragraphPrice {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-32),
-            var(--text-weight-normal),
-            var(---dark-text-color),
-            var(--space-41-60)
-          );
-          margin: var(--space-7) 0 var(--space-8);
-          span {
-            @include fontsMixins.text-style-paragraph(
-              var(--font-size-56),
-              var(--text-weight-normal),
-              var(---dark-text-color),
-              var(--space-67-20)
-            );
-          }
-        }
-        &.paragraphText {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-16),
-            var(--text-weight-normal),
-            var(---dark-text-color),
-            var(--space-24)
-          );
-          margin: 0;
-        }
-        &.paragraphListHeader {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-15),
-            var(--text-weight-normal),
-            var(---dark-text-color),
-            var(--space-24)
-          );
-          margin: 0 0 var(--space-24);
-        }
-      }
-      hr {
-        background: var(--darker-light-text-color);
-        height: var(--space-1);
-        border: none;
-        margin: var(--space-32) 0;
-      }
-      ul {
-        li {
-          &::before {
-            content: url("../../../../../public/icons/PricingSection/marker-dark.svg");
-            position: absolute;
-            left: 0;
-          }
-        }
-      }
-      button {
-        margin: 0;
-        font-weight: var(--text-weight-bold);
-        position: absolute;
-        bottom: var(--space-32);
-        left: var(--space-32);
+
+    .paragraphPrice {
+      @include fontsMixins.text-style-paragraph-32-normal;
+      margin: var(--space-7) 0 var(--space-8);
+
+      .price {
+        @include fontsMixins.text-style-paragraph-56-normal;
       }
     }
-    &.secondaryPricingCard {
-      @include cardModule.card-price-style(
-        var(--primary-bg-color),
-        var(--space-32),
-        var(--light-text-color)
-      );
-      height: var(--space-668);
-      p {
-        &.paragraphPrice {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-32),
-            var(--text-weight-normal),
-            var(---light-text-color),
-            var(--space-41-60)
-          );
-          margin: var(--space-7) 0 var(--space-8);
-          span {
-            font-size: var(--font-size-56);
-          }
-        }
-        &.paragraphText {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-16),
-            var(--text-weight-normal),
-            var(---light-text-color),
-            var(--space-24)
-          );
-          margin: 0;
-        }
-        &.paragraphListHeader {
-          @include fontsMixins.text-style-paragraph(
-            var(--font-size-15),
-            var(--text-weight-normal),
-            var(---light-text-color),
-            var(--space-24)
-          );
-          margin: 0 0 var(--space-24);
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-16-normal-dark;
+      margin: 0;
+    }
+
+    .paragraphListHeader {
+      @include fontsMixins.text-style-paragraph-15-normal;
+      margin: 0 0 var(--space-24);
+    }
+
+    .hrDivider {
+      background: var(--darker-light-text-color);
+      height: var(--space-1);
+      border: none;
+      margin: var(--space-32) 0;
+    }
+
+    .cardList {
+      .cardListItem {
+        &::before {
+          content: url("../../../../../public/icons/PricingSection/marker-dark.svg");
+          position: absolute;
+          left: 0;
         }
       }
-      hr {
-        background: var(--light-dark-text-color);
-        height: var(--space-1);
-        border: none;
-        margin: var(--space-32) 0;
-      }
-      ul {
-        li {
-          &::before {
-            content: url("../../../../../public/icons/PricingSection/marker-light.svg");
-            position: absolute;
-            left: 0;
-          }
+    }
+  }
+
+  .secondaryPricingCard {
+    padding: var(--space-112) var(--space-32) 0;
+    box-sizing: border-box;
+    text-align: start;
+    width: var(--space-405);
+    @include cardMixins.secondaryCardPrice;
+    height: var(--space-668);
+
+    .header {
+      @include fontsMixins.text-style-heading-20-normal;
+      margin: 0;
+    }
+
+    .cardList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .cardListItem {
+        @include fontsMixins.text-style-paragraph-15-normal-light;
+        position: relative;
+        padding: 0 0 0 var(--space-40);
+
+        &:not(:last-of-type) {
+          margin: 0 0 var(--space-16);
         }
       }
-      button {
-        margin: 0;
-        font-weight: var(--text-weight-bold);
-        position: absolute;
-        bottom: var(--space-32);
-        left: var(--space-32);
+    }
+
+    .paragraphPrice {
+      @include fontsMixins.text-style-paragraph-32-normal-light;
+      margin: var(--space-7) 0 var(--space-8);
+
+      .price {
+        @include fontsMixins.text-style-paragraph-56-normal-light;
+      }
+    }
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-16-normal-light;
+      margin: 0;
+    }
+
+    .paragraphListHeader {
+      @include fontsMixins.text-style-paragraph-15-normal-light;
+      margin: 0 0 var(--space-24);
+    }
+
+    .hrDivider {
+      background: var(--light-dark-text-color);
+      height: var(--space-1);
+      border: none;
+      margin: var(--space-32) 0;
+    }
+
+    .cardList {
+      .cardListItem {
+        &::before {
+          content: url("../../../../../public/icons/PricingSection/marker-light.svg");
+          position: absolute;
+          left: 0;
+        }
       }
     }
   }

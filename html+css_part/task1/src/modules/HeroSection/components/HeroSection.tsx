@@ -5,22 +5,27 @@ import VideoIntro from "../../../components/VideoIntro";
 
 function HeroSection(): JSX.Element {
   const imageLogoNumbers = [1, 2, 3, 4];
+
   const imageAbsoluteNumbers = [1, 2, 3];
+
   return (
     <section className={styles.heroSection}>
       <Container>
         <div className={styles.contentWrapper}>
-          <h1>
+          <h1 className={styles.header}>
             Head start your business<br></br> today!
           </h1>
+
           <p className={styles.paragraphText}>
             Consectetur adipiscing elit. Integer sagittis quam magna, quis
             sollicitudin<br></br> lorem ornare ut. Nulla et scelerisque mauris.
           </p>
+
           <p className={styles.paragraphButtons}>
-            <Button classBtn="filledBtnSecondary" text="Get started" />
-            <Button classBtn="arrowBtnSmall" text="Try for free" />
+            <Button classBtn="filledBtnSecondaryBold" text="Get started" />
+            <Button classBtn="arrowBtnSmallBold" text="Try for free" />
           </p>
+
           <p className={styles.paragraphImages}>
             {imageLogoNumbers.map((number) => (
               <img
@@ -32,15 +37,18 @@ function HeroSection(): JSX.Element {
             ))}
           </p>
         </div>
+
         {imageAbsoluteNumbers.map((number) => (
           <img
             className={styles[`absoluteImg${number}`]}
             key={number}
             src={`/images/HeroSection/image${number}.png`}
-            alt={`Image ${number}`}
+            alt={`Decor Image ${number}`}
           />
         ))}
+
         <div className={styles.filledDiv}></div>
+
         <div className={styles.videoWrapper}>
           <VideoIntro />
         </div>
@@ -48,4 +56,5 @@ function HeroSection(): JSX.Element {
     </section>
   );
 }
+
 export default HeroSection;

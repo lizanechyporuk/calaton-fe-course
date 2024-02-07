@@ -18,32 +18,46 @@ function PricingCard({
   ulComponents,
   src,
 }: PricingCardProps): JSX.Element {
+  const classBtn =
+    cardClass === "secondaryPricingCard"
+      ? "filledBtnSecondaryBiggestBold"
+      : "filledBtnPrimaryBiggestBold";
+
   return (
     <div className={styles.pricingCard}>
       <div className={styles[cardClass]}>
-        <h3>{header}</h3>
+        <h3 className={styles.header}>{header}</h3>
+
         <p className={styles.paragraphPrice}>
-          <span>{price}</span>/mo
+          <span className={styles.price}>{price}</span>/mo
         </p>
+
         <p className={styles.paragraphText}>{text}</p>
-        <hr></hr>
+
+        <hr className={styles.hrDivider}></hr>
+
         <p className={styles.paragraphListHeader}>Includes:</p>
-        <ul>
+
+        <ul className={styles.cardList}>
           {ulComponents.map((component, index) => (
-            <li key={index}>{component}</li>
+            <li className={styles.cardListItem} key={index}>
+              {component}
+            </li>
           ))}
         </ul>
-        <Button
-          classBtn={`${
-            cardClass === "secondaryPricingCard"
-              ? "filledBtnSecondaryBiggest"
-              : "filledBtnPrimaryBiggest"
-          }`}
-          text="Get started"
-        />
-        <img src={src} width="48px" height="48px"></img>
+
+        <Button classBtn={classBtn} text="Get started" />
+
+        <img
+          className={styles.image}
+          src={src}
+          width="48"
+          height="48"
+          alt="Price Photo"
+        ></img>
       </div>
     </div>
   );
 }
+
 export default PricingCard;

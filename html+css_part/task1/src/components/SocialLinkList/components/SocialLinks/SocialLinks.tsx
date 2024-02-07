@@ -7,7 +7,7 @@ function SocialLinks(): JSX.Element {
   return (
     <ul className={styles.socialLinks}>
       {imageNames.map((name, index) => (
-        <li key={index}>
+        <li key={index} className={styles.socialLinksItems}>
           <SocialLink
             socialMedia={`/icons/shared/${name}.svg`}
             alt={`${name}`}
@@ -17,4 +17,5 @@ function SocialLinks(): JSX.Element {
     </ul>
   );
 }
+
 export default SocialLinks;

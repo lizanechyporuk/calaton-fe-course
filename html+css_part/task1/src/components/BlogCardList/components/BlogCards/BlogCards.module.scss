@@ -1,6 +1,6 @@
 @use "/src/styles/variables.scss";
 
-div.blogCards {
+.blogCards {
   display: flex;
   gap: var(--space-32);
   justify-content: center;

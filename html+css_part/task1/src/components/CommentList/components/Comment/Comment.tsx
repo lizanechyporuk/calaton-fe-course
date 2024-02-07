@@ -16,16 +16,19 @@ function Comment({ src, text, name, position }: CommentProps): JSX.Element {
             <img
               key={index}
               src="/icons/CommentsSection/star.svg"
-              width="20px"
-              height="20px"
+              width="20"
+              height="20"
               alt="Star"
             />
           ))}
         </div>
-        <p>{text}</p>
+
+        <p className={styles.paragraphText}>{text}</p>
+
         <div className={styles.commentContent}>
-          <img src={src} width="48px" height="54px" alt="Portait"></img>
-          <div>
+          <img src={src} width="48" height="54" alt="Portait"></img>
+
+          <div className={styles.infoContainer}>
             <p className={styles.commentName}>{name}</p>
             <p className={styles.commentPosition}>{position}</p>
           </div>
@@ -34,4 +37,5 @@ function Comment({ src, text, name, position }: CommentProps): JSX.Element {
     </div>
   );
 }
+
 export default Comment;

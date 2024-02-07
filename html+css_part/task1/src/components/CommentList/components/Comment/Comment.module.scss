@@ -1,7 +1,7 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-div.comment {
+.comment {
   position: relative;
   z-index: 2;
   box-sizing: border-box;
@@ -11,41 +11,34 @@ div.comment {
   padding: var(--space-23) var(--space-50) var(--space-36) var(--space-32);
   text-align: start;
   font-family: var(--font-family-primary);
-  div.commentWrapper {
-    div {
-      &.stars {
-        display: flex;
-        gap: var(--space-4);
-      }
-      &.commentContent {
-        display: flex;
-        gap: var(--space-16);
-        div {
-          display: block;
-          p {
-            margin: 0;
-            &.commentName {
-              @include fontsMixins.text-style-paragraph(
-                var(--font-size-15),
-                var(--text-weight-normal),
-                var(--dark-text-color),
-                var(--space-24)
-              );
-            }
-            &.commentPosition {
-              @include fontsMixins.text-style-paragraph(
-                var(--font-size-16),
-                var(--text-weight-normal),
-                var(--lighter-dark-text-color),
-                var(--space-24)
-              );
-            }
-          }
+
+  .commentWrapper {
+    .stars {
+      display: flex;
+      gap: var(--space-4);
+    }
+
+    .commentContent {
+      display: flex;
+      gap: var(--space-16);
+
+      .infoContainer {
+        display: block;
+
+        .commentName {
+          margin: 0;
+          @include fontsMixins.text-style-paragraph-15-normal;
+        }
+
+        .commentPosition {
+          margin: 0;
+          @include fontsMixins.text-style-paragraph-16-normal;
         }
       }
     }
-    p {
-      @include fontsMixins.text-style-paragraph;
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-18-normal;
       margin: var(--space-26) 0 var(--space-22);
     }
   }

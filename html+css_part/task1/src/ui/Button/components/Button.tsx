@@ -1,4 +1,5 @@
 import styles from "./Button.module.scss";
+
 interface ButtonProps {
   text: string;
   classBtn: string;
@@ -11,4 +12,5 @@ function Button({ text, classBtn }: ButtonProps): JSX.Element {
     </button>
   );
 }
+
 export default Button;

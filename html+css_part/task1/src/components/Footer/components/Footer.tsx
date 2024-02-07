@@ -9,60 +9,74 @@ function Footer(): JSX.Element {
         <div className={styles.contentWrapper}>
           <div className={styles.footerContactsWrapper}>
             <img
+              className={styles.image}
               src="/icons/shared/logo-white.svg"
-              width="112px"
-              height="29px"
+              width="112"
+              height="29"
               alt="Logo"
             ></img>
+
             <address className={styles.footerAddress}>
-              <p>Address:</p>
-              <p>Level 1, 12 Nikola Tesla street, Niš, Serbia</p>
+              <p className={styles.paragraphContacts}>Address:</p>
+              <p className={styles.paragraphContacts}>
+                Level 1, 12 Nikola Tesla street, Niš, Serbia
+              </p>
             </address>
+
             <address className={styles.footerContact}>
-              <p>Contact:</p>
-              <p>1800 123 4567</p>
-              <p>info@startico.io</p>
+              <p className={styles.paragraphContacts}>Contact:</p>
+              <p className={styles.paragraphContacts}>1800 123 4567</p>
+              <p className={styles.paragraphContacts}>info@startico.io</p>
             </address>
           </div>
+
           <div className={styles.footerLists}>
-            <ul>
-              <li>Pages</li>
-              <li>Home v1</li>
-              <li>Home v2</li>
-              <li>Home v3</li>
-              <li>About v1</li>
-              <li>About v2</li>
-              <li>About v3</li>
-              <li>Contact v1</li>
-              <li>Contact v2</li>
-              <li>Contact v3</li>
-              <li>Blog</li>
-              <li>Pricing</li>
-              <li>Log in</li>
-              <li>Sign up</li>
+            <ul className={styles.footerList}>
+              <li className={styles.footerListHeader}>Pages</li>
+              <li className={styles.footerListItem}>Home v1</li>
+              <li className={styles.footerListItem}>Home v2</li>
+              <li className={styles.footerListItem}>Home v3</li>
+              <li className={styles.footerListItem}>About v1</li>
+              <li className={styles.footerListItem}>About v2</li>
+              <li className={styles.footerListItem}>About v3</li>
+              <li className={styles.footerListItem}>Contact v1</li>
+              <li className={styles.footerListItem}>Contact v2</li>
+              <li className={styles.footerListItem}>Contact v3</li>
+              <li className={styles.footerListItem}>Blog</li>
+              <li className={styles.footerListItem}>Pricing</li>
+              <li className={styles.footerListItem}>Log in</li>
+              <li className={styles.footerListItem}>Sign up</li>
             </ul>
-            <ul>
-              <li>CMS pages</li>
-              <li>Blog Post</li>
-              <li>Blog Categories</li>
+
+            <ul className={styles.footerList}>
+              <li className={styles.footerListHeader}>CMS pages</li>
+              <li className={styles.footerListItem}>Blog Post</li>
+              <li className={styles.footerListItem}>Blog Categories</li>
             </ul>
-            <ul>
-              <li>Utility pages</li>
-              <li>Style guide</li>
-              <li>Licenses</li>
-              <li>Changelog</li>
-              <li>404</li>
-              <li>Password</li>
+
+            <ul className={styles.footerList}>
+              <li className={styles.footerListHeader}>Utility pages</li>
+              <li className={styles.footerListItem}>Style guide</li>
+              <li className={styles.footerListItem}>Licenses</li>
+              <li className={styles.footerListItem}>Changelog</li>
+              <li className={styles.footerListItem}>404</li>
+              <li className={styles.footerListItem}>Password</li>
             </ul>
           </div>
         </div>
-        <hr></hr>
+
+        <hr className={styles.hrDivider}></hr>
+
         <div className={styles.copyrightWrapper}>
-          <p>© Startico by Minima Square. Powered by Webflow</p>
+          <p className={styles.paragraphCopyright}>
+            © Startico by Minima Square. Powered by Webflow
+          </p>
+
           <SocialLinkList />
         </div>
       </Container>
     </footer>
   );
 }
+
 export default Footer;

@@ -1,50 +1,41 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-section.commentsSection {
+.commentsSection {
   position: relative;
   background: var(--primary-bg-color);
   margin: var(--space-128) 0 0;
 
-  div.contentWrapper {
+  .contentWrapper {
     text-align: center;
-    padding: var(--space-128) 0;
-    h2 {
-      @include fontsMixins.text-style-heading-2(
-        var(--font-size-48),
-        var(--text-weight-normal),
-        var(--space-57-60),
-        var(--light-text-color)
-      );
+    padding: var(--space-127) 0 var(--space-167);
+
+    .header {
+      @include fontsMixins.text-style-heading-48-bold-light;
       margin: 0;
     }
-    p {
-      &.paragraphText {
-        @include fontsMixins.text-style-paragraph(
-          var(--font-size-17),
-          var(--text-weight-normal)
-        );
-        color: var(--light-text-color);
-        margin: var(--space-24) 0 var(--space-80);
-      }
+
+    .paragraphText {
+      @include fontsMixins.text-style-paragraph-17-normal-light;
+      margin: var(--space-24) 0 var(--space-80);
     }
   }
-  img {
-    &.absoluteImg1 {
-      position: absolute;
-      left: 0;
-      bottom: var(--space-100);
-      z-index: 1;
-      width: var(--space-200);
-      height: var(--space-268);
-    }
-    &.absoluteImg2 {
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 1;
-      width: var(--space-280);
-      height: var(--space-142);
-    }
+
+  .absoluteImg1 {
+    position: absolute;
+    left: 0;
+    bottom: var(--space-100);
+    z-index: 1;
+    width: var(--space-200);
+    height: var(--space-268);
+  }
+
+  .absoluteImg2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: var(--space-280);
+    height: var(--space-142);
   }
 }

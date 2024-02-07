@@ -2,60 +2,56 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
 
-section.efficientArticleSection {
+.efficientArticleSection {
   position: relative;
-  div {
-    &.contentWrapper {
-      display: flex;
-      gap: var(--space-80);
-      div {
-        &.textWrapper {
-          margin: auto 0;
-          h2 {
-            @include fontsMixins.text-style-heading-2;
-            margin: var(--space-15) 0 var(--space-27);
+
+  .contentWrapper {
+    display: flex;
+    gap: var(--space-80);
+
+    .textWrapper {
+      margin: auto 0;
+
+      .header {
+        @include fontsMixins.text-style-heading-40-normal;
+        margin: var(--space-15) 0 var(--space-27);
+      }
+      .paragraphText {
+        @include fontsMixins.text-style-paragraph-18-normal;
+        margin: 0 0 var(--space-38);
+      }
+
+      .paragraphButtons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--space-16);
+      }
+
+      .efficientCards {
+        display: flex;
+        gap: var(--space-26);
+        margin: 0 0 var(--space-31);
+
+        .efficientCard {
+          margin: 0;
+
+          .cardHeader {
+            @include fontsMixins.text-style-heading-20-normal-dark;
+            margin: var(--space-16) 0 var(--space-17);
           }
-          p {
-            @include fontsMixins.text-style-paragraph;
-            margin: 0 0 var(--space-38);
-            &.paragraphButtons {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              button {
-                &:first-of-type {
-                  margin-right: var(--space-16);
-                }
-              }
-            }
-          }
-          div.efficientCards {
-            display: flex;
-            gap: var(--space-26);
-            margin: 0 0 var(--space-31);
-            div {
-              margin: 0;
-              h3 {
-                @include fontsMixins.text-style-heading-3;
-                margin: var(--space-16) 0 var(--space-17);
-              }
-              p {
-                @include fontsMixins.text-style-paragraph(
-                  var(--font-size-16),
-                  var(--text-weight-normal),
-                  var(--lighter-dark-text-color),
-                  var(--space-27)
-                );
-                margin: 0;
-              }
-            }
+
+          .cardText {
+            @include fontsMixins.text-style-paragraph-16-normal;
+            margin: 0;
           }
         }
       }
     }
-    div.articlePercentage {
-      bottom: var(--space-48);
-      right: var(--space-308);
-    }
+  }
+
+  .articlePercentage {
+    bottom: var(--space-48);
+    right: var(--space-308);
   }
 }

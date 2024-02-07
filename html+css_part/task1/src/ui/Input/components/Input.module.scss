@@ -1,19 +1,17 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-input.formInput {
-  @include fontsMixins.text-style-paragraph(
-    var(--font-size-18),
-    var(--text-weight-bold),
-    var(--dark-text-color)
-  );
+.formInput {
+  @include fontsMixins.text-style-paragraph-18-normal-dark;
   padding: var(--space-12) 0 var(--space-13) var(--space-42);
   border-radius: var(--space-24);
   border: none;
   width: var(--space-368);
   box-sizing: border-box;
+
   &::placeholder {
     color: var(--dark-text-color);
     opacity: 1;
+    font-weight: var(--text-weight-bold);
   }
 }

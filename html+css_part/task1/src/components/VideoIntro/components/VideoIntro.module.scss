@@ -1,12 +1,12 @@
 @use "/src/styles/variables.scss";
 @use "/src/ui/Button/components/Button.module.scss" as buttonModule;
+
 .videoIntro {
   background-image: url("../../../../public/images/backgrounds/videoBg.png");
   width: 1280px;
   height: 640px;
   margin: 0 auto;
-  button {
-    margin: var(--space-274) 0 0 var(--space-504);
-    font-weight: var(--text-weight-bold);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
