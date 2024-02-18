@@ -4,110 +4,309 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Email</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .emailContent {
+        width: 579px;
+        height: 687px;
+        border: 1.1px solid #ededed;
+        border-radius: 10px;
+        border-collapse: collapse;
+        overflow: scroll;
+      }
+
+      /* --- header --- */
+
+      .headerContent {
+        width: 100%;
+        height: fit-content;
+        margin-top: 15px;
+      }
+
+      .headerTitleWrapper .headerIcons {
+        padding: 0 0 13.25px 18.77px;
+        width: 272.69px;
+      }
+
+      .headerIcons .circleBlue,
+      .headerIcons .circleOrange,
+      .headerIcons .circleRed {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+      }
+
+      .headerIcons .circleBlue {
+        background-color: #11adcf;
+        margin-right: 7.73px;
+      }
+
+      .headerIcons .circleOrange {
+        background-color: #ff7a00;
+        margin-right: 7.73px;
+      }
+
+      .headerIcons .circleRed {
+        background-color: #f93939;
+        margin-right: 0;
+      }
+
+      .headerTitleWrapper .headerTitle {
+        padding: 0 18.77px 13.25px 0;
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 12.94px;
+        color: #575756;
+      }
+
+      .headerAddressContainer .headerAddress {
+        border-top: 0.55px solid #d5d7dd;
+        border-bottom: 0.55px solid #d5d7dd;
+        padding: 11px 0 11px 23.18px;
+        color: #787878;
+        font-family: "Roboto", sans-serif;
+        font-size: 13.25px;
+        font-weight: 400;
+        line-height: 15.53px;
+      }
+
+      /* --- main content --- */
+
+      .mainWrapper {
+        padding: 12.16px 18px 50px 24px;
+      }
+
+      .mainTextContainer .mainText {
+        color: #0e0e0e;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .mainTextContainer .mainTextPart .mainTextPartContent {
+        margin-bottom: 24px;
+      }
+
+      .mainTextContainer .mainText .mainTextBold {
+        font-weight: 700;
+      }
+
+      .mainTextContainer .mainText .mainTextOrange {
+        font-weight: 700;
+        color: #ff7a00;
+      }
+
+      /* --- signature --- */
+
+      .signatureWrapper {
+        padding: 0 242.61px 0 24px;
+      }
+
+      .signatureWrapper .signatureContent {
+        margin-bottom: 15px;
+      }
+
+      .signatureWrapper .signatureLinkSite {
+        color: #2a3d6e;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        text-decoration: underline;
+      }
+
+      .signatureWrapper .signatureLinkSocial {
+        text-align: end;
+      }
+
+      .signatureLinkSocial .signatureLinkSocialList {
+        list-style: none;
+        display: inline-block;
+        width: fit-content;
+      }
+
+      .signatureLinksWrapper .signatureLinkSocialListItem {
+        display: inline-block;
+      }
+
+      .signatureLinkSocialListItem .signatureLinkFacebook {
+        margin-right: 10px;
+      }
+
+      .signatureTextWrapper .signatureText {
+        color: #575756;
+        font-family: "Roboto", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 11.72px;
+      }
+    </style>
   </head>
   <body>
-    <section class="emailWrapper">
-      <table class="emailContent">
-        <tr class="header">
-          <!-- header -->
-          <td class="headerWrapper">
-            <table class="headerContent">
-              <tr class="headerTitleWrapper">
-                <td class="headerIcons">
-                  <span class="circleBlue"></span>
-                  <span class="circleOrange"></span>
-                  <span class="circleRed"></span>
-                </td>
+    <table class="emailContent">
+      <tr class="header">
+        <!-- header -->
+        <td class="headerWrapper">
+          <table class="headerContent">
+            <tr class="headerTitleWrapper">
+              <td class="headerIcons">
+                <span class="circleBlue"></span>
+                <span class="circleOrange"></span>
+                <span class="circleRed"></span>
+              </td>
 
-                <td class="headerTitle">New Email</td>
-              </tr>
-              <tr class="headerAddressWrapper">
-                <td class="headerAddressContainer" colspan="2">
-                  <p class="headerAddress">
-                    To: Miroshnichenko Alexander<br />
-                    Subject: Back-End - Session Reminder
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr class="main">
-          <!-- main content -->
-          <td class="mainWrapper">
-            <table class="mainContent">
-              <tr class="mainTextWrapper">
-                <td class="mainTextContainer">
-                  <p class="mainText">
-                    Dear, Alexander<br /><br />
-                    This is a friendly reminder that the Course Back-End is
-                    scheduled to begin shortly. We are excited to have you as a
-                    mentor for this program.<br /><br />
-                    <span class="mainTextBold">Training Program:</span>
-                    <span class="mainTextOrange">Course Back-End</span
-                    ><br /><br />
-                    Please be prepared to welcome and guide our participants
-                    through this enriching learning experience. Your insights
-                    and expertise are highly valued. If you have any questions
-                    or need further information, please feel free to reach out
-                    to us.<br /><br />
-                    Thank you for your commitment to our learning community.<br /><br />
-                    Warm regards,<br />
-                    Calaton Academy
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr class="signature">
-          <!-- signature -->
-          <td class="signatureWrapper">
-            <table class="signatureContent">
-              <tr class="signatureLinksWrapper">
-                <td class="signatureLinkSite"><a>www.calaton.academy</a></td>
-                <td class="signatureLinkSocial">
-                  <ul class="signatureLinkSocialList">
-                    <li class="signatureLinkSocialListItem">
+              <td class="headerTitle">New Email</td>
+            </tr>
+            <tr class="headerAddressWrapper">
+              <td class="headerAddressContainer" colspan="2">
+                <p class="headerAddress">
+                  To: Miroshnichenko Alexander<br />
+                  Subject: Back-End - Session Reminder
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="main">
+        <!-- main content -->
+        <td class="mainWrapper">
+          <table class="mainContent">
+            <tr class="mainTextWrapper">
+              <td class="mainTextContainer">
+                <table class="mainText">
+                  <tr class="mainTextPart">
+                    <td>
+                      <p class="mainTextPartContent">Dear, Alexander</p>
+                    </td>
+                  </tr>
+
+                  <tr class="mainTextPart">
+                    <td>
+                      <p class="mainTextPartContent">
+                        This is a friendly reminder that the Course Back-End is
+                        scheduled to begin shortly. We are excited to have you
+                        as a mentor for this program.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr class="mainTextPart">
+                    <td>
+                      <p class="mainTextPartContent">
+                        <span class="mainTextBold">Training Program:</span>
+                        <span class="mainTextOrange">Course Back-End</span>
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr class="mainTextPart">
+                    <td>
+                      <p class="mainTextPartContent">
+                        Please be prepared to welcome and guide our participants
+                        through this enriching learning experience. Your
+                        insights and expertise are highly valued. If you have
+                        any questions or need further information, please feel
+                        free to reach out to us.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr class="mainTextPart">
+                    <td>
+                      <p class="mainTextPartContent">
+                        Thank you for your commitment to our learning community.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr class="mainTextPart">
+                    <td>
+                      <p>Warm regards,</p>
+                    </td>
+                  </tr>
+
+                  <tr class="mainTextPart">
+                    <td>
+                      <p>Calaton Academy</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="signature">
+        <!-- signature -->
+        <td class="signatureWrapper">
+          <table class="signatureContent">
+            <tr class="signatureLinksWrapper">
+              <td class="signatureLinkSite"><a>www.calaton.academy</a></td>
+
+              <td class="signatureLinkSocial">
+                <ul class="signatureLinkSocialList">
+                  <li class="signatureLinkSocialListItem">
+                    <a>
                       <img
                         class="signatureLinkFacebook"
                         src="img/icon-facebook.png"
                       />
-                    </li>
-                    <li class="signatureLinkSocialListItem">
+                    </a>
+                  </li>
+
+                  <li class="signatureLinkSocialListItem">
+                    <a>
                       <img
                         class="signatureLinkLinkedin"
                         src="img/icon-linkedin.png"
                       />
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <img
-                    src="img/banner.png"
-                    height="56"
-                    width="313"
-                    alt="Calaton Academy"
-                  />
-                </td>
-              </tr>
-              <tr class="signatureTextWrapper">
-                <td colspan="2">
-                  <p class="signatureText">
-                    This email is for intended recipients only. If you are not
-                    an intended recipient, you must not disclose, copy or
-                    distribute this email to others or act upon the information
-                    contained in this email in any way.
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </section>
+                    </a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <img
+                  src="img/banner.png"
+                  height="56"
+                  width="313"
+                  alt="Calaton Academy"
+                />
+              </td>
+            </tr>
+
+            <tr class="signatureTextWrapper">
+              <td colspan="2">
+                <p class="signatureText">
+                  This email is for intended recipients only. If you are not an
+                  intended recipient, you must not disclose, copy or distribute
+                  this email to others or act upon the information contained in
+                  this email in any way.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
