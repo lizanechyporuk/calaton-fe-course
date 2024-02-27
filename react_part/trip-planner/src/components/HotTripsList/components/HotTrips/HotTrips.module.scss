@@ -1,0 +1,8 @@
+@use "/src/styles/variables.scss";
+
+.hotTrips {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-30);
+  margin: var(--space-50) 0;
+}

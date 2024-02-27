@@ -1,0 +1,43 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+
+.tripFilter {
+  text-align: center;
+  margin-bottom: var(--space-50);
+
+  .tripFilterContent {
+    display: inline-block;
+
+    .tripFilterItems {
+      list-style: none;
+      display: inline-block;
+
+      .tripFilterItem {
+        @include fontsMixins.paragraph-20-light;
+        display: inline-block;
+        padding: 0 var(--space-12) var(--space-14);
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+          margin-right: var(--space-32);
+        }
+
+        &.active {
+          @include fontsMixins.headline5-semibold-green;
+          border-bottom: var(--space-3) solid var(--primary-bg-color);
+        }
+      }
+    }
+
+    .tripFilterBar {
+      height: var(--space-3);
+      border: none;
+      background-color: var(--tertiary-bg-color);
+      position: relative;
+      top: var(--space-minus-3);
+      z-index: 0;
+    }
+  }
+}

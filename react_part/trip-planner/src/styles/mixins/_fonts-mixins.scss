@@ -1,0 +1,187 @@
+@use "../variables.scss";
+
+/* Headlines */
+
+@mixin headline2-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-42);
+  font-weight: var(--regular);
+  line-height: var(--space-50-4);
+  word-wrap: break-word;
+  color: var(--dark-light-text-color);
+}
+
+@mixin headline3-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-35);
+  font-weight: var(--bold);
+  line-height: var(--space-42);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+@mixin headline4-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-29);
+  font-weight: var(--bold);
+  line-height: var(--space-34-8);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+@mixin headline4-bold-green {
+  font-family: var(--font-family);
+  font-size: var(--font-size-29);
+  font-weight: var(--bold);
+  line-height: var(--space-34-8);
+  word-wrap: break-word;
+  color: var(--link-text-color);
+}
+
+@mixin headline5-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-24);
+  font-weight: var(--regular);
+  line-height: var(--space-36);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+@mixin headline5-regular-gray-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-24);
+  font-weight: var(--regular);
+  line-height: var(--space-36);
+  word-wrap: break-word;
+  color: var(--gray-light-text-color);
+}
+
+@mixin headline5-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-24);
+  font-weight: var(--semibold);
+  line-height: var(--space-36);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+@mixin headline5-semibold-green {
+  font-family: var(--font-family);
+  font-size: var(--font-size-24);
+  font-weight: var(--semibold);
+  line-height: var(--space-36);
+  word-wrap: break-word;
+  color: var(--link-text-color);
+}
+
+@mixin headline6-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--regular);
+  line-height: var(--space-24);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+@mixin headline6-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--semibold);
+  line-height: var(--space-24);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+/* Paragraphs */
+@mixin paragraph-14-regular-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--regular);
+  line-height: var(--space-21);
+  word-wrap: break-word;
+  color: var(--gray-light-text-color);
+}
+
+@mixin paragraph-14-regular-link {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--regular);
+  line-height: var(--space-21);
+  word-wrap: break-word;
+  color: var(--link-text-color);
+  padding: var(--space-7) var(--space-20);
+  border: var(--space-2) solid var(--link-text-color);
+  border-radius: var(--space-4);
+}
+
+@mixin paragraph-16-regular-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--regular);
+  line-height: var(--space-24);
+  word-wrap: break-word;
+  color: var(--gray-light-text-color);
+}
+
+@mixin paragraph-17-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--regular);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--dark-lighter-text-color);
+}
+
+@mixin paragraph-17-regular-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--regular);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--black-text-color);
+}
+
+@mixin paragraph-17-regular-green {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--regular);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--link-text-color);
+}
+
+@mixin paragraph-20-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--light);
+  line-height: var(--space-30);
+  word-wrap: break-word;
+  color: var(--green-dark-text-color);
+}
+
+@mixin paragraph-28-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-28);
+  font-weight: var(--regular);
+  line-height: var(--space-42);
+  word-wrap: break-word;
+  color: var(--dark-light-text-color);
+}
+
+@mixin paragraph-38-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-38);
+  font-weight: var(--semibold);
+  line-height: var(--space-57);
+  word-wrap: break-word;
+  color: var(--dark-light-text-color);
+}
+
+@mixin paragraph-50-bold-green {
+  font-family: var(--font-family);
+  font-size: var(--font-size-50);
+  font-weight: var(--bold);
+  line-height: var(--space-60);
+  word-wrap: break-word;
+  color: var(--link-text-color);
+}

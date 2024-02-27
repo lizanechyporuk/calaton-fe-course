@@ -1,0 +1,41 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+
+.header {
+  background-color: var(--secondary-bg-color);
+
+  .headerContent {
+    height: var(--space-80);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navigationWrapper {
+      .navigationList {
+        @include fontsMixins.headline6-regular;
+        list-style-type: none;
+        display: inline;
+        padding: 0;
+        cursor: pointer;
+
+        .navigationListItem {
+          display: inline;
+
+          &:not(:last-of-type) {
+            margin-right: var(--space-30);
+          }
+
+          .navigationLink.active {
+            @include fontsMixins.headline6-semibold;
+          }
+        }
+      }
+    }
+
+    .accFeaturesWrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--space-40);
+    }
+  }
+}

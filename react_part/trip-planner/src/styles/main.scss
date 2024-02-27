@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-bg-color);
+}
+
+:root {
+  /* Background colors */
+  --primary-bg-color: #27959e;
+  --primary-bg-color-op-10: rgba(39, 149, 158, 0.1);
+  --secondary-bg-color: #bcdee1;
+  --tertiary-bg-color: #e9f4f5;
+  --light-bg-color: #fdfeff;
+  --white-bg-color: #ffffff;
+  --white-bg-color-op-90: rgba(255, 255, 255, 0.9);
+  --green-darkest-bg-color: #0f4e461a;
+
+  /* Text colors */
+  --white-text-color: #ffffff;
+  --black-text-color: #000;
+  --dark-text-color: #161616;
+  --dark-light-text-color: #262626;
+  --dark-lighter-text-color: #3a3a3a;
+  --gray-light-text-color: #838383;
+  --green-dark-text-color: #09292b;
+  --link-text-color: #27959e;
+
+  /* Font family */
+  --font-family: "Poppins", sans-serif;
+
+  /* Font sizes */
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-29: 29px;
+  --font-size-35: 35px;
+  --font-size-38: 38px;
+  --font-size-42: 42px;
+  --font-size-50: 50px;
+
+  /* Font weights */
+  --light: 300;
+  --regular: 400;
+  --semibold: 600;
+  --bold: 700;
+
+  /* Spaces */
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 3px;
+  --space-minus-3: -3px;
+  --space-4: 4px;
+  --space-7: 7px;
+  --space-8: 8px;
+  --space-9: 9px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-15: 15px;
+  --space-16-5: 16.5px;
+  --space-17: 17px;
+  --space-20: 20px;
+  --space-20-4: 20.4px;
+  --space-21: 21px;
+  --space-24: 24px;
+  --space-30: 30px;
+  --space-32: 32px;
+  --space-33: 33px;
+  --space-34-8: 34.8px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-42: 42px;
+  --space-48: 48px;
+  --space-50: 50px;
+  --space-50-4: 50.4px;
+  --space-57: 57px;
+  --space-60: 60px;
+  --space-70: 70px;
+  --space-80: 80px;
+  --space-82: 82px;
+  --space-90: 90px;
+  --space-100: 100px;
+  --space-120: 120px;
+  --space-140: 140px;
+  --space-225: 225px;
+  --space-339: 339px;
+  --space-409: 409px;
+  --space-1111: 1111px;
+  --space-1262: 1262px;
+}

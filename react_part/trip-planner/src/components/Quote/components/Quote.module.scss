@@ -1,0 +1,44 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+
+.quoteWrapper {
+  width: var(--space-1262);
+  margin: 0 auto;
+  box-shadow: 0 0 var(--space-30) 0 var(--primary-bg-color-op-10);
+  padding: var(--space-50) var(--space-100);
+
+  .quoteContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: var(--space-20);
+
+    .quoteText {
+      @include fontsMixins.paragraph-17-regular-black;
+      padding: 0 var(--space-16-5);
+
+      .quoteTextHighlight {
+        @include fontsMixins.headline5-semibold-green;
+      }
+    }
+
+    .quoteStart {
+      margin-left: var(--space-50);
+    }
+
+    .quoteEnd {
+      margin: 0 var(--space-50) 0 auto;
+    }
+  }
+
+  .quoteFooter {
+    @include fontsMixins.headline3-bold;
+    text-align: end;
+    cursor: default;
+
+    .quoteFooterAbbr {
+      @include fontsMixins.headline5-regular-gray-light;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+
+.tripCard {
+  position: relative;
+  width: var(--space-339);
+  height: var(--space-409);
+  border-radius: var(--space-20);
+  box-shadow: 0 0 var(--space-15) var(--green-darkest-bg-color);
+  padding: var(--space-30) var(--space-20);
+
+  .favouriteBtn {
+    position: absolute;
+    top: var(--space-30);
+    right: var(--space-20);
+  }
+
+  .tripCardHeader {
+    @include fontsMixins.headline5-semibold;
+    margin-bottom: var(--space-8);
+  }
+
+  .tripCardDate {
+    @include fontsMixins.paragraph-14-regular-light;
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  .tripCardPhoto {
+    margin: var(--space-20) 0;
+  }
+
+  .tripCardPriceInfo {
+    @include fontsMixins.paragraph-16-regular-light;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    .tripCardPrice {
+      @include fontsMixins.headline5-semibold;
+    }
+  }
+
+  .tripCardLink {
+    @include fontsMixins.paragraph-14-regular-link;
+    position: absolute;
+    bottom: var(--space-30);
+    right: var(--space-20);
+    cursor: pointer;
+  }
+}

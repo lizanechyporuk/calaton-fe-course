@@ -1,0 +1,26 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+
+.hotTrip {
+  .hotTripWrapper {
+    position: relative;
+
+    .hotTripImg {
+      border-radius: var(--space-10);
+    }
+
+    .hotTripCaption {
+      @include fontsMixins.headline4-bold;
+      position: absolute;
+      bottom: var(--space-9);
+      background-color: var(--white-bg-color-op-90);
+      width: 100%;
+      padding: var(--space-20) 0;
+
+      .hotTripCaptionText {
+        @include fontsMixins.headline6-regular;
+        margin-top: var(--space-10);
+      }
+    }
+  }
+}

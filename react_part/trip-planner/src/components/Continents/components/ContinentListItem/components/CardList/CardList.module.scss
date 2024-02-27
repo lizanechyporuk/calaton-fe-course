@@ -1,0 +1,9 @@
+@use "/src/styles/variables.scss";
+
+.tripCardList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: var(--space-8);
+  row-gap: var(--space-12);
+}

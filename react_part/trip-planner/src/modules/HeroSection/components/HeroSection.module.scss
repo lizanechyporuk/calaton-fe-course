@@ -1,0 +1,28 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+
+.heroSection {
+  margin: var(--space-50) 0;
+
+  .heroSectionContent {
+    text-align: center;
+
+    .heroSectionTitle {
+      @include fontsMixins.headline2-regular;
+
+      .heroSectionTitleHighlight {
+        @include fontsMixins.paragraph-50-bold-green;
+      }
+    }
+
+    .heroSectionText {
+      @include fontsMixins.paragraph-28-regular;
+      width: var(--space-1111);
+      margin: 0 auto;
+
+      .heroSectionTextHighlight {
+        @include fontsMixins.paragraph-38-semibold;
+      }
+    }
+  }
+}
