@@ -2,14 +2,14 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
 .hotTrip {
-  .hotTripWrapper {
+  .wrapper {
     position: relative;
 
-    .hotTripImg {
+    .img {
       border-radius: var(--space-10);
     }
 
-    .hotTripCaption {
+    .caption {
       @include fontsMixins.headline4-bold;
       position: absolute;
       bottom: var(--space-9);
@@ -17,7 +17,7 @@
       width: 100%;
       padding: var(--space-20) 0;
 
-      .hotTripCaptionText {
+      .text {
         @include fontsMixins.headline6-regular;
         margin-top: var(--space-10);
       }

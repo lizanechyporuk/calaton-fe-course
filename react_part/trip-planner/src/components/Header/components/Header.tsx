@@ -1,11 +1,12 @@
-import Container from "../../Container";
+import { Link } from "react-router-dom";
+import Container from "components/Container";
 import styles from "./Header.module.scss";
 
 function Header(): JSX.Element {
   return (
     <header className={styles.header}>
       <Container>
-        <div className={styles.headerContent}>
+        <div className={styles.content}>
           <img
             src="/icons/shared/logo.svg"
             height="60"
@@ -13,35 +14,41 @@ function Header(): JSX.Element {
             alt="Logo"
           ></img>
 
-          <nav className={styles.navigationWrapper}>
-            <ul className={styles.navigationList}>
-              <li className={styles.navigationListItem}>
-                <a className={`${styles.navigationLink} ${styles.active}`}>
+          <nav className={styles.navigation}>
+            <ul className={styles.list}>
+              <li className={styles.item}>
+                <Link to="/" className={`${styles.link} ${styles.active}`}>
                   Home
-                </a>
+                </Link>
               </li>
 
-              <li className={styles.navigationListItem}>
-                <a className={styles.navigationLink}>About</a>
+              <li className={styles.item}>
+                <Link to="/" className={styles.link}>
+                  About
+                </Link>
               </li>
 
-              <li className={styles.navigationListItem}>
-                <a className={styles.navigationLink}>Contact Us</a>
+              <li className={styles.item}>
+                <Link to="/" className={styles.link}>
+                  Contact Us
+                </Link>
               </li>
 
-              <li className={styles.navigationListItem}>
-                <a className={styles.navigationLink}>Blog</a>
+              <li className={styles.item}>
+                <Link to="/" className={styles.link}>
+                  Blog
+                </Link>
               </li>
 
-              <li className={styles.navigationListItem}>
-                <a className={styles.navigationLink}>
+              <li className={styles.item}>
+                <Link to="/" className={styles.link}>
                   Found a bug? Let us know
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
 
-          <div className={styles.accFeaturesWrapper}>
+          <div className={styles.accFeatures}>
             <a>
               <img
                 src="/icons/Header/favourites_empty.svg"

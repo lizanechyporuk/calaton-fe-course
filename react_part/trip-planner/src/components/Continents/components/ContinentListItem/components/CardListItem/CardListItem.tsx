@@ -1,4 +1,5 @@
 import styles from "./CardListItem.module.scss";
+import { formatDate } from "utils/continent-cards/formatDate";
 
 interface CardListItemProps {
   src: string;
@@ -6,35 +7,6 @@ interface CardListItemProps {
   depDate: string;
   arrDate: string;
   price: string;
-}
-
-function formatDate(dateString: string): string {
-  const [day, month, year] = dateString.split(".");
-
-  const date = new Date(
-    parseInt(year, 10),
-    parseInt(month, 10) - 1,
-    parseInt(day, 10)
-  );
-
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const monthResult = monthNames[date.getMonth()];
-  const dayResult = date.getDate();
-
-  return `${monthResult} ${dayResult}`;
 }
 
 function CardListItem({
@@ -54,9 +26,9 @@ function CardListItem({
         className={styles.favouriteBtn}
       ></img>
 
-      <p className={styles.tripCardHeader}>{header}</p>
+      <p className={styles.header}>{header}</p>
 
-      <div className={styles.tripCardDate}>
+      <div className={styles.date}>
         <img
           src="/icons/TripsSection/calendar.svg"
           height="20"
@@ -73,16 +45,16 @@ function CardListItem({
         height="180"
         width="297"
         alt={header}
-        className={styles.tripCardPhoto}
+        className={styles.photo}
       ></img>
 
-      <div className={styles.tripCardPriceInfo}>
+      <div className={styles.priceInfo}>
         <p>Total price:</p>
 
-        <p className={styles.tripCardPrice}>{price}</p>
+        <p className={styles.price}>{price}</p>
       </div>
 
-      <a className={styles.tripCardLink}>View Details</a>
+      <a className={styles.link}>View Details</a>
     </div>
   );
 }

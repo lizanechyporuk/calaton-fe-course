@@ -1,22 +1,8 @@
 import styles from "./HotTrips.module.scss";
 import HotTrip from "../HotTrip/HotTrip";
+import { hotTrips } from "constants/hot-trips";
 
 function HotTrips(): JSX.Element {
-  const hotTrips = [
-    {
-      captionTitle: "Forest Hike",
-      captionText: "United Kindom, London",
-    },
-    {
-      captionTitle: "Polar Ray",
-      captionText: "United Kindom, London",
-    },
-    {
-      captionTitle: "Yosemite Falls",
-      captionText: "United States, California",
-    },
-  ];
-
   return (
     <div className={styles.hotTrips}>
       {hotTrips.map((hotTrip, index) => (

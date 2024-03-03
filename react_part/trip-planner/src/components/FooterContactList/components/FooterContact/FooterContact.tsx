@@ -8,10 +8,10 @@ interface FooterContactProps {
 
 function FooterContact({ src, alt, text }: FooterContactProps): JSX.Element {
   return (
-    <div className={styles.footerContact}>
+    <div className={styles.contact}>
       <img src={src} width="68" height="68" alt={alt}></img>
 
-      <address className={styles.contactInfo}>{text}</address>
+      <address className={styles.info}>{text}</address>
     </div>
   );
 }

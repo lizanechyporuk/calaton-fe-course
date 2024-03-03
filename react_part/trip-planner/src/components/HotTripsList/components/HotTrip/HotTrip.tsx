@@ -9,17 +9,17 @@ interface HotTipProps {
 function HotTrip({ src, captionTitle, captionText }: HotTipProps): JSX.Element {
   return (
     <div className={styles.hotTrip}>
-      <figure className={styles.hotTripWrapper}>
+      <figure className={styles.wrapper}>
         <img
           src={src}
           width="400"
           height="490"
           alt={captionTitle}
-          className={styles.hotTripImg}
+          className={styles.img}
         ></img>
-        <figcaption className={styles.hotTripCaption}>
+        <figcaption className={styles.caption}>
           {captionTitle}
-          <p className={styles.hotTripCaptionText}>{captionText}</p>
+          <p className={styles.text}>{captionText}</p>
         </figcaption>
       </figure>
     </div>

@@ -7,36 +7,36 @@
   box-shadow: 0 0 var(--space-30) 0 var(--primary-bg-color-op-10);
   padding: var(--space-50) var(--space-100);
 
-  .quoteContent {
+  .content {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-bottom: var(--space-20);
 
-    .quoteText {
+    .text {
       @include fontsMixins.paragraph-17-regular-black;
       padding: 0 var(--space-16-5);
 
-      .quoteTextHighlight {
+      .textHighlight {
         @include fontsMixins.headline5-semibold-green;
       }
     }
 
-    .quoteStart {
+    .start {
       margin-left: var(--space-50);
     }
 
-    .quoteEnd {
+    .end {
       margin: 0 var(--space-50) 0 auto;
     }
   }
 
-  .quoteFooter {
+  .author {
     @include fontsMixins.headline3-bold;
     text-align: end;
     cursor: default;
 
-    .quoteFooterAbbr {
+    .abbr {
       @include fontsMixins.headline5-regular-gray-light;
       text-decoration: none;
     }

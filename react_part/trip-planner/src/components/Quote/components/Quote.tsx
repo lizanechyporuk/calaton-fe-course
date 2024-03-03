@@ -4,23 +4,20 @@ function Quote(): JSX.Element {
   return (
     <div className={styles.quoteWrapper}>
       <blockquote>
-        <div className={styles.quoteContent}>
+        <div className={styles.content}>
           <img
             src="/icons/QuoteSection/quote_start.svg"
             width="32"
             height="32"
             alt="Quote start"
-            className={styles.quoteStart}
+            className={styles.start}
           ></img>
 
-          <p className={styles.quoteText}>
+          <p className={styles.text}>
             Embark on
-            <span className={styles.quoteTextHighlight}> extraordinary </span>
+            <span className={styles.textHighlight}> extraordinary </span>
             journeys with us. Our
-            <span className={styles.quoteTextHighlight}>
-              {" "}
-              travel experiences{" "}
-            </span>
+            <span className={styles.textHighlight}> travel experiences </span>
             are meticulously crafted, ensuring seamless
             <span className={styles.quoteTextHighlight}> adventures </span>
             tailored just for you. Discover
@@ -37,19 +34,16 @@ function Quote(): JSX.Element {
             width="32"
             height="32"
             alt="Quote end"
-            className={styles.quoteEnd}
+            className={styles.end}
           ></img>
         </div>
 
-        <footer className={styles.quoteFooter}>
-          <abbr
-            title="Chief Executive Officer"
-            className={styles.quoteFooterAbbr}
-          >
+        <div className={styles.author}>
+          <abbr title="Chief Executive Officer" className={styles.abbr}>
             CEO:
           </abbr>{" "}
           Jane Cooper
-        </footer>
+        </div>
       </blockquote>
     </div>
   );

@@ -1,6 +1,6 @@
 import styles from "./Footer.module.scss";
-import Container from "../../Container/index";
-import FooterContacts from "../../FooterContactList/components/FooterContacts/FooterContacts";
+import Container from "components/Container";
+import FooterContacts from "components/FooterContactList";
 
 function Footer(): JSX.Element {
   const socialMedias = [
@@ -18,64 +18,64 @@ function Footer(): JSX.Element {
   return (
     <footer className={styles.footer}>
       <Container>
-        <div className={styles.footerContent}>
+        <div className={styles.content}>
           <FooterContacts />
 
-          <hr className={styles.footerDivider}></hr>
+          <hr className={styles.divider}></hr>
 
-          <div className={styles.footerLists}>
-            <ul className={styles.footerList}>
-              <li className={styles.footerListHeader}>About</li>
-              <li className={styles.footerListItem}>
+          <div className={styles.lists}>
+            <ul className={styles.list}>
+              <li className={styles.header}>About</li>
+              <li className={styles.item}>
                 <a>Our Story</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Awards</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Our Team</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Career</a>
               </li>
             </ul>
 
-            <ul className={styles.footerList}>
-              <li className={styles.footerListHeader}>Company</li>
-              <li className={styles.footerListItem}>
+            <ul className={styles.list}>
+              <li className={styles.header}>Company</li>
+              <li className={styles.item}>
                 <a>Our Services</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Contact</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Clients</a>
               </li>
             </ul>
 
-            <ul className={styles.footerList}>
-              <li className={styles.footerListHeader}>Resources</li>
-              <li className={styles.footerListItem}>
+            <ul className={styles.list}>
+              <li className={styles.header}>Resources</li>
+              <li className={styles.item}>
                 <a>Blog</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Newsletter</a>
               </li>
-              <li className={styles.footerListItem}>
+              <li className={styles.item}>
                 <a>Privacy Policy</a>
               </li>
             </ul>
 
-            <ul className={styles.footerList}>
-              <li className={styles.footerListHeader}>Social</li>
+            <ul className={styles.list}>
+              <li className={styles.header}>Social</li>
               {socialMedias.map((el, index) => (
-                <li key={index} className={styles.footerListItem}>
-                  <a className={styles.socialLink}>
+                <li key={index} className={styles.item}>
+                  <a className={styles.link}>
                     <img
                       src={`/icons/Footer/social${el.text}.svg`}
                       height="20"
                       width="20"
-                      className={styles.socialIcon}
+                      className={styles.icon}
                       alt={el.text}
                     ></img>
                     {el.text}

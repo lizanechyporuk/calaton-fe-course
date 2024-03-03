@@ -1,59 +1,48 @@
 import styles from "./ContinentList.module.scss";
 import ContinentListItem from "../ContinentListItem/ContinentListItem";
-import { fetchData } from "../../../../index";
-import { useState, useEffect } from "react";
+import { fetchData } from "utils/firebase/fetch";
+import { useState, useEffect, useMemo } from "react";
+import { objToArr } from "utils/continent-cards/objToArr";
+import { filter } from "utils/continent-cards/filter";
 
 interface ContinentListProps {
   activeContinent: string;
 }
 
 function ContinentList({ activeContinent }: ContinentListProps): JSX.Element {
-  const continents = ["Europe", "Asia", "Africa", "America"];
-  const [continentData, setFirebaseData] = useState<any[]>([]);
+  const [continentData, setContinentsData] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchFirebaseData = async () => {
+    const fetchContinentsData = async () => {
       const data = await fetchData();
+      const constants: any = {};
 
-      if (data && typeof data === "object") {
-        const dataArray = Object.values(data);
-        setFirebaseData(dataArray);
-      } else {
-        console.error("Fetched data is not an object:", data);
-      }
+      data?.forEach((obj: any) => {
+        const [key, value] = Object.entries(obj)[0];
+        constants[key] = value;
+      });
+
+      setContinentsData(data);
     };
-
-    fetchFirebaseData();
+    fetchContinentsData();
   }, []);
 
-  let filteredData = continentData;
-  if (activeContinent !== "All") {
-    filteredData = continentData.filter(
-      (item) => item.worldPart === activeContinent
-    );
-  }
+  const filteredData = useMemo(() => {
+    return filter(activeContinent, continentData);
+  }, [continentData, activeContinent]);
 
   return (
     <div className={styles.continentList}>
-      {activeContinent === "All" ? (
-        continents.map((continentEl, index) => {
-          const filteredData = continentData.filter(
-            (item) => item.worldPart === continentEl
-          );
-          return (
-            <ContinentListItem
-              key={index}
-              continent={continentEl}
-              continentData={filteredData}
-            />
-          );
-        })
-      ) : (
-        <ContinentListItem
-          continent={activeContinent}
-          continentData={filteredData}
-        />
-      )}
+      {filteredData.map((el: any, index: number) => {
+        console.log(Object.values(el));
+        return (
+          <ContinentListItem
+            key={index}
+            continent={Object.keys(el)[0]}
+            continentData={objToArr(Object.values(el)[0])}
+          />
+        );
+      })}
     </div>
   );
 }

@@ -1,19 +1,19 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-.continentWrapper {
-  .continentHeader {
+.continent {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--space-33) 0 var(--space-17);
     margin-bottom: var(--space-17);
 
-    .continentTitle {
+    .title {
       @include fontsMixins.headline4-bold-green;
     }
 
-    .viewMoreBtn {
+    .moreBtn {
       @include fontsMixins.paragraph-17-regular-green;
       cursor: pointer;
     }

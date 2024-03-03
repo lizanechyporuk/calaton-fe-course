@@ -1,10 +1,10 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 
-.footerContact {
+.contact {
   text-align: center;
 
-  .contactInfo {
+  .info {
     margin-top: var(--space-20);
     @include fontsMixins.paragraph-17-regular;
     font-style: normal;

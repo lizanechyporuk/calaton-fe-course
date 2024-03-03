@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./TripsSection.module.scss";
-import Container from "../../../components/Container";
-import TripFilter from "../../../components/TripsFilter/index";
-import ContinentList from "../../../components/Continents/index";
+import Container from "components/Container";
+import TripFilter from "components/TripsFilter";
+import ContinentList from "components/Continents";
 
 function TripsSection(): JSX.Element {
   const [activeContinent, setActiveContinent] = useState("All");
@@ -12,10 +12,12 @@ function TripsSection(): JSX.Element {
   };
 
   return (
-    <Container>
-      <TripFilter onFilterChange={handleFilterChange} />
-      <ContinentList activeContinent={activeContinent} />
-    </Container>
+    <section>
+      <Container>
+        <TripFilter onFilterChange={handleFilterChange} />
+        <ContinentList activeContinent={activeContinent} />
+      </Container>
+    </section>
   );
 }
 

@@ -1,0 +1,11 @@
+@use "/src/styles/mixins/btns-mixins" as btnsMixins;
+
+button {
+  &.filterBtn {
+    @include btnsMixins.filterBtn;
+  }
+
+  &.filterBtnActive {
+    @include btnsMixins.filterBtnActive;
+  }
+}

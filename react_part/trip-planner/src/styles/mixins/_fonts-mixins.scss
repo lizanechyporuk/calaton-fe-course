@@ -81,6 +81,7 @@
   line-height: var(--space-24);
   word-wrap: break-word;
   color: var(--dark-text-color);
+  text-decoration: none;
 }
 
 @mixin headline6-semibold {
@@ -90,6 +91,7 @@
   line-height: var(--space-24);
   word-wrap: break-word;
   color: var(--dark-text-color);
+  text-decoration: none;
 }
 
 /* Paragraphs */

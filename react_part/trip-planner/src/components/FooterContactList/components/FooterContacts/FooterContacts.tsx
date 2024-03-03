@@ -1,24 +1,10 @@
 import FooterContact from "../FooterContact/FooterContact";
 import styles from "./FooterContacts.module.scss";
+import { contacts } from "constants/footer-contacts";
 
 function FooterContacts(): JSX.Element {
-  const contacts = [
-    {
-      alt: "Phone",
-      text: "+123 45 678 901",
-    },
-    {
-      alt: "Email",
-      text: "somemail@gmail.com",
-    },
-    {
-      alt: "Location",
-      text: "Avenue St. 432 , New York",
-    },
-  ];
-
   return (
-    <div className={styles.footerContactsContainer}>
+    <div className={styles.footerContacts}>
       {contacts.map((contact, index) => (
         <FooterContact
           key={index}

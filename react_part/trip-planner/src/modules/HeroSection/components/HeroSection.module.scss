@@ -4,23 +4,23 @@
 .heroSection {
   margin: var(--space-50) 0;
 
-  .heroSectionContent {
+  .content {
     text-align: center;
 
-    .heroSectionTitle {
+    .title {
       @include fontsMixins.headline2-regular;
 
-      .heroSectionTitleHighlight {
+      .titleHighlight {
         @include fontsMixins.paragraph-50-bold-green;
       }
     }
 
-    .heroSectionText {
+    .text {
       @include fontsMixins.paragraph-28-regular;
       width: var(--space-1111);
       margin: 0 auto;
 
-      .heroSectionTextHighlight {
+      .textHighlight {
         @include fontsMixins.paragraph-38-semibold;
       }
     }

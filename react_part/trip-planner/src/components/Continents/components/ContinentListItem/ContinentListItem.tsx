@@ -11,11 +11,11 @@ function ContinentListItem({
   continentData,
 }: ContinentListItemProps): JSX.Element {
   return (
-    <div className={styles.continentWrapper}>
-      <div className={styles.continentHeader}>
-        <h4 className={styles.continentTitle}>{continent}</h4>
+    <div className={styles.continent}>
+      <div className={styles.header}>
+        <h4 className={styles.title}>{continent}</h4>
 
-        <a className={styles.viewMoreBtn}>View All</a>
+        <a className={styles.moreBtn}>View All</a>
       </div>
 
       <CardList data={continentData} />

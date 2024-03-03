@@ -15,33 +15,33 @@
     right: var(--space-20);
   }
 
-  .tripCardHeader {
+  .header {
     @include fontsMixins.headline5-semibold;
     margin-bottom: var(--space-8);
   }
 
-  .tripCardDate {
+  .date {
     @include fontsMixins.paragraph-14-regular-light;
     display: flex;
     gap: var(--space-4);
   }
 
-  .tripCardPhoto {
+  .photo {
     margin: var(--space-20) 0;
   }
 
-  .tripCardPriceInfo {
+  .priceInfo {
     @include fontsMixins.paragraph-16-regular-light;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 
-    .tripCardPrice {
+    .price {
       @include fontsMixins.headline5-semibold;
     }
   }
 
-  .tripCardLink {
+  .link {
     @include fontsMixins.paragraph-14-regular-link;
     position: absolute;
     bottom: var(--space-30);
