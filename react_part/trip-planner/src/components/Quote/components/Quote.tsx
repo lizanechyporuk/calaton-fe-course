@@ -2,7 +2,7 @@ import styles from "./Quote.module.scss";
 
 function Quote(): JSX.Element {
   return (
-    <div className={styles.quoteWrapper}>
+    <div className={styles.quote_wrapper}>
       <blockquote>
         <div className={styles.content}>
           <img

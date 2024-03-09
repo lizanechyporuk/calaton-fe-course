@@ -4,6 +4,7 @@ import styles from "./NavigationSmall.module.scss";
 import { openNav } from "utils/nav-menu/openNav";
 import { closeNav } from "utils/nav-menu/closeNav";
 import Button from "ui/Button";
+import { routes } from "constants/routes";
 
 function NavigationSmall(): JSX.Element {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -50,38 +51,43 @@ function NavigationSmall(): JSX.Element {
         <nav className={styles.navigation}>
           <ul className={styles.list}>
             <li className={`${styles.item} ${styles.active}`}>
-              <Link to="/" className={styles.link}>
+              <Link to={routes.homepage} className={styles.link}>
                 Home
               </Link>
             </li>
 
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to={routes.homepage} className={styles.link}>
                 About
               </Link>
             </li>
 
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to={routes.homepage} className={styles.link}>
                 Contact Us
               </Link>
             </li>
 
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to={routes.homepage} className={styles.link}>
                 Blog
               </Link>
             </li>
 
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to={routes.homepage} className={styles.link}>
                 Found a bug? Let us know
               </Link>
             </li>
           </ul>
         </nav>
 
-        <Button text="Log Out" value="logout" onClick="" classBtn="logoutBtn" />
+        <Button
+          text="Log Out"
+          value="logout"
+          onClick={null}
+          classBtn="logoutBtn"
+        />
       </div>
     </div>
   );

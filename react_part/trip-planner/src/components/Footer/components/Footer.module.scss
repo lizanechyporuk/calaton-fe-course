@@ -1,9 +1,14 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .footer {
   background-color: var(--secondary-bg-color);
   padding: var(--space-50) 0 var(--space-82);
+
+  @include breakpoints.for-md-screen {
+    padding: var(--space-25) 0;
+  }
 
   .content {
     padding: 0 var(--space-90);
@@ -11,10 +16,20 @@
     flex-direction: column;
     gap: var(--space-50);
 
+    @include breakpoints.for-md-screen {
+      padding: 0 var(--space-25);
+      gap: var(--space-30);
+      flex-direction: column-reverse;
+    }
+
     .divider {
       background-color: var(--white-bg-color);
       border: none;
       height: var(--space-1);
+
+      @include breakpoints.for-md-screen {
+        display: none;
+      }
     }
 
     .lists {
@@ -22,17 +37,33 @@
       justify-content: center;
       gap: var(--space-140);
 
+      @include breakpoints.for-md-screen {
+        gap: var(--space-14);
+        flex-direction: column;
+      }
+
       .list {
         @include fontsMixins.paragraph-17-regular;
         list-style: none;
 
-        .header {
+        .heading {
           @include fontsMixins.headline6-semibold;
           margin-bottom: var(--space-20);
+
+          @include breakpoints.for-md-screen {
+            @include fontsMixins.paragraph-14-semibold-dark-green;
+            margin: 0;
+            padding: var(--space-4) var(--space-10) var(--space-6);
+            border-bottom: var(--space-1) solid var(--green-dark-text-color);
+          }
         }
 
         .item {
           cursor: pointer;
+          @include breakpoints.for-md-screen {
+            display: none;
+          }
+
           &:not(:last-of-type) {
             margin-bottom: var(--space-4);
           }

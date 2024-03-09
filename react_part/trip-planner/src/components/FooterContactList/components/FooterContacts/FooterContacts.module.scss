@@ -1,6 +1,14 @@
-.footerContacts {
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.footer_contacts {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: var(--space-120);
+
+  @include breakpoints.for-md-screen {
+    flex-direction: column;
+    align-items: start;
+    gap: var(--space-14);
+  }
 }

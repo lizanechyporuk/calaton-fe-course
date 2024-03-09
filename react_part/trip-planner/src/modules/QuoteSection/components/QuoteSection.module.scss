@@ -1,5 +1,10 @@
 @use "/src/styles/variables.scss";
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.quoteSection {
+.quote_section {
   margin: var(--space-60) 0 var(--space-70);
+
+  @include breakpoints.for-md-screen {
+    display: none;
+  }
 }

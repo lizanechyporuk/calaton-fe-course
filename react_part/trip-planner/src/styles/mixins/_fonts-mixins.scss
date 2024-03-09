@@ -208,6 +208,15 @@
   color: var(--black-text-color);
 }
 
+@mixin paragraph-14-semibold-dark-green {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--semibold);
+  line-height: var(--space-21);
+  word-wrap: break-word;
+  color: var(--green-dark-text-color);
+}
+
 @mixin paragraph-14-bold {
   font-family: var(--font-family);
   font-size: var(--font-size-14);
@@ -251,6 +260,15 @@
   line-height: var(--space-20-4);
   word-wrap: break-word;
   color: var(--link-text-color);
+}
+
+@mixin paragraph-17-regular-dark-green {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--regular);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--green-dark-text-color);
 }
 
 @mixin paragraph-17-medium-red {

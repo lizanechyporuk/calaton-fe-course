@@ -1,13 +1,26 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .contact {
   text-align: center;
+
+  @include breakpoints.for-md-screen {
+    text-align: start;
+    display: flex;
+    align-items: center;
+  }
 
   .info {
     margin-top: var(--space-20);
     @include fontsMixins.paragraph-17-regular;
     font-style: normal;
     width: var(--space-225);
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.paragraph-17-regular-dark-green;
+      margin: 0 0 0 var(--space-10);
+      width: auto;
+    }
   }
 }

@@ -28,7 +28,7 @@ function Header(): JSX.Element {
 
           <NavigationBig />
 
-          <div className={styles.accFeatures}>
+          <div className={styles.acc_features}>
             <a>
               <img
                 src="/icons/Header/favourites_empty.svg"

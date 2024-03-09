@@ -36,29 +36,6 @@ function TripFilter({ onFilterChange }: TripFilterProps): JSX.Element {
                   activeContinent === `${el.value}` ? styles.active : ""
                 }`}
               >
-                {/* {windowWidth <= 900 ? (
-                  <Button
-                    text={el.title}
-                    classBtn={`${
-                      activeContinent === `${el.value}`
-                        ? "filterBtnActive"
-                        : "filterBtn"
-                    }`}
-                    value={el.value}
-                    onClick={onHandleFilter}
-                  />
-                ) : (
-                  <Button
-                    text={el.title}
-                    classBtn={`${
-                      activeContinent === `${el.value}`
-                        ? "filterBtnActiveSmall"
-                        : "filterBtnSmall"
-                    }`}
-                    value={el.value}
-                    onClick={onHandleFilter}
-                  />
-                )} */}
                 <Button
                   text={el.title}
                   classBtn={

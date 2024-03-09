@@ -12,7 +12,7 @@ function ContinentListItem({
 }: ContinentListItemProps): JSX.Element {
   return (
     <div className={styles.continent}>
-      <div className={styles.header}>
+      <div className={styles.heading}>
         <h4 className={styles.title}>{continent}</h4>
 
         <a className={styles.more_btn}>View All</a>

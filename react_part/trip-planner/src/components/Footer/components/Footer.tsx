@@ -25,7 +25,7 @@ function Footer(): JSX.Element {
 
           <div className={styles.lists}>
             <ul className={styles.list}>
-              <li className={styles.header}>About</li>
+              <li className={styles.heading}>About</li>
               <li className={styles.item}>
                 <a>Our Story</a>
               </li>
@@ -41,7 +41,7 @@ function Footer(): JSX.Element {
             </ul>
 
             <ul className={styles.list}>
-              <li className={styles.header}>Company</li>
+              <li className={styles.heading}>Company</li>
               <li className={styles.item}>
                 <a>Our Services</a>
               </li>
@@ -54,7 +54,7 @@ function Footer(): JSX.Element {
             </ul>
 
             <ul className={styles.list}>
-              <li className={styles.header}>Resources</li>
+              <li className={styles.heading}>Resources</li>
               <li className={styles.item}>
                 <a>Blog</a>
               </li>
@@ -67,7 +67,7 @@ function Footer(): JSX.Element {
             </ul>
 
             <ul className={styles.list}>
-              <li className={styles.header}>Social</li>
+              <li className={styles.heading}>Social</li>
               {socialMedias.map((el, index) => (
                 <li key={index} className={styles.item}>
                   <a className={styles.link}>
