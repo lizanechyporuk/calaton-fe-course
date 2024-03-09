@@ -1,0 +1,29 @@
+@mixin for-sm-screen {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-md-screen {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-lg-screen {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-xl-screen {
+  @media (max-width: 1799px) {
+    @content;
+  }
+}
+
+@mixin for-xxl-screen {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}

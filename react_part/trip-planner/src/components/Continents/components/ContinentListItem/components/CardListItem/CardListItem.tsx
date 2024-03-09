@@ -1,5 +1,6 @@
 import styles from "./CardListItem.module.scss";
 import { formatDate } from "utils/continent-cards/formatDate";
+import { useWindowWidth } from "utils/window-resize/useWindowWidth";
 
 interface CardListItemProps {
   src: string;
@@ -16,14 +17,16 @@ function CardListItem({
   arrDate,
   price,
 }: CardListItemProps): JSX.Element {
+  const windowWidth = useWindowWidth();
+
   return (
-    <div className={styles.tripCard}>
+    <div className={styles.trip_card}>
       <img
         src="/icons/TripsSection/favouriteBtn_empty.svg"
         height="24"
         width="24"
         alt="Favourite button"
-        className={styles.favouriteBtn}
+        className={styles.favourite_btn}
       ></img>
 
       <p className={styles.header}>{header}</p>
@@ -31,8 +34,8 @@ function CardListItem({
       <div className={styles.date}>
         <img
           src="/icons/TripsSection/calendar.svg"
-          height="20"
-          width="20"
+          height={windowWidth <= 900 ? "18" : "20"}
+          width={windowWidth <= 900 ? "18" : "20"}
           alt="Calendar"
         ></img>
         <p>
@@ -42,13 +45,13 @@ function CardListItem({
 
       <img
         src={src}
-        height="180"
-        width="297"
+        height={windowWidth <= 900 ? "95" : "180"}
+        width={windowWidth <= 900 ? "160" : "297"}
         alt={header}
         className={styles.photo}
       ></img>
 
-      <div className={styles.priceInfo}>
+      <div className={styles.price_info}>
         <p>Total price:</p>
 
         <p className={styles.price}>{price}</p>

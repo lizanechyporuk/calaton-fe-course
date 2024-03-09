@@ -1,8 +1,12 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .header {
   background-color: var(--secondary-bg-color);
+  @include breakpoints.for-md-screen {
+    padding: 0 var(--space-6);
+  }
 
   .content {
     height: var(--space-80);
@@ -10,35 +14,18 @@
     justify-content: space-between;
     align-items: center;
 
-    .navigation {
-      .list {
-        list-style-type: none;
-        display: inline;
-        padding: 0;
-        cursor: pointer;
-
-        .item {
-          display: inline;
-
-          &:not(:last-of-type) {
-            margin-right: var(--space-30);
-          }
-
-          .link {
-            @include fontsMixins.headline6-regular;
-
-            &.active {
-              @include fontsMixins.headline6-semibold;
-            }
-          }
-        }
-      }
+    @include breakpoints.for-md-screen {
+      height: var(--space-56);
     }
 
     .accFeatures {
       display: flex;
       align-items: center;
       gap: var(--space-40);
+
+      @include breakpoints.for-md-screen {
+        gap: var(--space-24);
+      }
     }
   }
 }

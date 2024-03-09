@@ -15,7 +15,7 @@ function ContinentListItem({
       <div className={styles.header}>
         <h4 className={styles.title}>{continent}</h4>
 
-        <a className={styles.moreBtn}>View All</a>
+        <a className={styles.more_btn}>View All</a>
       </div>
 
       <CardList data={continentData} />

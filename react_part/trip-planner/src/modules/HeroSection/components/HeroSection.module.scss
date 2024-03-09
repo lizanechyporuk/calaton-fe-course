@@ -1,17 +1,34 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.heroSection {
+.hero_section {
   margin: var(--space-50) 0;
+
+  @include breakpoints.for-md-screen {
+    margin: var(--space-20) 0;
+  }
 
   .content {
     text-align: center;
 
+    // @include breakpoints.for-md-screen {
+    //   text-align: start;
+    // }
+
     .title {
       @include fontsMixins.headline2-regular;
 
-      .titleHighlight {
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-14-regular-dark;
+      }
+
+      .title_highlight {
         @include fontsMixins.paragraph-50-bold-green;
+
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.headline6-bold-green;
+        }
       }
     }
 
@@ -19,9 +36,20 @@
       @include fontsMixins.paragraph-28-regular;
       width: var(--space-1111);
       margin: 0 auto;
+      text-align: start;
 
-      .textHighlight {
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-12-regular;
+        width: auto;
+        padding: 0 var(--space-10);
+      }
+
+      .text_highlight {
         @include fontsMixins.paragraph-38-semibold;
+
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.paragraph-12-semibold;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 function filter(activeEl: string, data: any) {
-  return activeEl === "All"
-    ? data
-    : data.filter((item: any) => Object.keys(item).includes(activeEl));
+  return data.filter((item: object) =>
+    Object.values(item)[0].toLowerCase().includes(activeEl)
+  );
 }
 
 export { filter };

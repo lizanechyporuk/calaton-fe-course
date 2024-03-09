@@ -1,5 +1,6 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .continent {
   .header {
@@ -9,13 +10,26 @@
     padding: 0 var(--space-33) 0 var(--space-17);
     margin-bottom: var(--space-17);
 
-    .title {
-      @include fontsMixins.headline4-bold-green;
+    @include breakpoints.for-md-screen {
+      padding: 0 var(--space-11);
+      margin-bottom: var(--space-5);
     }
 
-    .moreBtn {
+    .title {
+      @include fontsMixins.headline4-bold-green;
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-17-semibold-green;
+      }
+    }
+
+    .more_btn {
       @include fontsMixins.paragraph-17-regular-green;
       cursor: pointer;
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-14-regular-green;
+      }
     }
   }
 }

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import styles from "./CardList.module.scss";
 import CardListItem from "../CardListItem/CardListItem";
 
@@ -8,7 +7,7 @@ interface CardListProps {
 
 function CardList({ data }: CardListProps): JSX.Element {
   return (
-    <div className={styles.tripCardList}>
+    <div className={styles.trip_card_list}>
       {data.map((item: any, index: number) => (
         <CardListItem
           key={index}

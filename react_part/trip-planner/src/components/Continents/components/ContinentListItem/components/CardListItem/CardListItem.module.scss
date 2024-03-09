@@ -1,7 +1,8 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.tripCard {
+.trip_card {
   position: relative;
   width: var(--space-339);
   height: var(--space-409);
@@ -9,35 +10,70 @@
   box-shadow: 0 0 var(--space-15) var(--green-darkest-bg-color);
   padding: var(--space-30) var(--space-20);
 
-  .favouriteBtn {
+  @include breakpoints.for-md-screen {
+    width: var(--space-180);
+    height: var(--space-246);
+    border-radius: var(--space-10);
+    padding: var(--space-10);
+  }
+
+  .favourite_btn {
     position: absolute;
     top: var(--space-30);
     right: var(--space-20);
+
+    @include breakpoints.for-md-screen {
+      top: var(--space-10);
+      right: var(--space-10);
+    }
   }
 
   .header {
     @include fontsMixins.headline5-semibold;
     margin-bottom: var(--space-8);
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.paragraph-17-semibold-dark;
+      margin-bottom: var(--space-2);
+    }
   }
 
   .date {
     @include fontsMixins.paragraph-14-regular-light;
     display: flex;
     gap: var(--space-4);
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.paragraph-12-regular-gray-light;
+    }
   }
 
   .photo {
     margin: var(--space-20) 0;
+
+    @include breakpoints.for-md-screen {
+      margin: var(--space-8) 0;
+    }
   }
 
-  .priceInfo {
+  .price_info {
     @include fontsMixins.paragraph-16-regular-light;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.paragraph-14-regular-light;
+      flex-direction: row;
+      gap: var(--space-35);
+    }
+
     .price {
       @include fontsMixins.headline5-semibold;
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-17-semibold-dark;
+      }
     }
   }
 
@@ -47,5 +83,11 @@
     bottom: var(--space-30);
     right: var(--space-20);
     cursor: pointer;
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.paragraph-12-regular-green;
+      bottom: var(--space-10);
+      right: var(--space-10);
+    }
   }
 }

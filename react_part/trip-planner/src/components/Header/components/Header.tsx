@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import Container from "components/Container";
+import NavigationBig from "./NavigationBig/NavigationBig";
+import NavigationSmall from "./NavigationSmall/NavigationSmall";
 import styles from "./Header.module.scss";
 
 function Header(): JSX.Element {
@@ -7,46 +8,25 @@ function Header(): JSX.Element {
     <header className={styles.header}>
       <Container>
         <div className={styles.content}>
-          <img
-            src="/icons/shared/logo.svg"
-            height="60"
-            width="40"
-            alt="Logo"
-          ></img>
+          <NavigationSmall />
 
-          <nav className={styles.navigation}>
-            <ul className={styles.list}>
-              <li className={styles.item}>
-                <Link to="/" className={`${styles.link} ${styles.active}`}>
-                  Home
-                </Link>
-              </li>
+          <picture>
+            <source
+              media="(max-width: 899px)"
+              srcSet="/icons/shared/logo_small.svg"
+              width="40"
+              height="31"
+            />
+            <source
+              media="(min-width: 900px)"
+              srcSet="/icons/shared/logo.svg"
+              width="40"
+              height="60"
+            />
+            <img src="/icons/shared/logo.svg" alt="Logo"></img>
+          </picture>
 
-              <li className={styles.item}>
-                <Link to="/" className={styles.link}>
-                  About
-                </Link>
-              </li>
-
-              <li className={styles.item}>
-                <Link to="/" className={styles.link}>
-                  Contact Us
-                </Link>
-              </li>
-
-              <li className={styles.item}>
-                <Link to="/" className={styles.link}>
-                  Blog
-                </Link>
-              </li>
-
-              <li className={styles.item}>
-                <Link to="/" className={styles.link}>
-                  Found a bug? Let us know
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <NavigationBig />
 
           <div className={styles.accFeatures}>
             <a>
@@ -59,12 +39,21 @@ function Header(): JSX.Element {
             </a>
 
             <a>
-              <img
-                src="/icons/Header/account.svg"
-                height="32"
-                width="32"
-                alt="Account"
-              ></img>
+              <picture>
+                <source
+                  media="(max-width: 899px)"
+                  srcSet="/icons/Header/account_small.svg"
+                  width="24"
+                  height="24"
+                />
+                <source
+                  media="(min-width: 900px)"
+                  srcSet="/icons/Header/account.svg"
+                  width="32"
+                  height="32"
+                />
+                <img src="/icons/Header/account.svg" alt="Account"></img>
+              </picture>
             </a>
           </div>
         </div>

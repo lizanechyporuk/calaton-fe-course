@@ -9,10 +9,34 @@
   cursor: pointer;
 }
 
+@mixin filterBtnSmall {
+  @include fontsMixins.paragraph-14-regular;
+  padding: var(--space-2-5) var(--space-4-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 @mixin filterBtnActive {
   @include fontsMixins.headline5-semibold-green;
   padding: 0 var(--space-12) var(--space-14);
   background: none;
   border: none;
   cursor: pointer;
+}
+
+@mixin filterBtnActiveSmall {
+  @include fontsMixins.paragraph-17-semibold-green;
+  padding: var(--space-2-5) var(--space-4-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin logoutBtn {
+  @include fontsMixins.paragraph-17-medium-red;
+  padding: var(--space-9) var(--space-41);
+  background-color: var(--darker-light-bg-color);
+  border: none;
+  border-radius: var(--space-7);
 }

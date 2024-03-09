@@ -1,9 +1,14 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.tripFilter {
+.trip_filter {
   text-align: center;
   margin-bottom: var(--space-50);
+
+  @include breakpoints.for-md-screen {
+    margin-bottom: var(--space-31);
+  }
 
   .content {
     display: inline-block;
@@ -19,12 +24,24 @@
         position: relative;
         z-index: 1;
 
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.paragraph-14-regular;
+        }
+
         &:not(:last-of-type) {
           margin-right: var(--space-32);
+
+          @include breakpoints.for-md-screen {
+            margin-right: var(--space-11);
+          }
         }
 
         &.active {
           border-bottom: var(--space-3) solid var(--primary-bg-color);
+
+          @include breakpoints.for-md-screen {
+            border-bottom: var(--space-2) solid var(--primary-bg-color);
+          }
         }
       }
     }
@@ -36,6 +53,10 @@
       position: relative;
       top: var(--space-minus-3);
       z-index: 0;
+
+      @include breakpoints.for-sm-screen {
+        display: none;
+      }
     }
   }
 }

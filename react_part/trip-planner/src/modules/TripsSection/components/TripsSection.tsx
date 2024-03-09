@@ -5,7 +5,7 @@ import TripFilter from "components/TripsFilter";
 import ContinentList from "components/Continents";
 
 function TripsSection(): JSX.Element {
-  const [activeContinent, setActiveContinent] = useState("All");
+  const [activeContinent, setActiveContinent] = useState("");
 
   const handleFilterChange = (continent: string) => {
     setActiveContinent(continent);

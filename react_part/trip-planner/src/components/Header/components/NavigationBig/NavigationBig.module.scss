@@ -1,0 +1,32 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.navigation {
+  .list {
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+    cursor: pointer;
+
+    .item {
+      display: inline;
+
+      &:not(:last-of-type) {
+        margin-right: var(--space-30);
+      }
+
+      .link {
+        @include fontsMixins.headline6-regular;
+
+        &.active {
+          @include fontsMixins.headline6-semibold;
+        }
+      }
+    }
+  }
+
+  @include breakpoints.for-md-screen {
+    display: none;
+  }
+}
