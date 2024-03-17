@@ -1,9 +1,12 @@
 import styles from "./CardListItem.module.scss";
 import { formatDate } from "utils/continent-cards/formatDate";
 import { useWindowWidth } from "utils/window-resize/useWindowWidth";
+import { Link } from "react-router-dom";
 
 interface CardListItemProps {
   src: string;
+  continentIndex: number;
+  tripIndex: number;
   header: string;
   depDate: string;
   arrDate: string;
@@ -12,6 +15,8 @@ interface CardListItemProps {
 
 function CardListItem({
   src,
+  continentIndex,
+  tripIndex,
   header,
   depDate,
   arrDate,
@@ -20,13 +25,13 @@ function CardListItem({
   const windowWidth = useWindowWidth();
 
   return (
-    <div className={styles.trip_card}>
+    <div className={styles.trip__card}>
       <img
         src="/icons/TripsSection/favouriteBtn_empty.svg"
         height="24"
         width="24"
         alt="Favourite button"
-        className={styles.favourite_btn}
+        className={styles.favourite__btn}
       ></img>
 
       <p className={styles.header}>{header}</p>
@@ -51,13 +56,18 @@ function CardListItem({
         className={styles.photo}
       ></img>
 
-      <div className={styles.price_info}>
+      <div className={styles.price__info}>
         <p>Total price:</p>
 
         <p className={styles.price}>{price}</p>
       </div>
 
-      <a className={styles.link}>View Details</a>
+      <Link
+        to={`/trip-details/${continentIndex}/${tripIndex}`}
+        className={styles.link}
+      >
+        View Details
+      </Link>
     </div>
   );
 }

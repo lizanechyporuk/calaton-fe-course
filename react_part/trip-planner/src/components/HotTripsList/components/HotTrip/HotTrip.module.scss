@@ -2,39 +2,39 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.hot_trip {
+.hot__trip {
   .wrapper {
     position: relative;
 
     .img {
-      border-radius: var(--space-10);
+      border-radius: var(--space-4);
 
       @include breakpoints.for-md-screen {
-        border-radius: var(--space-4);
+        border-radius: var(--space-10);
       }
     }
 
     .caption {
-      @include fontsMixins.headline4-bold;
+      @include fontsMixins.paragraph-14-bold;
       position: absolute;
-      bottom: var(--space-13);
+      bottom: var(--space-8);
+      padding: var(--space-14) 0;
       background-color: var(--white-bg-color-op-90);
       width: 100%;
-      padding: var(--space-20) 0;
 
       @include breakpoints.for-md-screen {
-        @include fontsMixins.paragraph-14-bold;
-        bottom: var(--space-8);
-        padding: var(--space-14) 0;
+        @include fontsMixins.headline4-bold;
+        bottom: var(--space-13);
+        padding: var(--space-20) 0;
       }
 
       .text {
-        @include fontsMixins.headline6-regular;
-        margin-top: var(--space-10);
+        @include fontsMixins.paragraph-10-regular;
+        margin-top: 0;
 
         @include breakpoints.for-md-screen {
-          @include fontsMixins.paragraph-10-regular;
-          margin-top: 0;
+          @include fontsMixins.headline6-regular;
+          margin-top: var(--space-10);
         }
       }
     }

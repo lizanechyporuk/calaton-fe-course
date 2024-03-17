@@ -2,10 +2,10 @@
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .container {
-  padding: 0 var(--space-30);
+  padding: 0 var(--space-10);
   margin: 0 auto;
 
   @include breakpoints.for-md-screen {
-    padding: 0 var(--space-10);
+    padding: 0 var(--space-30);
   }
 }

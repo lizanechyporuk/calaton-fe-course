@@ -21,4 +21,21 @@ const fetchData = async () => {
   }
 };
 
-export { app, fetchData };
+const fetchCurCity = async (continentIndex: number, tripIndex: number) => {
+  const cityRef = ref(database, `cities/${continentIndex}/trips/${tripIndex}`);
+
+  try {
+    const snapshot = await get(cityRef);
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
+};
+
+export { app, fetchData, fetchCurCity };

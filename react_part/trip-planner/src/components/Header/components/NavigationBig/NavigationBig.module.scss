@@ -3,6 +3,12 @@
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .navigation {
+  display: none;
+
+  @include breakpoints.for-md-screen {
+    display: block;
+  }
+
   .list {
     list-style-type: none;
     display: inline;
@@ -24,9 +30,5 @@
         }
       }
     }
-  }
-
-  @include breakpoints.for-md-screen {
-    display: none;
   }
 }

@@ -4,7 +4,7 @@ import { contacts } from "constants/footer-contacts";
 
 function FooterContacts(): JSX.Element {
   return (
-    <div className={styles.footer_contacts}>
+    <div className={styles.footer__contacts}>
       {contacts.map((contact, index) => (
         <FooterContact
           key={index}

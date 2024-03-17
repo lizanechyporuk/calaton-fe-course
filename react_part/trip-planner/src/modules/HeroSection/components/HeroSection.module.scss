@@ -2,49 +2,50 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.hero_section {
-  margin: var(--space-50) 0;
+.hero__section {
+  margin: var(--space-20) 0;
 
   @include breakpoints.for-md-screen {
-    margin: var(--space-20) 0;
+    margin: var(--space-50) 0;
   }
 
   .content {
     text-align: center;
 
     .title {
-      @include fontsMixins.headline2-regular;
+      @include fontsMixins.paragraph-14-regular-dark;
 
       @include breakpoints.for-md-screen {
-        @include fontsMixins.paragraph-14-regular-dark;
+        @include fontsMixins.headline2-regular;
       }
 
-      .title_highlight {
-        @include fontsMixins.paragraph-50-bold-green;
+      .title__highlight {
+        @include fontsMixins.headline6-bold-green;
 
         @include breakpoints.for-md-screen {
-          @include fontsMixins.headline6-bold-green;
+          @include fontsMixins.paragraph-50-bold-green;
         }
       }
     }
 
     .text {
-      @include fontsMixins.paragraph-28-regular;
-      width: var(--space-1111);
+      @include fontsMixins.paragraph-12-regular;
+      max-width: var(--space-1111);
       margin: 0 auto;
       text-align: start;
+      width: auto;
+      padding: 0 var(--space-10);
 
       @include breakpoints.for-md-screen {
-        @include fontsMixins.paragraph-12-regular;
-        width: auto;
-        padding: 0 var(--space-10);
+        @include fontsMixins.paragraph-28-regular;
+        padding: 0;
       }
 
-      .text_highlight {
-        @include fontsMixins.paragraph-38-semibold;
+      .text__highlight {
+        @include fontsMixins.paragraph-12-semibold;
 
         @include breakpoints.for-md-screen {
-          @include fontsMixins.paragraph-12-semibold;
+          @include fontsMixins.paragraph-38-semibold;
         }
       }
     }

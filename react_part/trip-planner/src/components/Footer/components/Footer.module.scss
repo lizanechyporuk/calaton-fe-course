@@ -4,42 +4,48 @@
 
 .footer {
   background-color: var(--secondary-bg-color);
-  padding: var(--space-50) 0 var(--space-82);
+  padding: var(--space-25) 0;
 
   @include breakpoints.for-md-screen {
-    padding: var(--space-25) 0;
+    padding: var(--space-50) 0 var(--space-82);
   }
 
   .content {
-    padding: 0 var(--space-90);
+    margin: 0 auto;
+    max-width: var(--space-320);
     display: flex;
-    flex-direction: column;
-    gap: var(--space-50);
+    gap: var(--space-30);
+    flex-direction: column-reverse;
 
     @include breakpoints.for-md-screen {
-      padding: 0 var(--space-25);
-      gap: var(--space-30);
-      flex-direction: column-reverse;
+      flex-direction: column;
+      gap: var(--space-50);
+      align-items: center;
+      max-width: var(--space-1200);
     }
 
     .divider {
-      background-color: var(--white-bg-color);
-      border: none;
-      height: var(--space-1);
+      display: none;
 
       @include breakpoints.for-md-screen {
-        display: none;
+        display: block;
+        background-color: var(--white-bg-color);
+        border: none;
+        height: var(--space-1);
+        width: 100%;
       }
     }
 
     .lists {
       display: flex;
-      justify-content: center;
-      gap: var(--space-140);
+      width: 100%;
+      gap: var(--space-14);
+      flex-direction: column;
 
       @include breakpoints.for-md-screen {
-        gap: var(--space-14);
-        flex-direction: column;
+        flex-direction: row;
+        max-width: var(--space-844);
+        justify-content: space-between;
       }
 
       .list {
@@ -47,33 +53,43 @@
         list-style: none;
 
         .heading {
-          @include fontsMixins.headline6-semibold;
-          margin-bottom: var(--space-20);
+          @include fontsMixins.paragraph-14-semibold-dark-green;
+          margin: 0;
+          padding: var(--space-4) var(--space-10) var(--space-6);
+          border-bottom: var(--space-1) solid var(--green-dark-text-color);
 
           @include breakpoints.for-md-screen {
-            @include fontsMixins.paragraph-14-semibold-dark-green;
-            margin: 0;
-            padding: var(--space-4) var(--space-10) var(--space-6);
-            border-bottom: var(--space-1) solid var(--green-dark-text-color);
+            @include fontsMixins.headline6-semibold;
+            margin: 0 0 var(--space-20) 0;
+            padding: 0;
+            border-bottom: 0;
           }
         }
 
         .item {
           cursor: pointer;
+          display: none;
+
           @include breakpoints.for-md-screen {
-            display: none;
+            display: block;
           }
 
           &:not(:last-of-type) {
-            margin-bottom: var(--space-4);
+            @include breakpoints.for-md-screen {
+              margin-bottom: var(--space-4);
+            }
           }
 
           .link {
-            display: flex;
-            align-content: center;
+            @include breakpoints.for-md-screen {
+              display: flex;
+              align-content: center;
+            }
 
             .icon {
-              margin-right: var(--space-10);
+              @include breakpoints.for-md-screen {
+                margin-right: var(--space-10);
+              }
             }
           }
         }

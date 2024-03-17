@@ -5,19 +5,15 @@ button {
     @include btnsMixins.filterBtn;
   }
 
-  &.filterBtnSmall {
-    @include btnsMixins.filterBtnSmall;
-  }
-
   &.filterBtnActive {
     @include btnsMixins.filterBtnActive;
   }
 
-  &.filterBtnActiveSmall {
-    @include btnsMixins.filterBtnActiveSmall;
-  }
-
   &.logoutBtn {
     @include btnsMixins.logoutBtn;
+  }
+
+  &.bigBtn {
+    @include btnsMixins.bigBtn;
   }
 }

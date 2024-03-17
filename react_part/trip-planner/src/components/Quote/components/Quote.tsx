@@ -2,7 +2,7 @@ import styles from "./Quote.module.scss";
 
 function Quote(): JSX.Element {
   return (
-    <div className={styles.quote_wrapper}>
+    <div className={styles.quote__wrapper}>
       <blockquote>
         <div className={styles.content}>
           <img
@@ -15,18 +15,18 @@ function Quote(): JSX.Element {
 
           <p className={styles.text}>
             Embark on
-            <span className={styles.textHighlight}> extraordinary </span>
+            <span className={styles.text__highlight}> extraordinary </span>
             journeys with us. Our
-            <span className={styles.textHighlight}> travel experiences </span>
+            <span className={styles.text__highlight}> travel experiences </span>
             are meticulously crafted, ensuring seamless
-            <span className={styles.quoteTextHighlight}> adventures </span>
+            <span className={styles.text__highlight}> adventures </span>
             tailored just for you. Discover
-            <span className={styles.quoteTextHighlight}> unparalleled </span>
+            <span className={styles.text__highlight}> unparalleled </span>
             service, <span> attention </span> to detail, and a commitment to
             making every moment
-            <span className={styles.quoteTextHighlight}> unforgettable </span>.
+            <span className={styles.text__highlight}> unforgettable </span>.
             Choose us for a travel experience beyond the
-            <span className={styles.quoteTextHighlight}> ordinary </span>
+            <span className={styles.text__highlight}> ordinary </span>
           </p>
 
           <img

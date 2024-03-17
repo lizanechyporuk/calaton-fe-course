@@ -1,0 +1,121 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.trip__card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--white-bg-color);
+  border-radius: var(--space-10);
+  box-shadow: 0 0 var(--space-20) 0 var(--primary-bg-color-op-15);
+  padding: var(--space-8) 0 var(--space-13) var(--space-8);
+  width: 100%;
+
+  @include breakpoints.for-xsm-screen {
+    width: var(--space-193);
+    top: var(--space-33);
+  }
+
+  @include breakpoints.for-md-screen {
+    width: fit-content;
+    top: var(--space-45);
+    border-radius: var(--space-25);
+    padding: var(--space-30) 0 var(--space-44) var(--space-60);
+    background: url("../../../../public/images/GallerySection/earth-big.png")
+      var(--white-bg-color) right no-repeat;
+  }
+
+  @include breakpoints.for-lg-screen {
+    width: var(--space-700);
+  }
+
+  .heading {
+    @include fontsMixins.paragraph-17-bold-dark;
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.headline3-bold;
+      margin-bottom: var(--space-30);
+    }
+
+    .heading__small {
+      @include fontsMixins.paragraph-10-regular-gray-light;
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.headline6-regular-gray-light;
+      }
+    }
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+
+    @include breakpoints.for-md-screen {
+      gap: var(--space-36);
+    }
+
+    .date__info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-32);
+
+      @include breakpoints.for-md-screen {
+        gap: var(--space-116);
+      }
+
+      .time {
+        @include fontsMixins.paragraph-10-regular-dark;
+
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.headline6-regular;
+        }
+      }
+
+      .date {
+        @include fontsMixins.paragraph-10-regular-gray-light;
+
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.paragraph-17-regular-gray-light;
+        }
+      }
+    }
+
+    .divider {
+      @include breakpoints.for-md-screen {
+        width: var(--space-24);
+        height: var(--space-181);
+      }
+    }
+
+    .station__info {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: var(--space-27);
+      background: url("../../../../public/images/GallerySection/earth-small.png")
+        no-repeat;
+
+      @include breakpoints.for-md-screen {
+        gap: var(--space-116);
+        background: none;
+      }
+
+      .location {
+        @include fontsMixins.paragraph-12-bold-dark;
+
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.headline6-regular;
+        }
+      }
+
+      .station {
+        @include fontsMixins.paragraph-10-regular-gray-light;
+
+        @include breakpoints.for-md-screen {
+          @include fontsMixins.paragraph-17-regular-gray-light;
+        }
+      }
+    }
+  }
+}

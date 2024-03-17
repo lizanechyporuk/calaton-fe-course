@@ -1,7 +1,7 @@
 import styles from "./ContinentList.module.scss";
 import ContinentListItem from "../ContinentListItem/ContinentListItem";
 import { fetchData } from "utils/firebase/fetch";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { filter } from "utils/continent-cards/filter";
 
 interface ContinentListProps {
@@ -21,17 +21,16 @@ function ContinentList({ activeContinent }: ContinentListProps): JSX.Element {
     fetchContinentsData();
   }, []);
 
-  const filteredData = useMemo(() => {
-    return filter(activeContinent, continentData);
-  }, [continentData, activeContinent]);
+  const filteredData = filter(activeContinent, continentData);
 
   return (
-    <div className={styles.continent_list}>
+    <div className={styles.continent__list}>
       {filteredData.map((el: any, index: number) => {
         return (
           <ContinentListItem
             key={index}
             continent={el.continent}
+            continentIndex={index}
             continentData={el.trips}
           />
         );

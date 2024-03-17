@@ -12,7 +12,7 @@ function TripsSection(): JSX.Element {
   };
 
   return (
-    <section>
+    <section className={styles.trips__section}>
       <Container>
         <TripFilter onFilterChange={handleFilterChange} />
         <ContinentList activeContinent={activeContinent} />

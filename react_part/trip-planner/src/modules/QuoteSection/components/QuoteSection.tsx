@@ -4,7 +4,7 @@ import Quote from "components/Quote";
 
 function QuoteSection(): JSX.Element {
   return (
-    <section className={styles.quote_section}>
+    <section className={styles.quote__section}>
       <Container>
         <Quote />
       </Container>

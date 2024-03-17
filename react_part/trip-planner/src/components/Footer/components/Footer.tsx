@@ -1,20 +1,9 @@
 import styles from "./Footer.module.scss";
 import Container from "components/Container";
 import FooterContacts from "components/FooterContactList";
+import { lists } from "constants/footer-lists";
 
 function Footer(): JSX.Element {
-  const socialMedias = [
-    {
-      text: "Instagram",
-    },
-    {
-      text: "Facebook",
-    },
-    {
-      text: "Twitch",
-    },
-  ];
-
   return (
     <footer className={styles.footer}>
       <Container>
@@ -24,65 +13,34 @@ function Footer(): JSX.Element {
           <hr className={styles.divider}></hr>
 
           <div className={styles.lists}>
-            <ul className={styles.list}>
-              <li className={styles.heading}>About</li>
-              <li className={styles.item}>
-                <a>Our Story</a>
-              </li>
-              <li className={styles.item}>
-                <a>Awards</a>
-              </li>
-              <li className={styles.item}>
-                <a>Our Team</a>
-              </li>
-              <li className={styles.item}>
-                <a>Career</a>
-              </li>
-            </ul>
-
-            <ul className={styles.list}>
-              <li className={styles.heading}>Company</li>
-              <li className={styles.item}>
-                <a>Our Services</a>
-              </li>
-              <li className={styles.item}>
-                <a>Contact</a>
-              </li>
-              <li className={styles.item}>
-                <a>Clients</a>
-              </li>
-            </ul>
-
-            <ul className={styles.list}>
-              <li className={styles.heading}>Resources</li>
-              <li className={styles.item}>
-                <a>Blog</a>
-              </li>
-              <li className={styles.item}>
-                <a>Newsletter</a>
-              </li>
-              <li className={styles.item}>
-                <a>Privacy Policy</a>
-              </li>
-            </ul>
-
-            <ul className={styles.list}>
-              <li className={styles.heading}>Social</li>
-              {socialMedias.map((el, index) => (
-                <li key={index} className={styles.item}>
-                  <a className={styles.link}>
-                    <img
-                      src={`/icons/Footer/social${el.text}.svg`}
-                      height="20"
-                      width="20"
-                      className={styles.icon}
-                      alt={el.text}
-                    ></img>
-                    {el.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {lists.map((el, index) => (
+              <ul className={styles.list} key={index}>
+                <li className={styles.heading}>{el.heading}</li>
+                {el.items.map((item, index) => (
+                  <li className={styles.item} key={index}>
+                    <a
+                      className={
+                        el.heading === "Social" ? `${styles.link}` : ""
+                      }
+                    >
+                      {el.heading === "Social" && (
+                        <>
+                          <img
+                            src={`/icons/Footer/social${item}.svg`}
+                            height="20"
+                            width="20"
+                            className={styles.icon}
+                            alt={item}
+                          />
+                          {item}
+                        </>
+                      )}
+                      {el.heading !== "Social" && item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
           </div>
         </div>
       </Container>

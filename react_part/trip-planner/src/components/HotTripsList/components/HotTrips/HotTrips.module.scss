@@ -1,20 +1,22 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.hot_trips {
+.hot__trips {
   display: flex;
   justify-content: center;
-  margin: var(--space-50) 0;
+  margin: var(--space-15) 0 var(--space-20);
   overflow-x: auto;
+
+  @include breakpoints.for-md-screen {
+    margin: var(--space-50) 0;
+  }
 
   .content {
     display: flex;
-    gap: var(--space-30);
     overflow-x: auto;
-  }
-
-  @include breakpoints.for-md-screen {
-    margin: var(--space-15) 0 var(--space-20);
     gap: var(--space-4);
+    @include breakpoints.for-md-screen {
+      gap: var(--space-30);
+    }
   }
 }

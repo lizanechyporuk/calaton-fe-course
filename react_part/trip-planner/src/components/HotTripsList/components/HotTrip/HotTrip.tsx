@@ -11,7 +11,7 @@ function HotTrip({ src, captionTitle, captionText }: HotTipProps): JSX.Element {
   const windowWidth = useWindowWidth();
 
   return (
-    <div className={styles.hot_trip}>
+    <div className={styles.hot__trip}>
       <figure className={styles.wrapper}>
         <img
           src={src}

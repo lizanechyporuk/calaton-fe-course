@@ -1,29 +1,41 @@
+// @mixin for-xsm-screen {
+//   @media (max-width: 280px) {
+//     @content;
+//   }
+// }
+
+@mixin for-xsm-screen {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
 @mixin for-sm-screen {
-  @media (max-width: 599px) {
+  @media (min-width: 600px) {
     @content;
   }
 }
 
 @mixin for-md-screen {
-  @media (max-width: 900px) {
+  @media (min-width: 900px) {
     @content;
   }
 }
 
 @mixin for-lg-screen {
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     @content;
   }
 }
 
 @mixin for-xl-screen {
-  @media (max-width: 1799px) {
-    @content;
-  }
-}
-
-@mixin for-xxl-screen {
   @media (min-width: 1800px) {
     @content;
   }
 }
+
+// @mixin for-xxl-screen {
+//   @media (min-width: 1800px) {
+//     @content;
+//   }
+// }

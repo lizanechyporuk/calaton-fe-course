@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./TripFilter.module.scss";
 import { filterBtnTitles } from "constants/filter-btns";
 import Button from "ui/Button";
-import { useWindowWidth } from "utils/window-resize/useWindowWidth";
 
 interface TripFilterProps {
   onFilterChange: (continent: string) => void;
@@ -22,10 +21,8 @@ function TripFilter({ onFilterChange }: TripFilterProps): JSX.Element {
     handleFilterChange((e.target as HTMLButtonElement)?.value);
   };
 
-  const windowWidth = useWindowWidth();
-
   return (
-    <div className={styles.trip_filter}>
+    <div className={styles.trip__filter}>
       <div className={styles.content}>
         <ul className={styles.items}>
           {filterBtnTitles.map((el, index) => {
@@ -39,11 +36,7 @@ function TripFilter({ onFilterChange }: TripFilterProps): JSX.Element {
                 <Button
                   text={el.title}
                   classBtn={
-                    windowWidth <= 900
-                      ? activeContinent === `${el.value}`
-                        ? "filterBtnActiveSmall"
-                        : "filterBtnSmall"
-                      : activeContinent === `${el.value}`
+                    activeContinent === `${el.value}`
                       ? "filterBtnActive"
                       : "filterBtn"
                   }

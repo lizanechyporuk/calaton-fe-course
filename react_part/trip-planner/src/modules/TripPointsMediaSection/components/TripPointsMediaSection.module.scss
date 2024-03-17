@@ -1,0 +1,105 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.trip__medias {
+  margin: var(--space-30) 0 var(--space-20);
+
+  @include breakpoints.for-md-screen {
+    margin: 0 0 var(--space-50);
+  }
+
+  .content {
+    display: flex;
+    position: relative;
+    gap: var(--space-68);
+    height: var(--space-495);
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--space-360);
+    margin: 0 auto;
+    background-image: url("../../../../public/images/TripPointsSection/pointsMap-small.png");
+    background-repeat: no-repeat;
+    background-position: right;
+
+    @include breakpoints.for-md-screen {
+      background-image: url("../../../../public/images/TripPointsSection/pointsMap-big.png");
+      max-width: var(--space-1267);
+      flex-direction: row;
+      justify-content: space-between;
+      height: var(--space-411);
+      background-position: center;
+    }
+
+    .header {
+      @include fontsMixins.headline6-semibold-black;
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-32-medium-dark;
+      }
+    }
+
+    .subheader {
+      @include fontsMixins.paragraph-14-regular-black;
+      margin-bottom: var(--space-10);
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-14-regular;
+      }
+    }
+
+    .media__big {
+      text-align: center;
+      width: fit-content;
+
+      .big__img {
+        border: var(--space-3) solid var(--primary-bg-color);
+        border-radius: 50%;
+
+        @include breakpoints.for-md-screen {
+          height: var(--space-160);
+          width: var(--space-160);
+        }
+      }
+    }
+
+    .media__small1,
+    .media__small2 {
+      width: fit-content;
+      text-align: center;
+      position: absolute;
+
+      @include breakpoints.for-md-screen {
+        position: static;
+      }
+
+      .small__img {
+        border: var(--space-3) solid var(--primary-bg-color);
+        border-radius: 50%;
+
+        @include breakpoints.for-md-screen {
+          height: var(--space-120);
+          width: var(--space-120);
+        }
+      }
+    }
+
+    .media__small1 {
+      top: var(--space-113);
+      right: var(--space-15);
+
+      @include breakpoints.for-md-screen {
+        margin-top: var(--space-140);
+      }
+    }
+
+    .media__small2 {
+      bottom: var(--space-68);
+      right: var(--space-34);
+
+      @include breakpoints.for-md-screen {
+        margin-top: var(--space-119);
+      }
+    }
+  }
+}

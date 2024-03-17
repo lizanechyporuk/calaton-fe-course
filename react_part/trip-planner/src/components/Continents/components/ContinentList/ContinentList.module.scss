@@ -1,12 +1,12 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.continent_list {
+.continent__list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-48);
+  gap: var(--space-11);
 
   @include breakpoints.for-md-screen {
-    gap: var(--space-11);
+    gap: var(--space-48);
   }
 }

@@ -1,0 +1,89 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.trip__details {
+  @include fontsMixins.paragraph-14-regular-black;
+  text-align: start;
+  padding: 0 var(--space-20);
+  max-width: var(--space-876);
+  margin: 0 auto;
+
+  @include breakpoints.for-md-screen {
+    @include fontsMixins.paragraph-17-regular-dark;
+    padding: 0;
+  }
+
+  .heading {
+    @include fontsMixins.paragraph-17-semibold-black;
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.headline2-bold-dark;
+    }
+  }
+
+  .points__wrapper {
+    display: flex;
+    position: relative;
+    margin: var(--space-20) 0;
+    align-items: center;
+
+    @include breakpoints.for-md-screen {
+      margin: var(--space-28) 0;
+    }
+
+    .points {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-20);
+      list-style: none;
+      padding-left: var(--space-22);
+
+      @include breakpoints.for-md-screen {
+        padding-left: var(--space-60);
+        gap: var(--space-48);
+      }
+
+      .point {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: var(--space-minus-21);
+          top: 50%;
+          width: var(--space-6);
+          height: var(--space-6);
+          border-radius: 50%;
+          background-color: var(--gray-light-darker-text-color);
+          transform: translateY(-50%);
+
+          @include breakpoints.for-md-screen {
+            left: var(--space-minus-35);
+          }
+        }
+
+        .line {
+          position: absolute;
+          left: var(--space-minus-19);
+          top: 50%;
+          width: var(--space-1);
+          background-color: var(--gray-light-darker-text-color);
+          z-index: -1;
+
+          @include breakpoints.for-md-screen {
+            left: var(--space-minus-33);
+          }
+        }
+
+        .point__header {
+          @include fontsMixins.paragraph-17-medium-black;
+
+          @include breakpoints.for-md-screen {
+            @include fontsMixins.headline6-bold-black;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,11 +3,13 @@ import CardList from "./components/CardList/CardList";
 
 interface ContinentListItemProps {
   continent: string;
+  continentIndex: number;
   continentData: any[];
 }
 
 function ContinentListItem({
   continent,
+  continentIndex,
   continentData,
 }: ContinentListItemProps): JSX.Element {
   return (
@@ -15,10 +17,10 @@ function ContinentListItem({
       <div className={styles.heading}>
         <h4 className={styles.title}>{continent}</h4>
 
-        <a className={styles.more_btn}>View All</a>
+        <a className={styles.more__btn}>View All</a>
       </div>
 
-      <CardList data={continentData} />
+      <CardList data={continentData} continentIndex={continentIndex} />
     </div>
   );
 }

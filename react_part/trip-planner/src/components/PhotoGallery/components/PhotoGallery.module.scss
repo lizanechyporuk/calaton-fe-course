@@ -1,0 +1,55 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.gallery {
+  .big__photo {
+    border-radius: var(--space-7);
+    max-height: var(--space-550);
+    margin-top: 50%;
+    width: 100%;
+    max-width: var(--space-331);
+    transform: scaleX(-1);
+    z-index: 1;
+
+    @include breakpoints.for-xsm-screen {
+      margin: 0;
+    }
+
+    @include breakpoints.for-md-screen {
+      max-width: var(--space-880);
+      height: var(--space-550);
+    }
+
+    @include breakpoints.for-lg-screen {
+      transform: scaleX(1);
+    }
+  }
+
+  .small__photos {
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--space-359);
+    margin: var(--space-minus-25) 0 0 auto;
+    overflow-x: auto;
+
+    @include breakpoints.for-md-screen {
+      max-width: var(--space-1340);
+      margin: var(--space-minus-25) var(--space-20) 0 var(--space-11);
+      gap: var(--space-20);
+    }
+
+    .small__photo {
+      box-sizing: border-box;
+      cursor: pointer;
+      border-radius: var(--space-7);
+      box-shadow: 0 0 var(--space-20) 0 var(--green-dark-bg-color-op-10);
+      z-index: 2;
+
+      @include breakpoints.for-md-screen {
+        border-radius: var(--space-12);
+        width: var(--space-320);
+        height: var(--space-200);
+      }
+    }
+  }
+}

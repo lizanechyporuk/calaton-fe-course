@@ -3,24 +3,25 @@
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
 .contact {
-  text-align: center;
+  text-align: start;
+  display: flex;
+  align-items: center;
 
   @include breakpoints.for-md-screen {
-    text-align: start;
-    display: flex;
-    align-items: center;
+    text-align: center;
+    display: block;
   }
 
   .info {
-    margin-top: var(--space-20);
-    @include fontsMixins.paragraph-17-regular;
+    @include fontsMixins.paragraph-17-regular-dark-green;
+    margin: 0 0 0 var(--space-10);
+    width: auto;
     font-style: normal;
-    width: var(--space-225);
 
     @include breakpoints.for-md-screen {
-      @include fontsMixins.paragraph-17-regular-dark-green;
-      margin: 0 0 0 var(--space-10);
-      width: auto;
+      margin: var(--space-20) 0 0;
+      @include fontsMixins.paragraph-17-regular;
+      width: var(--space-225);
     }
   }
 }

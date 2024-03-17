@@ -1,42 +1,60 @@
 @use "../variables.scss";
 @use "./fonts-mixins.scss" as fontsMixins;
+@use "./breakpoints-mixins" as breakpoints;
 
 @mixin filterBtn {
-  @include fontsMixins.paragraph-20-light;
-  padding: 0 var(--space-12) var(--space-14);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-@mixin filterBtnSmall {
   @include fontsMixins.paragraph-14-regular;
   padding: var(--space-2-5) var(--space-4-5);
   background: none;
   border: none;
   cursor: pointer;
+
+  @include breakpoints.for-md-screen {
+    @include fontsMixins.paragraph-20-light;
+    padding: 0 var(--space-12) var(--space-14);
+  }
 }
 
 @mixin filterBtnActive {
-  @include fontsMixins.headline5-semibold-green;
-  padding: 0 var(--space-12) var(--space-14);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-@mixin filterBtnActiveSmall {
   @include fontsMixins.paragraph-17-semibold-green;
   padding: var(--space-2-5) var(--space-4-5);
   background: none;
   border: none;
   cursor: pointer;
+
+  @include breakpoints.for-md-screen {
+    @include fontsMixins.headline5-semibold-green;
+    padding: 0 var(--space-12) var(--space-14);
+  }
 }
 
 @mixin logoutBtn {
+  // display: none;
   @include fontsMixins.paragraph-17-medium-red;
   padding: var(--space-9) var(--space-41);
   background-color: var(--darker-light-bg-color);
   border: none;
   border-radius: var(--space-7);
+
+  // @include breakpoints.for-md-screen {
+  //   display: block;
+  // }
+}
+
+@mixin bigBtn {
+  display: block;
+  @include fontsMixins.paragraph-17-semibold-white;
+  width: 100%;
+  max-width: var(--space-300);
+  padding: var(--space-9) 0;
+  text-align: center;
+  background: var(--primary-bg-color);
+  border: none;
+  border-radius: var(--space-8);
+  margin: var(--space-20) auto 0;
+
+  @include breakpoints.for-md-screen {
+    max-width: var(--space-400);
+    padding: var(--space-14) 0;
+  }
 }

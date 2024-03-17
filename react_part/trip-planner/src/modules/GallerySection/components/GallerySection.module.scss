@@ -1,0 +1,20 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.gallery__section {
+  margin: var(--space-20) 0 var(--space-40);
+
+  @include breakpoints.for-md-screen {
+    margin: var(--space-53) 0 var(--space-50);
+  }
+
+  .content {
+    max-width: var(--space-370);
+    margin: 0 auto;
+    position: relative;
+
+    @include breakpoints.for-md-screen {
+      max-width: var(--space-1371);
+    }
+  }
+}

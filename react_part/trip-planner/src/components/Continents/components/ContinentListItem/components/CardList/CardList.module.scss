@@ -1,15 +1,15 @@
 @use "/src/styles/variables.scss";
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.trip_card_list {
+.trip__card__list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: var(--space-8);
-  row-gap: var(--space-12);
+  column-gap: var(--space-10);
+  row-gap: var(--space-11);
 
   @include breakpoints.for-md-screen {
-    column-gap: var(--space-10);
-    row-gap: var(--space-11);
+    column-gap: var(--space-8);
+    row-gap: var(--space-12);
   }
 }

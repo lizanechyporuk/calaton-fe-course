@@ -1,34 +1,28 @@
 import Container from "components/Container";
 import NavigationBig from "./NavigationBig/NavigationBig";
 import NavigationSmall from "./NavigationSmall/NavigationSmall";
+import { useWindowWidth } from "utils/window-resize/useWindowWidth";
 import styles from "./Header.module.scss";
 
 function Header(): JSX.Element {
+  const windowWidth = useWindowWidth();
+
   return (
     <header className={styles.header}>
       <Container>
         <div className={styles.content}>
           <NavigationSmall />
 
-          <picture>
-            <source
-              media="(max-width: 899px)"
-              srcSet="/icons/shared/logo_small.svg"
-              width="40"
-              height="31"
-            />
-            <source
-              media="(min-width: 900px)"
-              srcSet="/icons/shared/logo.svg"
-              width="40"
-              height="60"
-            />
-            <img src="/icons/shared/logo.svg" alt="Logo"></img>
-          </picture>
+          <img
+            src="/icons/shared/logo.svg"
+            width={windowWidth <= 900 ? "31" : "60"}
+            height="60"
+            alt="Logo"
+          ></img>
 
           <NavigationBig />
 
-          <div className={styles.acc_features}>
+          <div className={styles.acc__features}>
             <a>
               <img
                 src="/icons/Header/favourites_empty.svg"
@@ -39,21 +33,12 @@ function Header(): JSX.Element {
             </a>
 
             <a>
-              <picture>
-                <source
-                  media="(max-width: 899px)"
-                  srcSet="/icons/Header/account_small.svg"
-                  width="24"
-                  height="24"
-                />
-                <source
-                  media="(min-width: 900px)"
-                  srcSet="/icons/Header/account.svg"
-                  width="32"
-                  height="32"
-                />
-                <img src="/icons/Header/account.svg" alt="Account"></img>
-              </picture>
+              <img
+                src="/icons/Header/account.svg"
+                width={windowWidth <= 900 ? "24" : "32"}
+                height={windowWidth <= 900 ? "24" : "32"}
+                alt="Account"
+              ></img>
             </a>
           </div>
         </div>

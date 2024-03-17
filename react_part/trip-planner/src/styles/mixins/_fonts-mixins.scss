@@ -11,6 +11,15 @@
   color: var(--dark-light-text-color);
 }
 
+@mixin headline2-bold-dark {
+  font-family: var(--font-family);
+  font-size: var(--font-size-40);
+  font-weight: var(--bold);
+  line-height: var(--space-60);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
 @mixin headline3-bold {
   font-family: var(--font-family);
   font-size: var(--font-size-35);
@@ -84,6 +93,16 @@
   text-decoration: none;
 }
 
+@mixin headline6-regular-gray-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--regular);
+  line-height: var(--space-24);
+  word-wrap: break-word;
+  color: var(--gray-light-text-color);
+  text-decoration: none;
+}
+
 @mixin headline6-semibold {
   font-family: var(--font-family);
   font-size: var(--font-size-20);
@@ -92,6 +111,24 @@
   word-wrap: break-word;
   color: var(--dark-text-color);
   text-decoration: none;
+}
+
+@mixin headline6-semibold-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--semibold);
+  line-height: var(--space-24);
+  word-wrap: break-word;
+  color: var(--black-text-color);
+}
+
+@mixin headline6-bold-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--bold);
+  line-height: var(--space-24);
+  word-wrap: break-word;
+  color: var(--black-text-color);
 }
 
 @mixin headline6-bold-green {
@@ -111,6 +148,24 @@
   line-height: var(--space-12);
   word-wrap: break-word;
   color: var(--dark-light-text-color);
+}
+
+@mixin paragraph-10-regular-dark {
+  font-family: var(--font-family);
+  font-size: var(--font-size-10);
+  font-weight: var(--regular);
+  line-height: var(--space-12);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
+@mixin paragraph-10-regular-gray-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-10);
+  font-weight: var(--regular);
+  line-height: var(--space-12);
+  word-wrap: break-word;
+  color: var(--gray-light-text-color);
 }
 
 @mixin paragraph-12-regular {
@@ -151,6 +206,15 @@
   color: var(--dark-light-text-color);
 }
 
+@mixin paragraph-12-bold-dark {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--bold);
+  line-height: var(--space-16-8);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
 @mixin paragraph-14-regular {
   font-family: var(--font-family);
   font-size: var(--font-size-14);
@@ -158,6 +222,15 @@
   line-height: var(--space-21);
   word-wrap: break-word;
   color: var(--dark-text-color);
+}
+
+@mixin paragraph-14-regular-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--regular);
+  line-height: var(--space-21);
+  word-wrap: break-word;
+  color: var(--black-text-color);
 }
 
 @mixin paragraph-14-regular-dark {
@@ -244,6 +317,15 @@
   color: var(--dark-lighter-text-color);
 }
 
+@mixin paragraph-17-regular-dark {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--regular);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
 @mixin paragraph-17-regular-black {
   font-family: var(--font-family);
   font-size: var(--font-size-17);
@@ -251,6 +333,15 @@
   line-height: var(--space-20-4);
   word-wrap: break-word;
   color: var(--black-text-color);
+}
+
+@mixin paragraph-17-regular-gray-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--regular);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--gray-light-text-color);
 }
 
 @mixin paragraph-17-regular-green {
@@ -271,6 +362,15 @@
   color: var(--green-dark-text-color);
 }
 
+@mixin paragraph-17-medium-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--medium);
+  line-height: var(--space-25-5);
+  word-wrap: break-word;
+  color: var(--black-text-color);
+}
+
 @mixin paragraph-17-medium-red {
   font-family: var(--font-family);
   font-size: var(--font-size-17);
@@ -278,6 +378,24 @@
   line-height: var(--space-25-5);
   word-wrap: break-word;
   color: var(--dark-red-text-color);
+}
+
+@mixin paragraph-17-semibold-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--semibold);
+  line-height: var(--space-25-5);
+  word-wrap: break-word;
+  color: var(--black-text-color);
+}
+
+@mixin paragraph-17-semibold-white {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--semibold);
+  line-height: var(--space-25-5);
+  word-wrap: break-word;
+  color: var(--white-text-color);
 }
 
 @mixin paragraph-17-semibold-dark {
@@ -298,6 +416,15 @@
   color: var(--link-text-color);
 }
 
+@mixin paragraph-17-bold-dark {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--bold);
+  line-height: var(--space-20-4);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
+}
+
 @mixin paragraph-20-light {
   font-family: var(--font-family);
   font-size: var(--font-size-20);
@@ -314,6 +441,15 @@
   line-height: var(--space-42);
   word-wrap: break-word;
   color: var(--dark-light-text-color);
+}
+
+@mixin paragraph-32-medium-dark {
+  font-family: var(--font-family);
+  font-size: var(--font-size-32);
+  font-weight: var(--medium);
+  line-height: var(--space-48);
+  word-wrap: break-word;
+  color: var(--dark-text-color);
 }
 
 @mixin paragraph-38-semibold {

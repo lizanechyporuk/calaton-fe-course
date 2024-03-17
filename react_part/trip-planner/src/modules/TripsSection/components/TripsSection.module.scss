@@ -1,0 +1,10 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.trips__section {
+  margin-bottom: var(--space-53);
+
+  @include breakpoints.for-md-screen {
+    margin: 0;
+  }
+}

@@ -2,12 +2,12 @@
 @use "/src/styles/mixins/fonts-mixins" as fontsMixins;
 @use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
 
-.trip_filter {
+.trip__filter {
   text-align: center;
-  margin-bottom: var(--space-50);
+  margin-bottom: var(--space-31);
 
   @include breakpoints.for-md-screen {
-    margin-bottom: var(--space-31);
+    margin-bottom: var(--space-50);
   }
 
   .content {
@@ -18,44 +18,45 @@
       display: inline-block;
 
       .item {
-        @include fontsMixins.paragraph-20-light;
+        @include fontsMixins.paragraph-14-regular;
         display: inline-block;
         padding: 0;
         position: relative;
         z-index: 1;
 
         @include breakpoints.for-md-screen {
-          @include fontsMixins.paragraph-14-regular;
+          @include fontsMixins.paragraph-20-light;
         }
 
         &:not(:last-of-type) {
-          margin-right: var(--space-32);
+          margin-right: var(--space-11);
 
           @include breakpoints.for-md-screen {
-            margin-right: var(--space-11);
+            margin-right: var(--space-32);
           }
         }
 
         &.active {
-          border-bottom: var(--space-3) solid var(--primary-bg-color);
+          border-bottom: var(--space-2) solid var(--primary-bg-color);
 
           @include breakpoints.for-md-screen {
-            border-bottom: var(--space-2) solid var(--primary-bg-color);
+            border-bottom: var(--space-3) solid var(--primary-bg-color);
           }
         }
       }
     }
 
     .bar {
-      height: var(--space-3);
-      border: none;
-      background-color: var(--tertiary-bg-color);
-      position: relative;
-      top: var(--space-minus-3);
-      z-index: 0;
+      display: none;
 
       @include breakpoints.for-sm-screen {
-        display: none;
+        display: block;
+        height: var(--space-3);
+        border: none;
+        background-color: var(--tertiary-bg-color);
+        position: relative;
+        top: var(--space-minus-3);
+        z-index: 0;
       }
     }
   }
