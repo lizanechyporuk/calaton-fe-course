@@ -50,6 +50,8 @@ body {
   --gray-light-darker-text-color: #5e5e5e;
   --green-dark-text-color: #09292b;
   --link-text-color: #27959e;
+  --link-light-text-color: #bcdee1;
+  --error-text-color: #d42121;
   --dark-red-text-color: #7f1414;
 
   /* Font family */
@@ -80,8 +82,10 @@ body {
   --bold: 700;
 
   /* Spaces */
+  --space-0-88: 0.88px;
   --space-1: 1px;
   --space-2: 2px;
+  --space-2-33: 2.33px;
   --space-2-5: 2.5px;
   --space-3: 3px;
   --space-minus-3: -3px;
@@ -98,10 +102,13 @@ body {
   --space-13: 13px;
   --space-14: 14px;
   --space-15: 15px;
+  --space-minus-15: -15px;
   --space-16: 16px;
   --space-16-5: 16.5px;
   --space-16-8: 16.8px;
   --space-17: 17px;
+  --space-18: 18px;
+  --space-19: 19px;
   --space-minus-19: -19px;
   --space-20: 20px;
   --space-20-4: 20.4px;
@@ -129,9 +136,12 @@ body {
   --space-42: 42px;
   --space-44: 44px;
   --space-45: 45px;
+  --space-47: 47px;
   --space-48: 48px;
+  --space-49: 49px;
   --space-50: 50px;
   --space-50-4: 50.4px;
+  --space-52: 52px;
   --space-53: 53px;
   --space-56: 56px;
   --space-57: 57px;
@@ -153,11 +163,13 @@ body {
   --space-181: 181px;
   --space-193: 193px;
   --space-200: 200px;
+  --space-217: 217px;
   --space-220: 220px;
   --space-225: 225px;
   --space-246: 246px;
   --space-280: 280px;
   --space-290: 290px;
+  --space-297: 297px;
   --space-300: 300px;
   --space-320: 320px;
   --space-331: 331px;
@@ -171,6 +183,7 @@ body {
   --space-415: 415px;
   --space-495: 495px;
   --space-550: 550px;
+  --space-600: 600px;
   --space-700: 700px;
   --space-844: 844px;
   --space-876: 876px;

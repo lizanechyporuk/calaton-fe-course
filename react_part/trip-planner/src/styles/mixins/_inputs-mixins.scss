@@ -1,0 +1,16 @@
+@use "../variables.scss";
+@use "./fonts-mixins.scss" as fontsMixins;
+@use "./breakpoints-mixins" as breakpoints;
+
+@mixin inputText {
+  @include fontsMixins.paragraph-14-regular;
+  width: 100%;
+  padding: var(--space-12) var(--space-19);
+  background: var(--white-bg-color);
+  border-radius: var(--space-10);
+  border: var(--space-1) solid var(--secondary-bg-color);
+
+  @include breakpoints.for-md-screen {
+    padding: var(--space-17) var(--space-25);
+  }
+}

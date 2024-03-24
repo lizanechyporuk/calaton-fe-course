@@ -1,5 +1,6 @@
 const routes = {
-  homepage: "/",
+  welcomepage: "/",
+  homepage: "/homepage",
   tripdetails: "/trip-details/:continent/:trip",
 };
 

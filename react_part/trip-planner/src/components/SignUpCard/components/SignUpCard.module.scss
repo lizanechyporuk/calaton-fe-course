@@ -1,0 +1,143 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/fonts-mixins" as fontsMixins;
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.sign__up__card {
+  max-width: var(--space-300);
+  margin: 0 auto;
+
+  @include breakpoints.for-md-screen {
+    max-width: var(--space-400);
+  }
+
+  .heading {
+    @include fontsMixins.headline5-semibold-green;
+    margin-bottom: var(--space-52);
+
+    @include breakpoints.for-md-screen {
+      @include fontsMixins.headline3-bold-link;
+      margin-bottom: var(--space-40);
+    }
+  }
+
+  .form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+
+    @include breakpoints.for-md-screen {
+      gap: var(--space-25);
+    }
+
+    .input__wrapper {
+      position: relative;
+
+      .btn {
+        position: absolute;
+        top: var(--space-12);
+        right: var(--space-18);
+
+        @include breakpoints.for-md-screen {
+          top: var(--space-16);
+          right: var(--space-16);
+          width: var(--space-24);
+          height: var(--space-24);
+        }
+      }
+    }
+
+    .error {
+      @include fontsMixins.paragraph-12-regular-error;
+      margin-top: var(--space-minus-15);
+      text-align: start;
+
+      @include breakpoints.for-md-screen {
+        @include fontsMixins.paragraph-14-regular-error;
+      }
+
+      &::before {
+        display: inline;
+        content: "⚠ ";
+      }
+    }
+
+    .select {
+      @include fontsMixins.paragraph-14-regular;
+      width: 50%;
+      min-width: fit-content;
+      padding: var(--space-12) var(--space-19);
+      background: var(--white-bg-color);
+      border-radius: var(--space-10);
+      border: var(--space-1) solid var(--secondary-bg-color);
+    }
+
+    .features {
+      padding: 0 var(--space-5);
+      text-align: start;
+
+      @include breakpoints.for-md-screen {
+        margin-top: var(--space-minus-15);
+      }
+
+      .checkbox__label {
+        @include fontsMixins.paragraph-12-regular-link-light;
+      }
+
+      .checkbox {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0 var(--space-9) 0 0;
+        background: none;
+        color: var(--primary-bg-color);
+        width: var(--space-12);
+        height: var(--space-12);
+        border: var(--space-0-88) solid var(--primary-bg-color);
+        border-radius: var(--space-2-33);
+        cursor: pointer;
+        position: relative;
+
+        &::before {
+          content: "✔";
+          top: -30%;
+          left: 0;
+          font-size: var(--space-12);
+          position: absolute;
+          transform: scale(0);
+          transform-origin: bottom left;
+          transition: 120ms transform ease-in-out;
+        }
+
+        &:checked + .checkbox__label {
+          @include fontsMixins.paragraph-12-bold-link;
+        }
+
+        &:checked::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .divider {
+    border: none;
+    width: 90%;
+    height: var(--space-1);
+    background: var(--primary-bg-color);
+    margin: var(--space-21) auto var(--space-49);
+
+    @include breakpoints.for-md-screen {
+      margin: var(--space-40) auto var(--space-30);
+    }
+  }
+
+  .references {
+    @include fontsMixins.paragraph-14-regular-green;
+    cursor: pointer;
+
+    .highlight {
+      @include fontsMixins.paragraph-14-semibold-link;
+    }
+  }
+}

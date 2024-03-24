@@ -29,6 +29,15 @@
   color: var(--dark-text-color);
 }
 
+@mixin headline3-bold-link {
+  font-family: var(--font-family);
+  font-size: var(--font-size-32);
+  font-weight: var(--bold);
+  line-height: var(--space-48);
+  word-wrap: break-word;
+  color: var(--link-text-color);
+}
+
 @mixin headline4-bold {
   font-family: var(--font-family);
   font-size: var(--font-size-29);
@@ -197,6 +206,24 @@
   padding: 0;
 }
 
+@mixin paragraph-12-regular-link-light {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--regular);
+  line-height: var(--space-16-8);
+  word-wrap: break-word;
+  color: var(--link-light-text-color);
+}
+
+@mixin paragraph-12-regular-error {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--regular);
+  line-height: var(--space-16-8);
+  word-wrap: break-word;
+  color: var(--error-text-color);
+}
+
 @mixin paragraph-12-semibold {
   font-family: var(--font-family);
   font-size: var(--font-size-12);
@@ -213,6 +240,15 @@
   line-height: var(--space-16-8);
   word-wrap: break-word;
   color: var(--dark-text-color);
+}
+
+@mixin paragraph-12-bold-link {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--bold);
+  line-height: var(--space-16-8);
+  word-wrap: break-word;
+  color: var(--link-text-color);
 }
 
 @mixin paragraph-14-regular {
@@ -272,6 +308,15 @@
   border-radius: var(--space-4);
 }
 
+@mixin paragraph-14-regular-error {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--regular);
+  line-height: var(--space-21);
+  word-wrap: break-word;
+  color: var(--error-text-color);
+}
+
 @mixin paragraph-14-semibold {
   font-family: var(--font-family);
   font-size: var(--font-size-14);
@@ -279,6 +324,15 @@
   line-height: var(--space-21);
   word-wrap: break-word;
   color: var(--black-text-color);
+}
+
+@mixin paragraph-14-semibold-link {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--semibold);
+  line-height: var(--space-21);
+  word-wrap: break-word;
+  color: var(--link-text-color);
 }
 
 @mixin paragraph-14-semibold-dark-green {

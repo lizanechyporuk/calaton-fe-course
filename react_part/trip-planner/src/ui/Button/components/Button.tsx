@@ -5,13 +5,20 @@ interface ButtonProps {
   classBtn: any;
   value: string;
   onClick: any;
+  type?: "button";
 }
 
-function Button({ text, classBtn, value, onClick }: ButtonProps): JSX.Element {
+function Button({
+  text,
+  classBtn,
+  value,
+  onClick,
+  type,
+}: ButtonProps): JSX.Element {
   return (
     <button
       value={value}
-      type="button"
+      type={type}
       className={styles[classBtn]}
       onClick={onClick}
     >

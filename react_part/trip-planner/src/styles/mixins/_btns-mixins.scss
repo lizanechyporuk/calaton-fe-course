@@ -29,16 +29,11 @@
 }
 
 @mixin logoutBtn {
-  // display: none;
   @include fontsMixins.paragraph-17-medium-red;
   padding: var(--space-9) var(--space-41);
   background-color: var(--darker-light-bg-color);
   border: none;
   border-radius: var(--space-7);
-
-  // @include breakpoints.for-md-screen {
-  //   display: block;
-  // }
 }
 
 @mixin bigBtn {
@@ -52,6 +47,24 @@
   border: none;
   border-radius: var(--space-8);
   margin: var(--space-20) auto 0;
+
+  @include breakpoints.for-md-screen {
+    max-width: var(--space-400);
+    padding: var(--space-14) 0;
+  }
+}
+
+@mixin googleBtn {
+  @include fontsMixins.paragraph-14-semibold;
+  width: 100%;
+  max-width: var(--space-300);
+  padding: var(--space-12) 0;
+  text-align: center;
+  background: url(../../../public/icons/shared/google.svg) center left no-repeat
+    var(--white-bg-color);
+  border: var(--space-1) solid var(--secondary-bg-color);
+  border-radius: var(--space-10);
+  margin: 0 auto;
 
   @include breakpoints.for-md-screen {
     max-width: var(--space-400);

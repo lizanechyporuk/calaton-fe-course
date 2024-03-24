@@ -16,4 +16,8 @@ button {
   &.bigBtn {
     @include btnsMixins.bigBtn;
   }
+
+  &.googleBtn {
+    @include btnsMixins.googleBtn;
+  }
 }

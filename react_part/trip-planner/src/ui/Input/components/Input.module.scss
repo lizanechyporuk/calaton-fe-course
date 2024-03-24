@@ -1,0 +1,7 @@
+@use "/src/styles/mixins/inputs-mixins" as inputsMixins;
+
+input {
+  &.inputText {
+    @include inputsMixins.inputText;
+  }
+}

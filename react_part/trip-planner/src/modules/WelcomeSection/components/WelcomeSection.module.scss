@@ -1,0 +1,50 @@
+@use "/src/styles/variables.scss";
+@use "/src/styles/mixins/breakpoints-mixins" as breakpoints;
+
+.welcome__section {
+  margin: var(--space-20) 0 var(--space-5);
+  background: url("../../../../public/images/WelcomeSection/worldMap.png")
+    center no-repeat;
+
+  @include breakpoints.for-md-screen {
+    padding: var(--space-10) 0 var(--space-50);
+  }
+
+  .card {
+    position: relative;
+    padding: var(--space-35) 0;
+    background-color: var(--white-bg-color-op-90);
+    border-radius: var(--space-25);
+    box-shadow: 0 0 20px 0 var(--green-dark-bg-color-op-10);
+    text-align: center;
+    max-width: var(--space-700);
+    margin: 0 auto;
+    overflow: hidden;
+    max-height: 660px;
+
+    @include breakpoints.for-md-screen {
+      padding: var(--space-40) 0 var(--space-47);
+    }
+
+    .content {
+      display: flex;
+      width: 200%;
+
+      .item {
+        flex: 1;
+        overflow-y: auto;
+        max-height: var(--space-600);
+
+        transition: transform 0.5s ease-in-out;
+
+        &.slideLeft {
+          transform: translateX(-100%); // Slide content to the left
+        }
+
+        &.slideRight {
+          transform: translateX(0%); // Slide content to the right
+        }
+      }
+    }
+  }
+}
